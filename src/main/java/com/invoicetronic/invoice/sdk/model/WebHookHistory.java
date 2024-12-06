@@ -51,7 +51,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * Webhook history.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-06T10:33:08.241248Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-06T10:41:12.345404Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class WebHookHistory implements Serializable {
   private static final long serialVersionUID = 1L;
 
