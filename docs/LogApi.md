@@ -1,0 +1,150 @@
+# LogApi
+
+All URIs are relative to *https://api.invoicetronic.com*
+
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**invoiceV1LogGet**](LogApi.md#invoiceV1LogGet) | **GET** /invoice/v1/log | List events |
+| [**invoiceV1LogIdGet**](LogApi.md#invoiceV1LogIdGet) | **GET** /invoice/v1/log/{id} | Get an event by id |
+
+
+<a id="invoiceV1LogGet"></a>
+# **invoiceV1LogGet**
+> List&lt;Event&gt; invoiceV1LogGet(page, pageSize)
+
+List events
+
+Every API operation is logged and can be retrieved here.
+
+### Example
+```java
+// Import classes:
+import invalidPackageName.ApiClient;
+import invalidPackageName.ApiException;
+import invalidPackageName.Configuration;
+import invalidPackageName.auth.*;
+import invalidPackageName.models.*;
+import org.openapitools.client.api.LogApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.invoicetronic.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    LogApi apiInstance = new LogApi(defaultClient);
+    Integer page = 1; // Integer | Page number.
+    Integer pageSize = 100; // Integer | Items per page.
+    try {
+      List<Event> result = apiInstance.invoiceV1LogGet(page, pageSize);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LogApi#invoiceV1LogGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **page** | **Integer**| Page number. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+
+### Return type
+
+[**List&lt;Event&gt;**](Event.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+
+<a id="invoiceV1LogIdGet"></a>
+# **invoiceV1LogIdGet**
+> Event invoiceV1LogIdGet(id)
+
+Get an event by id
+
+Every API operation is logged and can be retrieved here.
+
+### Example
+```java
+// Import classes:
+import invalidPackageName.ApiClient;
+import invalidPackageName.ApiException;
+import invalidPackageName.Configuration;
+import invalidPackageName.auth.*;
+import invalidPackageName.models.*;
+import org.openapitools.client.api.LogApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.invoicetronic.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    LogApi apiInstance = new LogApi(defaultClient);
+    Integer id = 56; // Integer | Item id.
+    try {
+      Event result = apiInstance.invoiceV1LogIdGet(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LogApi#invoiceV1LogIdGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| Item id. | |
+
+### Return type
+
+[**Event**](Event.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+

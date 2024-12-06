@@ -1,0 +1,247 @@
+# ReceiveApi
+
+All URIs are relative to *https://api.invoicetronic.com*
+
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**invoiceV1ReceiveGet**](ReceiveApi.md#invoiceV1ReceiveGet) | **GET** /invoice/v1/receive | List incoming invoices |
+| [**invoiceV1ReceiveIdDelete**](ReceiveApi.md#invoiceV1ReceiveIdDelete) | **DELETE** /invoice/v1/receive/{id} | Delete an incoming invoice by id |
+| [**invoiceV1ReceiveIdGet**](ReceiveApi.md#invoiceV1ReceiveIdGet) | **GET** /invoice/v1/receive/{id} | Get an incoming invoice by id |
+
+
+<a id="invoiceV1ReceiveGet"></a>
+# **invoiceV1ReceiveGet**
+> List&lt;Receive&gt; invoiceV1ReceiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize)
+
+List incoming invoices
+
+Receive invoices are the invoices that are received from other companies.
+
+### Example
+```java
+// Import classes:
+import invalidPackageName.ApiClient;
+import invalidPackageName.ApiException;
+import invalidPackageName.Configuration;
+import invalidPackageName.auth.*;
+import invalidPackageName.models.*;
+import org.openapitools.client.api.ReceiveApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.invoicetronic.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    ReceiveApi apiInstance = new ReceiveApi(defaultClient);
+    Integer companyId = 56; // Integer | Company id.
+    String identifier = "identifier_example"; // String | SDI identifier.
+    Boolean unread = true; // Boolean | Unread items only.
+    String committente = "committente_example"; // String | VAT number or fiscal code.
+    String prestatore = "prestatore_example"; // String | VAT number or fiscal code.
+    String fileName = "fileName_example"; // String | File name.
+    OffsetDateTime lastUpdateFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    OffsetDateTime lastUpdateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    OffsetDateTime dateSentFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    OffsetDateTime dateSentTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    OffsetDateTime documentDateFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    OffsetDateTime documentDateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    String documentNumber = "documentNumber_example"; // String | Document number.
+    Integer page = 1; // Integer | Page number.
+    Integer pageSize = 100; // Integer | Items per page.
+    try {
+      List<Receive> result = apiInstance.invoiceV1ReceiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReceiveApi#invoiceV1ReceiveGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| Company id. | [optional] |
+| **identifier** | **String**| SDI identifier. | [optional] |
+| **unread** | **Boolean**| Unread items only. | [optional] |
+| **committente** | **String**| VAT number or fiscal code. | [optional] |
+| **prestatore** | **String**| VAT number or fiscal code. | [optional] |
+| **fileName** | **String**| File name. | [optional] |
+| **lastUpdateFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **lastUpdateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **dateSentFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **dateSentTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **documentDateFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **documentDateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **documentNumber** | **String**| Document number. | [optional] |
+| **page** | **Integer**| Page number. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+
+### Return type
+
+[**List&lt;Receive&gt;**](Receive.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **400** | Bad Request |  -  |
+
+<a id="invoiceV1ReceiveIdDelete"></a>
+# **invoiceV1ReceiveIdDelete**
+> Receive invoiceV1ReceiveIdDelete(id)
+
+Delete an incoming invoice by id
+
+Receive invoices are the invoices that are received from other companies.
+
+### Example
+```java
+// Import classes:
+import invalidPackageName.ApiClient;
+import invalidPackageName.ApiException;
+import invalidPackageName.Configuration;
+import invalidPackageName.auth.*;
+import invalidPackageName.models.*;
+import org.openapitools.client.api.ReceiveApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.invoicetronic.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    ReceiveApi apiInstance = new ReceiveApi(defaultClient);
+    Integer id = 56; // Integer | Item id.
+    try {
+      Receive result = apiInstance.invoiceV1ReceiveIdDelete(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReceiveApi#invoiceV1ReceiveIdDelete");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| Item id. | |
+
+### Return type
+
+[**Receive**](Receive.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+
+<a id="invoiceV1ReceiveIdGet"></a>
+# **invoiceV1ReceiveIdGet**
+> Receive invoiceV1ReceiveIdGet(id)
+
+Get an incoming invoice by id
+
+Receive invoices are the invoices that are received from other companies.
+
+### Example
+```java
+// Import classes:
+import invalidPackageName.ApiClient;
+import invalidPackageName.ApiException;
+import invalidPackageName.Configuration;
+import invalidPackageName.auth.*;
+import invalidPackageName.models.*;
+import org.openapitools.client.api.ReceiveApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.invoicetronic.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    ReceiveApi apiInstance = new ReceiveApi(defaultClient);
+    Integer id = 56; // Integer | Item id.
+    try {
+      Receive result = apiInstance.invoiceV1ReceiveIdGet(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReceiveApi#invoiceV1ReceiveIdGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| Item id. | |
+
+### Return type
+
+[**Receive**](Receive.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+
