@@ -50,7 +50,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * StabileOrganizzazione
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-06T11:12:43.180218Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-06T11:17:21.916154Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class StabileOrganizzazione implements Serializable {
   private static final long serialVersionUID = 1L;
 
