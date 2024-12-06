@@ -21,4 +21,8 @@ Webhook history.
 |**success** | **Boolean** | Wether the request was successful. |  [optional] [readonly] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

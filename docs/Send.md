@@ -24,4 +24,8 @@
 |**metaData** | **Map&lt;String, String&gt;** | Optional metadata, as json. |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

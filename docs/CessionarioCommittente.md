@@ -13,4 +13,8 @@
 |**rappresentanteFiscale** | [**RappresentanteFiscaleCessionarioCommittente**](RappresentanteFiscaleCessionarioCommittente.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

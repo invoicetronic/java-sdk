@@ -13,4 +13,8 @@
 |**riferimentoData** | **OffsetDateTime** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

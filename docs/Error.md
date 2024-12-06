@@ -13,4 +13,8 @@ Validation error from the SDI.
 |**hint** | **String** | Hint on how to solve the issue. |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

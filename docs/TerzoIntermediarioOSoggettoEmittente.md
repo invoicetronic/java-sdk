@@ -10,4 +10,8 @@
 |**datiAnagrafici** | [**DatiAnagrafici**](DatiAnagrafici.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

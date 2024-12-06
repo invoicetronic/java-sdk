@@ -16,4 +16,8 @@
 |**codiceCig** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

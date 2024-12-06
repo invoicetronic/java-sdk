@@ -12,4 +12,8 @@
 |**anagrafica** | [**Anagrafica**](Anagrafica.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

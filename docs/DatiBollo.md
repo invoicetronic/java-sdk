@@ -11,4 +11,8 @@
 |**importoBollo** | **Double** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

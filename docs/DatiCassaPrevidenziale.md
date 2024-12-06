@@ -17,4 +17,8 @@
 |**riferimentoAmministrazione** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

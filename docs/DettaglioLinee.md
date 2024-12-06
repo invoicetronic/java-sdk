@@ -25,4 +25,8 @@
 |**altriDatiGestionali** | [**List&lt;AltriDatiGestionali&gt;**](AltriDatiGestionali.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

@@ -11,4 +11,8 @@
 |**dataFatturaPrincipale** | **OffsetDateTime** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

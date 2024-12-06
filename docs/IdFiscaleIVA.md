@@ -11,4 +11,8 @@
 |**idCodice** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

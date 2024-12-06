@@ -15,4 +15,8 @@
 |**nazione** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

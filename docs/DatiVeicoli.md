@@ -11,4 +11,8 @@
 |**totalePercorso** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

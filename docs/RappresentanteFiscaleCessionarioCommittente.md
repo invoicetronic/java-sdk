@@ -13,4 +13,8 @@
 |**idFiscaleIva** | [**IdFiscaleIVA**](IdFiscaleIVA.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

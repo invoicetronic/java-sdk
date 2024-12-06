@@ -14,4 +14,8 @@
 |**allegati** | [**List&lt;Allegati&gt;**](Allegati.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

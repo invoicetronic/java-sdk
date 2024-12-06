@@ -25,4 +25,8 @@
 |**apiKeyId** | **Integer** | Api key id. |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

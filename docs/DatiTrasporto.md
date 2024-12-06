@@ -22,4 +22,8 @@
 |**dataOraConsegna** | **OffsetDateTime** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

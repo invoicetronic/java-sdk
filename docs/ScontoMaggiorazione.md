@@ -12,4 +12,8 @@
 |**importo** | **Double** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

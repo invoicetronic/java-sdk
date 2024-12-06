@@ -19,4 +19,8 @@
 |**fatturaPrincipale** | [**FatturaPrincipale**](FatturaPrincipale.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

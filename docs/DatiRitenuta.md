@@ -13,4 +13,8 @@
 |**causalePagamento** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

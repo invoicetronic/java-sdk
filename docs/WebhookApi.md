@@ -1,6 +1,6 @@
 # WebhookApi
 
-All URIs are relative to *https://api.invoicetronic.com*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -24,17 +24,17 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -95,17 +95,17 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -164,17 +164,17 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -233,17 +233,17 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -301,17 +301,17 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -367,17 +367,17 @@ List webhook history items
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -436,17 +436,17 @@ Get a webhook history item by id
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.WebhookApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");

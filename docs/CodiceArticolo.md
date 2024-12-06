@@ -11,4 +11,8 @@
 |**codiceValore** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

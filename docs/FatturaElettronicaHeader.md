@@ -15,4 +15,8 @@
 |**soggettoEmittente** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

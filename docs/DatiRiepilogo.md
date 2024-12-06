@@ -17,4 +17,8 @@
 |**riferimentoNormativo** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

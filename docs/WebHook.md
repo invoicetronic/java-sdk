@@ -19,4 +19,8 @@
 |**events** | **List&lt;String&gt;** | List of events to that trigger the webhook.  See InvoiceApi.SupportedEvents.Available for a list of valid event names. |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

@@ -14,4 +14,8 @@
 |**attachment** | **byte[]** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

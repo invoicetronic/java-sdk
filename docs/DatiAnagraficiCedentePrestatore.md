@@ -17,4 +17,8 @@
 |**regimeFiscale** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

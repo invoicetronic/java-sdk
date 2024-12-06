@@ -18,4 +18,8 @@ A company model.
 |**counter** | **Integer** | Holds the last unique value used to generate a XML filename. This is automatically updated by the system   when a raw XML file is uploaded. Normally, you do not need or want to change this value. |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

@@ -21,4 +21,8 @@
 |**art73** | **String** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

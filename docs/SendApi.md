@@ -1,6 +1,6 @@
 # SendApi
 
-All URIs are relative to *https://api.invoicetronic.com*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -23,17 +23,17 @@ Send invoices are the invoices that are sent to the SDI.
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.SendApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.SendApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -93,17 +93,17 @@ test **markdown**.
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.SendApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.SendApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -189,17 +189,17 @@ Send invoices are the invoices that are sent to the SDI.
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.SendApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.SendApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -258,17 +258,17 @@ Send invoices are the invoices that are sent to the SDI.
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.SendApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.SendApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -328,17 +328,17 @@ Send invoices are the invoices that are sent to the SDI.
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.SendApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.SendApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -398,17 +398,17 @@ Send invoices are the invoices that are sent to the SDI.
 ### Example
 ```java
 // Import classes:
-import invalidPackageName.ApiClient;
-import invalidPackageName.ApiException;
-import invalidPackageName.Configuration;
-import invalidPackageName.auth.*;
-import invalidPackageName.models.*;
-import org.openapitools.client.api.SendApi;
+import com.invoicetronic.invoice.sdk.ApiClient;
+import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.Configuration;
+import com.invoicetronic.invoice.sdk.auth.*;
+import com.invoicetronic.invoice.sdk.models.*;
+import com.invoicetronic.invoice.sdk.api.SendApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.invoicetronic.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");

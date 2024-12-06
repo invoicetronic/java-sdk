@@ -12,4 +12,8 @@
 |**fatturaElettronicaBody** | [**List&lt;FatturaElettronicaBody&gt;**](FatturaElettronicaBody.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

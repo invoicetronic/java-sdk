@@ -10,4 +10,8 @@
 |**riferimentoFase** | **Integer** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

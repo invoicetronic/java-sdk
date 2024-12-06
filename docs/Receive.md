@@ -24,4 +24,8 @@
 |**isRead** | **Boolean** | Wether the invoice has been read at least once. |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

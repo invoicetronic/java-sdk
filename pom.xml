@@ -1,33 +1,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.openapitools</groupId>
-    <artifactId>openapi-java-client</artifactId>
+    <groupId>com.invoicetronic.invoice</groupId>
+    <artifactId>invoice-java-sdk</artifactId>
     <packaging>jar</packaging>
-    <name>openapi-java-client</name>
+    <name>invoice-java-sdk</name>
     <version>1.0.0</version>
-    <url></url>
-    <description>OpenAPI Java</description>
+    <url>https://github.com/invoicetronic/invoice-java-sdk</url>
+    <description>Java SDK for the Italian eInvoice API</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>scm:git:git@github.com:invoicetronic/invoice-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:invoicetronic/invoice-java-sdk.git</developerConnection>
+        <url>https://github.com/invoicetronic/invoice-java-sdk.git</url>
     </scm>
 
     <licenses>
         <license>
             <name>MIT</name>
-            <url>http://unlicense.org</url>
+            <url>https://github.com/invoicetronic/invoice-java-sdk/blob/master/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <developers>
         <developer>
-            <name>OpenAPI-Generator Contributors</name>
-            <email>team@openapitools.org</email>
+            <name>Invoicetronic API Team</name>
+            <email>info@invoicetronic.com</email>
             <organization>Invoicetronic</organization>
-            <organizationUrl></organizationUrl>
+            <organizationUrl>https://invoicetronic.com</organizationUrl>
         </developer>
     </developers>
 

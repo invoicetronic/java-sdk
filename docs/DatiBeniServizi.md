@@ -11,4 +11,8 @@
 |**datiRiepilogo** | [**List&lt;DatiRiepilogo&gt;**](DatiRiepilogo.md) |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

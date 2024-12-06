@@ -39,4 +39,8 @@
 | ATTESTAZIONE_TRASMISSIONE_FATTURA | &quot;AttestazioneTrasmissioneFattura&quot; |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 

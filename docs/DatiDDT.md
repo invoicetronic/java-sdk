@@ -12,4 +12,8 @@
 |**riferimentoNumeroLinea** | **List&lt;Integer&gt;** |  |  [optional] |
 
 
+## Implemented Interfaces
+
+* Serializable
+
 
