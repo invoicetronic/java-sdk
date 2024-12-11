@@ -13,7 +13,7 @@
 
 package com.invoicetronic.invoice.sdk;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T15:05:08.862696Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T15:14:49.837999Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class Pair {
     private String name = "";
     private String value = "";

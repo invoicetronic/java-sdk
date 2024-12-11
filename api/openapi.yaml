@@ -891,6 +891,12 @@ paths:
   /invoice/v1/send/validate/xml:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/FatturaOrdinaria'
+        required: true
       responses:
         "204":
           description: No Content
@@ -909,6 +915,7 @@ paths:
       summary: Validate an invoice by xml
       tags:
       - send
+      x-content-type: application/xml
       x-accepts:
       - application/json
   /invoice/v1/send/validate/files:

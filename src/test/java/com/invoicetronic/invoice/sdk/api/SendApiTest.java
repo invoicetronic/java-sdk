@@ -172,7 +172,8 @@ public class SendApiTest {
      */
     @Test
     public void invoiceV1SendValidateXmlPostTest() throws ApiException {
-        api.invoiceV1SendValidateXmlPost();
+        FatturaOrdinaria fatturaOrdinaria = null;
+        api.invoiceV1SendValidateXmlPost(fatturaOrdinaria);
         // TODO: test validations
     }
 

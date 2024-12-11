@@ -606,7 +606,7 @@ null (empty response body)
 
 <a id="invoiceV1SendValidateXmlPost"></a>
 # **invoiceV1SendValidateXmlPost**
-> invoiceV1SendValidateXmlPost()
+> invoiceV1SendValidateXmlPost(fatturaOrdinaria)
 
 Validate an invoice by xml
 
@@ -633,8 +633,9 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
+    FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
     try {
-      apiInstance.invoiceV1SendValidateXmlPost();
+      apiInstance.invoiceV1SendValidateXmlPost(fatturaOrdinaria);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#invoiceV1SendValidateXmlPost");
       System.err.println("Status code: " + e.getCode());
@@ -647,7 +648,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
 
 ### Return type
 
@@ -659,7 +663,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/xml
  - **Accept**: application/json
 
 ### HTTP response details

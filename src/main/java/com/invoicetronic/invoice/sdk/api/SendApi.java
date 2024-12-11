@@ -1276,6 +1276,7 @@ public class SendApi {
     }
     /**
      * Build call for invoiceV1SendValidateXmlPost
+     * @param fatturaOrdinaria  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1288,7 +1289,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendValidateXmlPostCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendValidateXmlPostCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1302,7 +1303,7 @@ public class SendApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = fatturaOrdinaria;
 
         // create path and map variables
         String localVarPath = "/invoice/v1/send/validate/xml";
@@ -1322,6 +1323,7 @@ public class SendApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/xml"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1333,14 +1335,20 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoiceV1SendValidateXmlPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return invoiceV1SendValidateXmlPostCall(_callback);
+    private okhttp3.Call invoiceV1SendValidateXmlPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'fatturaOrdinaria' is set
+        if (fatturaOrdinaria == null) {
+            throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling invoiceV1SendValidateXmlPost(Async)");
+        }
+
+        return invoiceV1SendValidateXmlPostCall(fatturaOrdinaria, _callback);
 
     }
 
     /**
      * Validate an invoice by xml
      * Send invoices are the invoices that are sent to the SDI.
+     * @param fatturaOrdinaria  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1351,13 +1359,14 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void invoiceV1SendValidateXmlPost() throws ApiException {
-        invoiceV1SendValidateXmlPostWithHttpInfo();
+    public void invoiceV1SendValidateXmlPost(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+        invoiceV1SendValidateXmlPostWithHttpInfo(fatturaOrdinaria);
     }
 
     /**
      * Validate an invoice by xml
      * Send invoices are the invoices that are sent to the SDI.
+     * @param fatturaOrdinaria  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1369,14 +1378,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> invoiceV1SendValidateXmlPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = invoiceV1SendValidateXmlPostValidateBeforeCall(null);
+    public ApiResponse<Void> invoiceV1SendValidateXmlPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendValidateXmlPostValidateBeforeCall(fatturaOrdinaria, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Validate an invoice by xml (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
+     * @param fatturaOrdinaria  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1389,9 +1399,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendValidateXmlPostAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendValidateXmlPostAsync(FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invoiceV1SendValidateXmlPostValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = invoiceV1SendValidateXmlPostValidateBeforeCall(fatturaOrdinaria, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
