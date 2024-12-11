@@ -11,54 +11,56 @@
  */
 
 
-package com.invoicetronic.invoice.sdk.api;
+package com.invoicetronic.invoice.sdk.model;
 
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.model.Event;
-import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.invoicetronic.invoice.sdk.model.ProblemDetails;
+import java.io.IOException;
+import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
- * API tests for LogApi
+ * Model tests for ProblemHttpResult
  */
-@Disabled
-public class LogApiTest {
-
-    private final LogApi api = new LogApi();
+public class ProblemHttpResultTest {
+    private final ProblemHttpResult model = new ProblemHttpResult();
 
     /**
-     * List events
-     *
-     * Every API operation is logged and can be retrieved here.
-     *
-     * @throws ApiException if the Api call fails
+     * Model tests for ProblemHttpResult
      */
     @Test
-    public void invoiceV1LogGetTest() throws ApiException {
-        Integer page = null;
-        Integer pageSize = null;
-        List<Event> response = api.invoiceV1LogGet(page, pageSize);
-        // TODO: test validations
+    public void testProblemHttpResult() {
+        // TODO: test ProblemHttpResult
     }
 
     /**
-     * Get an event by id
-     *
-     * Every API operation is logged and can be retrieved here.
-     *
-     * @throws ApiException if the Api call fails
+     * Test the property 'problemDetails'
      */
     @Test
-    public void invoiceV1LogIdGetTest() throws ApiException {
-        Integer id = null;
-        Event response = api.invoiceV1LogIdGet(id);
-        // TODO: test validations
+    public void problemDetailsTest() {
+        // TODO: test problemDetails
+    }
+
+    /**
+     * Test the property 'contentType'
+     */
+    @Test
+    public void contentTypeTest() {
+        // TODO: test contentType
+    }
+
+    /**
+     * Test the property 'statusCode'
+     */
+    @Test
+    public void statusCodeTest() {
+        // TODO: test statusCode
     }
 
 }

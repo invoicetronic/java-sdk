@@ -19,11 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.invoicetronic.invoice.sdk.model.ProblemDetails;
 import java.io.IOException;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 
@@ -51,93 +49,78 @@ import java.util.Set;
 import com.invoicetronic.invoice.sdk.JSON;
 
 /**
- * DatiDDT
+ * ProblemHttpResult
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T14:59:33.789130Z[Etc/UTC]", comments = "Generator version: 7.10.0")
-public class DatiDDT implements Serializable {
+public class ProblemHttpResult implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  public static final String SERIALIZED_NAME_NUMERO_DDT = "numero_ddt";
-  @SerializedName(SERIALIZED_NAME_NUMERO_DDT)
+  public static final String SERIALIZED_NAME_PROBLEM_DETAILS = "problem_details";
+  @SerializedName(SERIALIZED_NAME_PROBLEM_DETAILS)
   @javax.annotation.Nullable
-  private String numeroDdt;
+  private ProblemDetails problemDetails;
 
-  public static final String SERIALIZED_NAME_DATA_DDT = "data_ddt";
-  @SerializedName(SERIALIZED_NAME_DATA_DDT)
+  public static final String SERIALIZED_NAME_CONTENT_TYPE = "content_type";
+  @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
   @javax.annotation.Nullable
-  private OffsetDateTime dataDdt;
+  private String contentType;
 
-  public static final String SERIALIZED_NAME_RIFERIMENTO_NUMERO_LINEA = "riferimento_numero_linea";
-  @SerializedName(SERIALIZED_NAME_RIFERIMENTO_NUMERO_LINEA)
+  public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
+  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
   @javax.annotation.Nullable
-  private List<Integer> riferimentoNumeroLinea;
+  private Integer statusCode;
 
-  public DatiDDT() {
+  public ProblemHttpResult() {
   }
 
-  public DatiDDT numeroDdt(@javax.annotation.Nullable String numeroDdt) {
-    this.numeroDdt = numeroDdt;
+  public ProblemHttpResult(
+     String contentType, 
+     Integer statusCode
+  ) {
+    this();
+    this.contentType = contentType;
+    this.statusCode = statusCode;
+  }
+
+  public ProblemHttpResult problemDetails(@javax.annotation.Nullable ProblemDetails problemDetails) {
+    this.problemDetails = problemDetails;
     return this;
   }
 
   /**
-   * Get numeroDdt
-   * @return numeroDdt
+   * Get problemDetails
+   * @return problemDetails
    */
   @javax.annotation.Nullable
-  public String getNumeroDdt() {
-    return numeroDdt;
+  public ProblemDetails getProblemDetails() {
+    return problemDetails;
   }
 
-  public void setNumeroDdt(@javax.annotation.Nullable String numeroDdt) {
-    this.numeroDdt = numeroDdt;
+  public void setProblemDetails(@javax.annotation.Nullable ProblemDetails problemDetails) {
+    this.problemDetails = problemDetails;
   }
 
-
-  public DatiDDT dataDdt(@javax.annotation.Nullable OffsetDateTime dataDdt) {
-    this.dataDdt = dataDdt;
-    return this;
-  }
 
   /**
-   * Get dataDdt
-   * @return dataDdt
+   * Get contentType
+   * @return contentType
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getDataDdt() {
-    return dataDdt;
-  }
-
-  public void setDataDdt(@javax.annotation.Nullable OffsetDateTime dataDdt) {
-    this.dataDdt = dataDdt;
+  public String getContentType() {
+    return contentType;
   }
 
 
-  public DatiDDT riferimentoNumeroLinea(@javax.annotation.Nullable List<Integer> riferimentoNumeroLinea) {
-    this.riferimentoNumeroLinea = riferimentoNumeroLinea;
-    return this;
-  }
-
-  public DatiDDT addRiferimentoNumeroLineaItem(Integer riferimentoNumeroLineaItem) {
-    if (this.riferimentoNumeroLinea == null) {
-      this.riferimentoNumeroLinea = new ArrayList<>();
-    }
-    this.riferimentoNumeroLinea.add(riferimentoNumeroLineaItem);
-    return this;
-  }
 
   /**
-   * Get riferimentoNumeroLinea
-   * @return riferimentoNumeroLinea
+   * Get statusCode
+   * @return statusCode
    */
   @javax.annotation.Nullable
-  public List<Integer> getRiferimentoNumeroLinea() {
-    return riferimentoNumeroLinea;
+  public Integer getStatusCode() {
+    return statusCode;
   }
 
-  public void setRiferimentoNumeroLinea(@javax.annotation.Nullable List<Integer> riferimentoNumeroLinea) {
-    this.riferimentoNumeroLinea = riferimentoNumeroLinea;
-  }
 
 
 
@@ -149,10 +132,10 @@ public class DatiDDT implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DatiDDT datiDDT = (DatiDDT) o;
-    return Objects.equals(this.numeroDdt, datiDDT.numeroDdt) &&
-        Objects.equals(this.dataDdt, datiDDT.dataDdt) &&
-        Objects.equals(this.riferimentoNumeroLinea, datiDDT.riferimentoNumeroLinea);
+    ProblemHttpResult problemHttpResult = (ProblemHttpResult) o;
+    return Objects.equals(this.problemDetails, problemHttpResult.problemDetails) &&
+        Objects.equals(this.contentType, problemHttpResult.contentType) &&
+        Objects.equals(this.statusCode, problemHttpResult.statusCode);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -161,7 +144,7 @@ public class DatiDDT implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(numeroDdt, dataDdt, riferimentoNumeroLinea);
+    return Objects.hash(problemDetails, contentType, statusCode);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -174,10 +157,10 @@ public class DatiDDT implements Serializable {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DatiDDT {\n");
-    sb.append("    numeroDdt: ").append(toIndentedString(numeroDdt)).append("\n");
-    sb.append("    dataDdt: ").append(toIndentedString(dataDdt)).append("\n");
-    sb.append("    riferimentoNumeroLinea: ").append(toIndentedString(riferimentoNumeroLinea)).append("\n");
+    sb.append("class ProblemHttpResult {\n");
+    sb.append("    problemDetails: ").append(toIndentedString(problemDetails)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,9 +183,9 @@ public class DatiDDT implements Serializable {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("numero_ddt");
-    openapiFields.add("data_ddt");
-    openapiFields.add("riferimento_numero_linea");
+    openapiFields.add("problem_details");
+    openapiFields.add("content_type");
+    openapiFields.add("status_code");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -212,29 +195,25 @@ public class DatiDDT implements Serializable {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DatiDDT
+   * @throws IOException if the JSON Element is invalid with respect to ProblemHttpResult
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DatiDDT.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DatiDDT is not found in the empty JSON string", DatiDDT.openapiRequiredFields.toString()));
+        if (!ProblemHttpResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ProblemHttpResult is not found in the empty JSON string", ProblemHttpResult.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!DatiDDT.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DatiDDT` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ProblemHttpResult.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ProblemHttpResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("numero_ddt") != null && !jsonObj.get("numero_ddt").isJsonNull()) && !jsonObj.get("numero_ddt").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `numero_ddt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("numero_ddt").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("riferimento_numero_linea") != null && !jsonObj.get("riferimento_numero_linea").isJsonNull() && !jsonObj.get("riferimento_numero_linea").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `riferimento_numero_linea` to be an array in the JSON string but got `%s`", jsonObj.get("riferimento_numero_linea").toString()));
+      if ((jsonObj.get("content_type") != null && !jsonObj.get("content_type").isJsonNull()) && !jsonObj.get("content_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `content_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content_type").toString()));
       }
   }
 
@@ -242,22 +221,22 @@ public class DatiDDT implements Serializable {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DatiDDT.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DatiDDT' and its subtypes
+       if (!ProblemHttpResult.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ProblemHttpResult' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DatiDDT> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DatiDDT.class));
+       final TypeAdapter<ProblemHttpResult> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ProblemHttpResult.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DatiDDT>() {
+       return (TypeAdapter<T>) new TypeAdapter<ProblemHttpResult>() {
            @Override
-           public void write(JsonWriter out, DatiDDT value) throws IOException {
+           public void write(JsonWriter out, ProblemHttpResult value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public DatiDDT read(JsonReader in) throws IOException {
+           public ProblemHttpResult read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -268,18 +247,18 @@ public class DatiDDT implements Serializable {
   }
 
   /**
-   * Create an instance of DatiDDT given an JSON string
+   * Create an instance of ProblemHttpResult given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DatiDDT
-   * @throws IOException if the JSON string is invalid with respect to DatiDDT
+   * @return An instance of ProblemHttpResult
+   * @throws IOException if the JSON string is invalid with respect to ProblemHttpResult
    */
-  public static DatiDDT fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DatiDDT.class);
+  public static ProblemHttpResult fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ProblemHttpResult.class);
   }
 
   /**
-   * Convert an instance of DatiDDT to an JSON string
+   * Convert an instance of ProblemHttpResult to an JSON string
    *
    * @return JSON string
    */

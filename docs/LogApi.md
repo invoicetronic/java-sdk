@@ -78,6 +78,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
+| **400** | Bad Request |  -  |
 
 <a id="invoiceV1LogIdGet"></a>
 # **invoiceV1LogIdGet**

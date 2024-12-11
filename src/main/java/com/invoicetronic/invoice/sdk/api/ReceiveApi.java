@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import java.time.OffsetDateTime;
-import com.invoicetronic.invoice.sdk.model.ProblemDetails;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.Receive;
 
 import java.lang.reflect.Type;
@@ -189,8 +189,7 @@ public class ReceiveApi {
         }
 
         final String[] localVarAccepts = {
-            "application/json",
-            "application/problem+json"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -331,6 +330,8 @@ public class ReceiveApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -401,6 +402,8 @@ public class ReceiveApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -420,6 +423,8 @@ public class ReceiveApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -441,6 +446,8 @@ public class ReceiveApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */

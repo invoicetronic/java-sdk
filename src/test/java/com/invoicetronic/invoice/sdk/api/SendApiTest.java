@@ -17,7 +17,7 @@ import com.invoicetronic.invoice.sdk.ApiException;
 import com.invoicetronic.invoice.sdk.model.FatturaOrdinaria;
 import java.io.File;
 import java.time.OffsetDateTime;
-import com.invoicetronic.invoice.sdk.model.ProblemDetails;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.Send;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ public class SendApiTest {
     private final SendApi api = new SendApi();
 
     /**
-     * Add a send invoice by file
+     * Add an invoice by file
      *
      * Send invoices are the invoices that are sent to the SDI.
      *
@@ -51,7 +51,7 @@ public class SendApiTest {
     }
 
     /**
-     * List send invoices
+     * List invoices
      *
      * test **markdown**.
      *
@@ -78,7 +78,7 @@ public class SendApiTest {
     }
 
     /**
-     * Get a send invoice by id
+     * Get a invoice by id
      *
      * Send invoices are the invoices that are sent to the SDI.
      *
@@ -92,7 +92,7 @@ public class SendApiTest {
     }
 
     /**
-     * Add a send invoice by json
+     * Add an invoice by json
      *
      * Send invoices are the invoices that are sent to the SDI.
      *
@@ -107,7 +107,7 @@ public class SendApiTest {
     }
 
     /**
-     * Add a send invoice
+     * Add an invoice
      *
      * Send invoices are the invoices that are sent to the SDI.
      *
@@ -122,7 +122,62 @@ public class SendApiTest {
     }
 
     /**
-     * Add a send invoice by xml
+     * Validate an invoice by file
+     *
+     * Send invoices are the invoices that are sent to the SDI.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void invoiceV1SendValidateFilesPostTest() throws ApiException {
+        List<File> files = null;
+        api.invoiceV1SendValidateFilesPost(files);
+        // TODO: test validations
+    }
+
+    /**
+     * Validate an invoice by json
+     *
+     * Send invoices are the invoices that are sent to the SDI.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void invoiceV1SendValidateJsonPostTest() throws ApiException {
+        FatturaOrdinaria fatturaOrdinaria = null;
+        api.invoiceV1SendValidateJsonPost(fatturaOrdinaria);
+        // TODO: test validations
+    }
+
+    /**
+     * Validate an invoice
+     *
+     * Send invoices are the invoices that are sent to the SDI.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void invoiceV1SendValidatePostTest() throws ApiException {
+        Send send = null;
+        api.invoiceV1SendValidatePost(send);
+        // TODO: test validations
+    }
+
+    /**
+     * Validate an invoice by xml
+     *
+     * Send invoices are the invoices that are sent to the SDI.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void invoiceV1SendValidateXmlPostTest() throws ApiException {
+        api.invoiceV1SendValidateXmlPost();
+        // TODO: test validations
+    }
+
+    /**
+     * Add an invoice by xml
      *
      * Send invoices are the invoices that are sent to the SDI.
      *

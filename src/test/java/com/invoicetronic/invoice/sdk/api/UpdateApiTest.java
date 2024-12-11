@@ -15,6 +15,7 @@ package com.invoicetronic.invoice.sdk.api;
 
 import com.invoicetronic.invoice.sdk.ApiException;
 import java.time.OffsetDateTime;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.Update;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

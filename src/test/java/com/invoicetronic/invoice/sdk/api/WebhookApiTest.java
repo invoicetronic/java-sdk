@@ -14,6 +14,7 @@
 package com.invoicetronic.invoice.sdk.api;
 
 import com.invoicetronic.invoice.sdk.ApiException;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.WebHook;
 import com.invoicetronic.invoice.sdk.model.WebHookHistory;
 import org.junit.jupiter.api.Disabled;

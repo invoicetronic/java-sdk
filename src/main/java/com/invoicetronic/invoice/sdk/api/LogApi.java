@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.invoicetronic.invoice.sdk.model.Event;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -85,6 +86,7 @@ public class LogApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1LogGetCall(Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
@@ -158,6 +160,7 @@ public class LogApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public List<Event> invoiceV1LogGet(Integer page, Integer pageSize) throws ApiException {
@@ -178,6 +181,7 @@ public class LogApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<Event>> invoiceV1LogGetWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
@@ -200,6 +204,7 @@ public class LogApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1LogGetAsync(Integer page, Integer pageSize, final ApiCallback<List<Event>> _callback) throws ApiException {

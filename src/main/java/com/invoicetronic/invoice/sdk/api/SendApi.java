@@ -30,7 +30,7 @@ import java.io.IOException;
 import com.invoicetronic.invoice.sdk.model.FatturaOrdinaria;
 import java.io.File;
 import java.time.OffsetDateTime;
-import com.invoicetronic.invoice.sdk.model.ProblemDetails;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.Send;
 
 import java.lang.reflect.Type;
@@ -88,6 +88,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendFilesPostCall(List<File> files, Boolean validate, final ApiCallback _callback) throws ApiException {
@@ -155,7 +157,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by file
+     * Add an invoice by file
      * Send invoices are the invoices that are sent to the SDI.
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -166,6 +168,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public Send invoiceV1SendFilesPost(List<File> files, Boolean validate) throws ApiException {
@@ -174,7 +178,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by file
+     * Add an invoice by file
      * Send invoices are the invoices that are sent to the SDI.
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -185,6 +189,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Send> invoiceV1SendFilesPostWithHttpInfo(List<File> files, Boolean validate) throws ApiException {
@@ -194,7 +200,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by file (asynchronously)
+     * Add an invoice by file (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -206,6 +212,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendFilesPostAsync(List<File> files, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
@@ -325,8 +333,7 @@ public class SendApi {
         }
 
         final String[] localVarAccepts = {
-            "application/json",
-            "application/problem+json"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -351,7 +358,7 @@ public class SendApi {
     }
 
     /**
-     * List send invoices
+     * List invoices
      * test **markdown**.
      * @param companyId Company id. (optional)
      * @param identifier SDI identifier. (optional)
@@ -384,7 +391,7 @@ public class SendApi {
     }
 
     /**
-     * List send invoices
+     * List invoices
      * test **markdown**.
      * @param companyId Company id. (optional)
      * @param identifier SDI identifier. (optional)
@@ -418,7 +425,7 @@ public class SendApi {
     }
 
     /**
-     * List send invoices (asynchronously)
+     * List invoices (asynchronously)
      * test **markdown**.
      * @param companyId Company id. (optional)
      * @param identifier SDI identifier. (optional)
@@ -524,7 +531,7 @@ public class SendApi {
     }
 
     /**
-     * Get a send invoice by id
+     * Get a invoice by id
      * Send invoices are the invoices that are sent to the SDI.
      * @param id Item id. (required)
      * @return Send
@@ -543,7 +550,7 @@ public class SendApi {
     }
 
     /**
-     * Get a send invoice by id
+     * Get a invoice by id
      * Send invoices are the invoices that are sent to the SDI.
      * @param id Item id. (required)
      * @return ApiResponse&lt;Send&gt;
@@ -563,7 +570,7 @@ public class SendApi {
     }
 
     /**
-     * Get a send invoice by id (asynchronously)
+     * Get a invoice by id (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
      * @param id Item id. (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -596,6 +603,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendJsonPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback _callback) throws ApiException {
@@ -659,7 +668,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by json
+     * Add an invoice by json
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -670,6 +679,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public Send invoiceV1SendJsonPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
@@ -678,7 +689,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by json
+     * Add an invoice by json
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -689,6 +700,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Send> invoiceV1SendJsonPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
@@ -698,7 +711,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by json (asynchronously)
+     * Add an invoice by json (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -710,6 +723,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendJsonPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
@@ -731,6 +746,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendPostCall(Send send, Boolean validate, final ApiCallback _callback) throws ApiException {
@@ -794,7 +811,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice
+     * Add an invoice
      * Send invoices are the invoices that are sent to the SDI.
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -805,6 +822,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public Send invoiceV1SendPost(Send send, Boolean validate) throws ApiException {
@@ -813,7 +832,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice
+     * Add an invoice
      * Send invoices are the invoices that are sent to the SDI.
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -824,6 +843,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Send> invoiceV1SendPostWithHttpInfo(Send send, Boolean validate) throws ApiException {
@@ -833,7 +854,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice (asynchronously)
+     * Add an invoice (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -845,6 +866,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendPostAsync(Send send, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
@@ -852,6 +875,524 @@ public class SendApi {
         okhttp3.Call localVarCall = invoiceV1SendPostValidateBeforeCall(send, validate, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for invoiceV1SendValidateFilesPost
+     * @param files  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidateFilesPostCall(List<File> files, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/invoice/v1/send/validate/files";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (files != null) {
+            localVarFormParams.put("files", files);
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call invoiceV1SendValidateFilesPostValidateBeforeCall(List<File> files, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'files' is set
+        if (files == null) {
+            throw new ApiException("Missing the required parameter 'files' when calling invoiceV1SendValidateFilesPost(Async)");
+        }
+
+        return invoiceV1SendValidateFilesPostCall(files, _callback);
+
+    }
+
+    /**
+     * Validate an invoice by file
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param files  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public void invoiceV1SendValidateFilesPost(List<File> files) throws ApiException {
+        invoiceV1SendValidateFilesPostWithHttpInfo(files);
+    }
+
+    /**
+     * Validate an invoice by file
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param files  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> invoiceV1SendValidateFilesPostWithHttpInfo(List<File> files) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendValidateFilesPostValidateBeforeCall(files, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Validate an invoice by file (asynchronously)
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param files  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidateFilesPostAsync(List<File> files, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = invoiceV1SendValidateFilesPostValidateBeforeCall(files, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for invoiceV1SendValidateJsonPost
+     * @param fatturaOrdinaria  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidateJsonPostCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = fatturaOrdinaria;
+
+        // create path and map variables
+        String localVarPath = "/invoice/v1/send/validate/json";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call invoiceV1SendValidateJsonPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'fatturaOrdinaria' is set
+        if (fatturaOrdinaria == null) {
+            throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling invoiceV1SendValidateJsonPost(Async)");
+        }
+
+        return invoiceV1SendValidateJsonPostCall(fatturaOrdinaria, _callback);
+
+    }
+
+    /**
+     * Validate an invoice by json
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param fatturaOrdinaria  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public void invoiceV1SendValidateJsonPost(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+        invoiceV1SendValidateJsonPostWithHttpInfo(fatturaOrdinaria);
+    }
+
+    /**
+     * Validate an invoice by json
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param fatturaOrdinaria  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> invoiceV1SendValidateJsonPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendValidateJsonPostValidateBeforeCall(fatturaOrdinaria, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Validate an invoice by json (asynchronously)
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param fatturaOrdinaria  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidateJsonPostAsync(FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = invoiceV1SendValidateJsonPostValidateBeforeCall(fatturaOrdinaria, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for invoiceV1SendValidatePost
+     * @param send  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidatePostCall(Send send, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = send;
+
+        // create path and map variables
+        String localVarPath = "/invoice/v1/send/validate";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call invoiceV1SendValidatePostValidateBeforeCall(Send send, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'send' is set
+        if (send == null) {
+            throw new ApiException("Missing the required parameter 'send' when calling invoiceV1SendValidatePost(Async)");
+        }
+
+        return invoiceV1SendValidatePostCall(send, _callback);
+
+    }
+
+    /**
+     * Validate an invoice
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param send  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public void invoiceV1SendValidatePost(Send send) throws ApiException {
+        invoiceV1SendValidatePostWithHttpInfo(send);
+    }
+
+    /**
+     * Validate an invoice
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param send  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> invoiceV1SendValidatePostWithHttpInfo(Send send) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendValidatePostValidateBeforeCall(send, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Validate an invoice (asynchronously)
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param send  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidatePostAsync(Send send, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = invoiceV1SendValidatePostValidateBeforeCall(send, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for invoiceV1SendValidateXmlPost
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidateXmlPostCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/invoice/v1/send/validate/xml";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call invoiceV1SendValidateXmlPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return invoiceV1SendValidateXmlPostCall(_callback);
+
+    }
+
+    /**
+     * Validate an invoice by xml
+     * Send invoices are the invoices that are sent to the SDI.
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public void invoiceV1SendValidateXmlPost() throws ApiException {
+        invoiceV1SendValidateXmlPostWithHttpInfo();
+    }
+
+    /**
+     * Validate an invoice by xml
+     * Send invoices are the invoices that are sent to the SDI.
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> invoiceV1SendValidateXmlPostWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendValidateXmlPostValidateBeforeCall(null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Validate an invoice by xml (asynchronously)
+     * Send invoices are the invoices that are sent to the SDI.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call invoiceV1SendValidateXmlPostAsync(final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = invoiceV1SendValidateXmlPostValidateBeforeCall(_callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
@@ -866,6 +1407,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendXmlPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback _callback) throws ApiException {
@@ -929,7 +1472,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by xml
+     * Add an invoice by xml
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -940,6 +1483,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public Send invoiceV1SendXmlPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
@@ -948,7 +1493,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by xml
+     * Add an invoice by xml
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -959,6 +1504,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Send> invoiceV1SendXmlPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
@@ -968,7 +1515,7 @@ public class SendApi {
     }
 
     /**
-     * Add a send invoice by xml (asynchronously)
+     * Add an invoice by xml (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
@@ -980,6 +1527,8 @@ public class SendApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1SendXmlPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {

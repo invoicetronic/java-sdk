@@ -15,6 +15,7 @@ package com.invoicetronic.invoice.sdk.api;
 
 import com.invoicetronic.invoice.sdk.ApiException;
 import com.invoicetronic.invoice.sdk.model.Company;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

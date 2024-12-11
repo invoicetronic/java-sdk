@@ -83,6 +83,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
+| **400** | Bad Request |  -  |
 
 <a id="invoiceV1WebhookIdDelete"></a>
 # **invoiceV1WebhookIdDelete**
@@ -151,6 +152,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **422** | Unprocessable Content |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 
 <a id="invoiceV1WebhookIdGet"></a>
@@ -289,6 +292,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
+| **400** | Bad Request |  -  |
+| **422** | Unprocessable Content |  -  |
 
 <a id="invoiceV1WebhookPut"></a>
 # **invoiceV1WebhookPut**
@@ -357,6 +362,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **422** | Unprocessable Content |  -  |
+| **400** | Bad Request |  -  |
 
 <a id="invoiceV1WebhookhistoryGet"></a>
 # **invoiceV1WebhookhistoryGet**
@@ -426,6 +433,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
+| **400** | Bad Request |  -  |
 
 <a id="invoiceV1WebhookhistoryIdGet"></a>
 # **invoiceV1WebhookhistoryIdGet**

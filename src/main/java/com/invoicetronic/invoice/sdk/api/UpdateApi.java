@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import java.time.OffsetDateTime;
+import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.Update;
 
 import java.lang.reflect.Type;
@@ -95,6 +96,7 @@ public class UpdateApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1UpdateGetCall(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
@@ -213,6 +215,7 @@ public class UpdateApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public List<Update> invoiceV1UpdateGet(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize) throws ApiException {
@@ -242,6 +245,7 @@ public class UpdateApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<Update>> invoiceV1UpdateGetWithHttpInfo(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize) throws ApiException {
@@ -273,6 +277,7 @@ public class UpdateApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call invoiceV1UpdateGetAsync(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, final ApiCallback<List<Update>> _callback) throws ApiException {
