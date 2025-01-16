@@ -13,7 +13,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1.0.0
 
-- Build date: 2025-01-16T07:50:13.390706Z[Etc/UTC]
+- Build date: 2025-01-16T15:13:35.846436Z[Etc/UTC]
 
 - Generator version: 7.10.0
 
