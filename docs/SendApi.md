@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 
 <a id="invoiceV1SendFilesPost"></a>
 # **invoiceV1SendFilesPost**
-> Send invoiceV1SendFilesPost(files, validate)
+> Send invoiceV1SendFilesPost(files, validate, signature)
 
 Add an invoice by file
 
@@ -47,8 +47,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     List<File> files = Arrays.asList(); // List<File> | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
+    String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendFilesPost(files, validate);
+      Send result = apiInstance.invoiceV1SendFilesPost(files, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#invoiceV1SendFilesPost");
@@ -67,6 +68,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **files** | **List&lt;File&gt;**|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
+| **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 
 ### Return type
 
@@ -117,10 +119,10 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    Integer companyId = 56; // Integer | Company id.
+    Integer companyId = 56; // Integer | Company id
     String identifier = "identifier_example"; // String | SDI identifier.
-    String committente = "committente_example"; // String | VAT number or fiscal code.
-    String prestatore = "prestatore_example"; // String | VAT number or fiscal code.
+    String committente = "committente_example"; // String | Vat number or fiscal code.
+    String prestatore = "prestatore_example"; // String | Vat number or fiscal code.
     String fileName = "fileName_example"; // String | File name.
     OffsetDateTime lastUpdateFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     OffsetDateTime lastUpdateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
@@ -129,8 +131,8 @@ public class Example {
     OffsetDateTime documentDateFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     OffsetDateTime documentDateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     String documentNumber = "documentNumber_example"; // String | Document number.
-    Integer page = 1; // Integer | Page number.
-    Integer pageSize = 100; // Integer | Items per page.
+    Integer page = 1; // Integer | Page number. Defaults to 1.
+    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     try {
       List<Send> result = apiInstance.invoiceV1SendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize);
       System.out.println(result);
@@ -149,10 +151,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **companyId** | **Integer**| Company id. | [optional] |
+| **companyId** | **Integer**| Company id | [optional] |
 | **identifier** | **String**| SDI identifier. | [optional] |
-| **committente** | **String**| VAT number or fiscal code. | [optional] |
-| **prestatore** | **String**| VAT number or fiscal code. | [optional] |
+| **committente** | **String**| Vat number or fiscal code. | [optional] |
+| **prestatore** | **String**| Vat number or fiscal code. | [optional] |
 | **fileName** | **String**| File name. | [optional] |
 | **lastUpdateFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **lastUpdateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
@@ -161,8 +163,8 @@ public class Example {
 | **documentDateFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **documentDateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **documentNumber** | **String**| Document number. | [optional] |
-| **page** | **Integer**| Page number. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 
 ### Return type
 
@@ -213,7 +215,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       Send result = apiInstance.invoiceV1SendIdGet(id);
       System.out.println(result);
@@ -232,7 +234,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 
@@ -255,7 +257,7 @@ public class Example {
 
 <a id="invoiceV1SendJsonPost"></a>
 # **invoiceV1SendJsonPost**
-> Send invoiceV1SendJsonPost(fatturaOrdinaria, validate)
+> Send invoiceV1SendJsonPost(fatturaOrdinaria, validate, signature)
 
 Add an invoice by json
 
@@ -284,8 +286,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
+    String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendJsonPost(fatturaOrdinaria, validate);
+      Send result = apiInstance.invoiceV1SendJsonPost(fatturaOrdinaria, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#invoiceV1SendJsonPost");
@@ -304,6 +307,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
+| **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 
 ### Return type
 
@@ -327,7 +331,7 @@ public class Example {
 
 <a id="invoiceV1SendPost"></a>
 # **invoiceV1SendPost**
-> Send invoiceV1SendPost(send, validate)
+> Send invoiceV1SendPost(send, validate, signature)
 
 Add an invoice
 
@@ -356,8 +360,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     Send send = new Send(); // Send | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
+    String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendPost(send, validate);
+      Send result = apiInstance.invoiceV1SendPost(send, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#invoiceV1SendPost");
@@ -376,6 +381,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **send** | [**Send**](Send.md)|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
+| **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 
 ### Return type
 
@@ -675,7 +681,7 @@ null (empty response body)
 
 <a id="invoiceV1SendXmlPost"></a>
 # **invoiceV1SendXmlPost**
-> Send invoiceV1SendXmlPost(fatturaOrdinaria, validate)
+> Send invoiceV1SendXmlPost(fatturaOrdinaria, validate, signature)
 
 Add an invoice by xml
 
@@ -704,8 +710,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
+    String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendXmlPost(fatturaOrdinaria, validate);
+      Send result = apiInstance.invoiceV1SendXmlPost(fatturaOrdinaria, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#invoiceV1SendXmlPost");
@@ -724,6 +731,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
+| **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 
 ### Return type
 

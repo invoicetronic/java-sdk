@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -76,8 +76,8 @@ public class WebhookApi {
 
     /**
      * Build call for invoiceV1WebhookGet
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -151,8 +151,8 @@ public class WebhookApi {
     /**
      * List webhooks
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return List&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -172,8 +172,8 @@ public class WebhookApi {
     /**
      * List webhooks
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return ApiResponse&lt;List&lt;WebHook&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -194,8 +194,8 @@ public class WebhookApi {
     /**
      * List webhooks (asynchronously)
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -217,7 +217,7 @@ public class WebhookApi {
     }
     /**
      * Build call for invoiceV1WebhookIdDelete
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -290,7 +290,7 @@ public class WebhookApi {
     /**
      * Delete a webhook by id
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return WebHook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -311,7 +311,7 @@ public class WebhookApi {
     /**
      * Delete a webhook by id
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -333,7 +333,7 @@ public class WebhookApi {
     /**
      * Delete a webhook by id (asynchronously)
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -356,7 +356,7 @@ public class WebhookApi {
     }
     /**
      * Build call for invoiceV1WebhookIdGet
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -427,7 +427,7 @@ public class WebhookApi {
     /**
      * Get a webhook by id
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return WebHook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -446,7 +446,7 @@ public class WebhookApi {
     /**
      * Get a webhook by id
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -466,7 +466,7 @@ public class WebhookApi {
     /**
      * Get a webhook by id (asynchronously)
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -757,8 +757,8 @@ public class WebhookApi {
     }
     /**
      * Build call for invoiceV1WebhookhistoryGet
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -832,8 +832,8 @@ public class WebhookApi {
     /**
      * List webhook history items
      * 
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return List&lt;WebHookHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -853,8 +853,8 @@ public class WebhookApi {
     /**
      * List webhook history items
      * 
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return ApiResponse&lt;List&lt;WebHookHistory&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -875,8 +875,8 @@ public class WebhookApi {
     /**
      * List webhook history items (asynchronously)
      * 
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -898,7 +898,7 @@ public class WebhookApi {
     }
     /**
      * Build call for invoiceV1WebhookhistoryIdGet
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -969,7 +969,7 @@ public class WebhookApi {
     /**
      * Get a webhook history item by id
      * 
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return WebHookHistory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -988,7 +988,7 @@ public class WebhookApi {
     /**
      * Get a webhook history item by id
      * 
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;WebHookHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1008,7 +1008,7 @@ public class WebhookApi {
     /**
      * Get a webhook history item by id (asynchronously)
      * 
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

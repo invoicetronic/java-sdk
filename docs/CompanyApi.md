@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 List companies
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Example
 ```java
@@ -40,8 +40,8 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
-    Integer page = 1; // Integer | Page number.
-    Integer pageSize = 100; // Integer | Items per page.
+    Integer page = 1; // Integer | Page number. Defaults to 1.
+    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     try {
       List<Company> result = apiInstance.invoiceV1CompanyGet(page, pageSize);
       System.out.println(result);
@@ -60,8 +60,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**| Page number. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 
 ### Return type
 
@@ -89,7 +89,7 @@ public class Example {
 
 Delete a company
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Example
 ```java
@@ -112,7 +112,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       Company result = apiInstance.invoiceV1CompanyIdDelete(id);
       System.out.println(result);
@@ -131,7 +131,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 
@@ -160,7 +160,7 @@ public class Example {
 
 Get a company by id
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Example
 ```java
@@ -183,7 +183,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       Company result = apiInstance.invoiceV1CompanyIdGet(id);
       System.out.println(result);
@@ -202,7 +202,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 
@@ -229,7 +229,7 @@ public class Example {
 
 Add a company
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Example
 ```java
@@ -299,7 +299,7 @@ public class Example {
 
 Update a company
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Example
 ```java

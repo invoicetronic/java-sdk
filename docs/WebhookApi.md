@@ -42,8 +42,8 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
-    Integer page = 1; // Integer | Page number.
-    Integer pageSize = 100; // Integer | Items per page.
+    Integer page = 1; // Integer | Page number. Defaults to 1.
+    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     try {
       List<WebHook> result = apiInstance.invoiceV1WebhookGet(page, pageSize);
       System.out.println(result);
@@ -62,8 +62,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**| Page number. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 
 ### Return type
 
@@ -114,7 +114,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       WebHook result = apiInstance.invoiceV1WebhookIdDelete(id);
       System.out.println(result);
@@ -133,7 +133,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 
@@ -185,7 +185,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       WebHook result = apiInstance.invoiceV1WebhookIdGet(id);
       System.out.println(result);
@@ -204,7 +204,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 
@@ -392,8 +392,8 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
-    Integer page = 1; // Integer | Page number.
-    Integer pageSize = 100; // Integer | Items per page.
+    Integer page = 1; // Integer | Page number. Defaults to 1.
+    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     try {
       List<WebHookHistory> result = apiInstance.invoiceV1WebhookhistoryGet(page, pageSize);
       System.out.println(result);
@@ -412,8 +412,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**| Page number. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 
 ### Return type
 
@@ -462,7 +462,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       WebHookHistory result = apiInstance.invoiceV1WebhookhistoryIdGet(id);
       System.out.println(result);
@@ -481,7 +481,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 

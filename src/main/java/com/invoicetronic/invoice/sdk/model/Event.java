@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -51,7 +51,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * Event
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T15:14:49.837999Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T07:50:13.390706Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class Event implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -69,6 +69,16 @@ public class Event implements Serializable {
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nullable
   private Integer version;
+
+  public static final String SERIALIZED_NAME_USER_ID = "user_id";
+  @SerializedName(SERIALIZED_NAME_USER_ID)
+  @javax.annotation.Nullable
+  private Integer userId;
+
+  public static final String SERIALIZED_NAME_API_KEY_ID = "api_key_id";
+  @SerializedName(SERIALIZED_NAME_API_KEY_ID)
+  @javax.annotation.Nullable
+  private Integer apiKeyId;
 
   public static final String SERIALIZED_NAME_COMPANY_ID = "company_id";
   @SerializedName(SERIALIZED_NAME_COMPANY_ID)
@@ -110,30 +120,15 @@ public class Event implements Serializable {
   @javax.annotation.Nullable
   private String error;
 
-  public static final String SERIALIZED_NAME_REQUEST_BODY = "request_body";
-  @SerializedName(SERIALIZED_NAME_REQUEST_BODY)
-  @javax.annotation.Nullable
-  private String requestBody;
-
-  public static final String SERIALIZED_NAME_RESPONSE_BODY = "response_body";
-  @SerializedName(SERIALIZED_NAME_RESPONSE_BODY)
-  @javax.annotation.Nullable
-  private String responseBody;
-
   public static final String SERIALIZED_NAME_SUCCESS = "success";
   @SerializedName(SERIALIZED_NAME_SUCCESS)
   @javax.annotation.Nullable
   private Boolean success;
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String SERIALIZED_NAME_RESPONSE_BODY = "response_body";
+  @SerializedName(SERIALIZED_NAME_RESPONSE_BODY)
   @javax.annotation.Nullable
-  private Integer userId;
-
-  public static final String SERIALIZED_NAME_API_KEY_ID = "api_key_id";
-  @SerializedName(SERIALIZED_NAME_API_KEY_ID)
-  @javax.annotation.Nullable
-  private Integer apiKeyId;
+  private String responseBody;
 
   public Event() {
   }
@@ -199,6 +194,44 @@ public class Event implements Serializable {
 
   public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
+  }
+
+
+  public Event userId(@javax.annotation.Nullable Integer userId) {
+    this.userId = userId;
+    return this;
+  }
+
+  /**
+   * User id.
+   * @return userId
+   */
+  @javax.annotation.Nullable
+  public Integer getUserId() {
+    return userId;
+  }
+
+  public void setUserId(@javax.annotation.Nullable Integer userId) {
+    this.userId = userId;
+  }
+
+
+  public Event apiKeyId(@javax.annotation.Nullable Integer apiKeyId) {
+    this.apiKeyId = apiKeyId;
+    return this;
+  }
+
+  /**
+   * Api key id.
+   * @return apiKeyId
+   */
+  @javax.annotation.Nullable
+  public Integer getApiKeyId() {
+    return apiKeyId;
+  }
+
+  public void setApiKeyId(@javax.annotation.Nullable Integer apiKeyId) {
+    this.apiKeyId = apiKeyId;
   }
 
 
@@ -354,23 +387,15 @@ public class Event implements Serializable {
   }
 
 
-  public Event requestBody(@javax.annotation.Nullable String requestBody) {
-    this.requestBody = requestBody;
-    return this;
-  }
-
   /**
-   * Request payload. It is guaranteed to be cyphered at rest.
-   * @return requestBody
+   * Wether the request was successful.
+   * @return success
    */
   @javax.annotation.Nullable
-  public String getRequestBody() {
-    return requestBody;
+  public Boolean getSuccess() {
+    return success;
   }
 
-  public void setRequestBody(@javax.annotation.Nullable String requestBody) {
-    this.requestBody = requestBody;
-  }
 
 
   public Event responseBody(@javax.annotation.Nullable String responseBody) {
@@ -392,55 +417,6 @@ public class Event implements Serializable {
   }
 
 
-  /**
-   * Wether the request was successful.
-   * @return success
-   */
-  @javax.annotation.Nullable
-  public Boolean getSuccess() {
-    return success;
-  }
-
-
-
-  public Event userId(@javax.annotation.Nullable Integer userId) {
-    this.userId = userId;
-    return this;
-  }
-
-  /**
-   * User id.
-   * @return userId
-   */
-  @javax.annotation.Nullable
-  public Integer getUserId() {
-    return userId;
-  }
-
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
-    this.userId = userId;
-  }
-
-
-  public Event apiKeyId(@javax.annotation.Nullable Integer apiKeyId) {
-    this.apiKeyId = apiKeyId;
-    return this;
-  }
-
-  /**
-   * Api key id.
-   * @return apiKeyId
-   */
-  @javax.annotation.Nullable
-  public Integer getApiKeyId() {
-    return apiKeyId;
-  }
-
-  public void setApiKeyId(@javax.annotation.Nullable Integer apiKeyId) {
-    this.apiKeyId = apiKeyId;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -454,6 +430,8 @@ public class Event implements Serializable {
     return Objects.equals(this.id, event.id) &&
         Objects.equals(this.created, event.created) &&
         Objects.equals(this.version, event.version) &&
+        Objects.equals(this.userId, event.userId) &&
+        Objects.equals(this.apiKeyId, event.apiKeyId) &&
         Objects.equals(this.companyId, event.companyId) &&
         Objects.equals(this.method, event.method) &&
         Objects.equals(this.query, event.query) &&
@@ -462,11 +440,8 @@ public class Event implements Serializable {
         Objects.equals(this.statusCode, event.statusCode) &&
         Objects.equals(this.dateTime, event.dateTime) &&
         Objects.equals(this.error, event.error) &&
-        Objects.equals(this.requestBody, event.requestBody) &&
-        Objects.equals(this.responseBody, event.responseBody) &&
         Objects.equals(this.success, event.success) &&
-        Objects.equals(this.userId, event.userId) &&
-        Objects.equals(this.apiKeyId, event.apiKeyId);
+        Objects.equals(this.responseBody, event.responseBody);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -475,7 +450,7 @@ public class Event implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, companyId, method, query, endpoint, apiVersion, statusCode, dateTime, error, requestBody, responseBody, success, userId, apiKeyId);
+    return Objects.hash(id, created, version, userId, apiKeyId, companyId, method, query, endpoint, apiVersion, statusCode, dateTime, error, success, responseBody);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -492,6 +467,8 @@ public class Event implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    apiKeyId: ").append(toIndentedString(apiKeyId)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
@@ -500,11 +477,8 @@ public class Event implements Serializable {
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    requestBody: ").append(toIndentedString(requestBody)).append("\n");
-    sb.append("    responseBody: ").append(toIndentedString(responseBody)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    apiKeyId: ").append(toIndentedString(apiKeyId)).append("\n");
+    sb.append("    responseBody: ").append(toIndentedString(responseBody)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -530,6 +504,8 @@ public class Event implements Serializable {
     openapiFields.add("id");
     openapiFields.add("created");
     openapiFields.add("version");
+    openapiFields.add("user_id");
+    openapiFields.add("api_key_id");
     openapiFields.add("company_id");
     openapiFields.add("method");
     openapiFields.add("query");
@@ -538,11 +514,8 @@ public class Event implements Serializable {
     openapiFields.add("status_code");
     openapiFields.add("date_time");
     openapiFields.add("error");
-    openapiFields.add("request_body");
-    openapiFields.add("response_body");
     openapiFields.add("success");
-    openapiFields.add("user_id");
-    openapiFields.add("api_key_id");
+    openapiFields.add("response_body");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -580,9 +553,6 @@ public class Event implements Serializable {
       }
       if ((jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) && !jsonObj.get("error").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
-      }
-      if ((jsonObj.get("request_body") != null && !jsonObj.get("request_body").isJsonNull()) && !jsonObj.get("request_body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `request_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_body").toString()));
       }
       if ((jsonObj.get("response_body") != null && !jsonObj.get("response_body").isJsonNull()) && !jsonObj.get("response_body").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `response_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_body").toString()));

@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.invoicetronic.invoice.sdk.model.Company;
 import com.invoicetronic.invoice.sdk.model.DocumentData;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -56,7 +57,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * Send
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T15:14:49.837999Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T07:50:13.390706Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class Send implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -130,10 +131,72 @@ public class Send implements Serializable {
   @javax.annotation.Nullable
   private List<DocumentData> documents;
 
+  /**
+   * Whether the payload is Base64 encoded or a plain XML (text).
+   */
+  @JsonAdapter(EncodingEnum.Adapter.class)
+  public enum EncodingEnum {
+    XML("Xml"),
+    
+    BASE64("Base64");
+
+    private String value;
+
+    EncodingEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EncodingEnum fromValue(String value) {
+      for (EncodingEnum b : EncodingEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<EncodingEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EncodingEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EncodingEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EncodingEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EncodingEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ENCODING = "encoding";
+  @SerializedName(SERIALIZED_NAME_ENCODING)
+  @javax.annotation.Nullable
+  private EncodingEnum encoding;
+
   public static final String SERIALIZED_NAME_META_DATA = "meta_data";
   @SerializedName(SERIALIZED_NAME_META_DATA)
   @javax.annotation.Nullable
   private Map<String, String> metaData;
+
+  public static final String SERIALIZED_NAME_COMPANY = "company";
+  @SerializedName(SERIALIZED_NAME_COMPANY)
+  @javax.annotation.Nullable
+  private Company company;
 
   public Send() {
   }
@@ -412,6 +475,25 @@ public class Send implements Serializable {
   }
 
 
+  public Send encoding(@javax.annotation.Nullable EncodingEnum encoding) {
+    this.encoding = encoding;
+    return this;
+  }
+
+  /**
+   * Whether the payload is Base64 encoded or a plain XML (text).
+   * @return encoding
+   */
+  @javax.annotation.Nullable
+  public EncodingEnum getEncoding() {
+    return encoding;
+  }
+
+  public void setEncoding(@javax.annotation.Nullable EncodingEnum encoding) {
+    this.encoding = encoding;
+  }
+
+
   public Send metaData(@javax.annotation.Nullable Map<String, String> metaData) {
     this.metaData = metaData;
     return this;
@@ -439,6 +521,25 @@ public class Send implements Serializable {
   }
 
 
+  public Send company(@javax.annotation.Nullable Company company) {
+    this.company = company;
+    return this;
+  }
+
+  /**
+   * Get company
+   * @return company
+   */
+  @javax.annotation.Nullable
+  public Company getCompany() {
+    return company;
+  }
+
+  public void setCompany(@javax.annotation.Nullable Company company) {
+    this.company = company;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -463,7 +564,9 @@ public class Send implements Serializable {
         Objects.equals(this.lastUpdate, send.lastUpdate) &&
         Objects.equals(this.dateSent, send.dateSent) &&
         Objects.equals(this.documents, send.documents) &&
-        Objects.equals(this.metaData, send.metaData);
+        Objects.equals(this.encoding, send.encoding) &&
+        Objects.equals(this.metaData, send.metaData) &&
+        Objects.equals(this.company, send.company);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -472,7 +575,7 @@ public class Send implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, metaData);
+    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, encoding, metaData, company);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -500,7 +603,9 @@ public class Send implements Serializable {
     sb.append("    lastUpdate: ").append(toIndentedString(lastUpdate)).append("\n");
     sb.append("    dateSent: ").append(toIndentedString(dateSent)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
     sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
+    sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -537,7 +642,9 @@ public class Send implements Serializable {
     openapiFields.add("last_update");
     openapiFields.add("date_sent");
     openapiFields.add("documents");
+    openapiFields.add("encoding");
     openapiFields.add("meta_data");
+    openapiFields.add("company");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -595,6 +702,17 @@ public class Send implements Serializable {
             DocumentData.validateJsonElement(jsonArraydocuments.get(i));
           };
         }
+      }
+      if ((jsonObj.get("encoding") != null && !jsonObj.get("encoding").isJsonNull()) && !jsonObj.get("encoding").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `encoding` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encoding").toString()));
+      }
+      // validate the optional field `encoding`
+      if (jsonObj.get("encoding") != null && !jsonObj.get("encoding").isJsonNull()) {
+        EncodingEnum.validateJsonElement(jsonObj.get("encoding"));
+      }
+      // validate the optional field `company`
+      if (jsonObj.get("company") != null && !jsonObj.get("company").isJsonNull()) {
+        Company.validateJsonElement(jsonObj.get("company"));
       }
   }
 

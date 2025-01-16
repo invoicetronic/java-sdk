@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="invoiceV1LogGet"></a>
 # **invoiceV1LogGet**
-> List&lt;Event&gt; invoiceV1LogGet(page, pageSize)
+> List&lt;Event&gt; invoiceV1LogGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize)
 
 List events
 
@@ -37,10 +37,17 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     LogApi apiInstance = new LogApi(defaultClient);
-    Integer page = 1; // Integer | Page number.
-    Integer pageSize = 100; // Integer | Items per page.
+    Integer companyId = 56; // Integer | Company id
+    String endpoint = "endpoint_example"; // String | 
+    String method = "method_example"; // String | 
+    Integer apiVerion = 56; // Integer | Api version
+    Integer statusCode = 56; // Integer | Response status code
+    OffsetDateTime dateCreatedFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    OffsetDateTime dateCreatedTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    Integer page = 1; // Integer | Page number. Defaults to 1.
+    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     try {
-      List<Event> result = apiInstance.invoiceV1LogGet(page, pageSize);
+      List<Event> result = apiInstance.invoiceV1LogGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LogApi#invoiceV1LogGet");
@@ -57,8 +64,15 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**| Page number. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+| **companyId** | **Integer**| Company id | [optional] |
+| **endpoint** | **String**|  | [optional] |
+| **method** | **String**|  | [optional] |
+| **apiVerion** | **Integer**| Api version | [optional] |
+| **statusCode** | **Integer**| Response status code | [optional] |
+| **dateCreatedFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **dateCreatedTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 
 ### Return type
 
@@ -109,7 +123,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     LogApi apiInstance = new LogApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       Event result = apiInstance.invoiceV1LogIdGet(id);
       System.out.println(result);
@@ -128,7 +142,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 

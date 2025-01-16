@@ -37,17 +37,17 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     UpdateApi apiInstance = new UpdateApi(defaultClient);
-    Integer companyId = 56; // Integer | Company id.
+    Integer companyId = 56; // Integer | Company id
     String identifier = "identifier_example"; // String | SDI identifier.
-    Boolean unread = true; // Boolean | Only unread items.
+    Boolean unread = true; // Boolean | Unread items only.
     Integer sendId = 56; // Integer | Send item's id.
     String state = "Inviato"; // String | SDI state
     OffsetDateTime lastUpdateFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     OffsetDateTime lastUpdateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     OffsetDateTime dateSentFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
-    OffsetDateTime dateSentTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 format (2024-11-29T12:34:56Z)
-    Integer page = 1; // Integer | Page number.
-    Integer pageSize = 100; // Integer | Items per page.
+    OffsetDateTime dateSentTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
+    Integer page = 1; // Integer | Page number. Defaults to 1.
+    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     try {
       List<Update> result = apiInstance.invoiceV1UpdateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize);
       System.out.println(result);
@@ -66,17 +66,17 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **companyId** | **Integer**| Company id. | [optional] |
+| **companyId** | **Integer**| Company id | [optional] |
 | **identifier** | **String**| SDI identifier. | [optional] |
-| **unread** | **Boolean**| Only unread items. | [optional] |
+| **unread** | **Boolean**| Unread items only. | [optional] |
 | **sendId** | **Integer**| Send item&#39;s id. | [optional] |
 | **state** | **String**| SDI state | [optional] [enum: Inviato, Consegnato, NonConsegnato, Scartato, AccettatoDalDestinatario, RifiutatoDalDestinatario, ImpossibilitàDiRecapito, DecorrenzaTermini, AttestazioneTrasmissioneFattura] |
 | **lastUpdateFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **lastUpdateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **dateSentFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
-| **dateSentTo** | **OffsetDateTime**| UTC ISO 8601 format (2024-11-29T12:34:56Z) | [optional] |
-| **page** | **Integer**| Page number. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. | [optional] [default to 100] |
+| **dateSentTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 
 ### Return type
 
@@ -127,7 +127,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     UpdateApi apiInstance = new UpdateApi(defaultClient);
-    Integer id = 56; // Integer | Item id.
+    Integer id = 56; // Integer | Item id
     try {
       Update result = apiInstance.invoiceV1UpdateIdGet(id);
       System.out.println(result);
@@ -146,7 +146,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Integer**| Item id. | |
+| **id** | **Integer**| Item id | |
 
 ### Return type
 

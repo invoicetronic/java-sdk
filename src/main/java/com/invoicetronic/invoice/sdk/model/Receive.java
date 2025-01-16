@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -54,7 +54,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * Receive
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T15:14:49.837999Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T07:50:13.390706Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class Receive implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -128,10 +128,72 @@ public class Receive implements Serializable {
   @javax.annotation.Nullable
   private List<DocumentData> documents;
 
+  /**
+   * Whether the payload is Base64 encoded or a plain XML (text).
+   */
+  @JsonAdapter(EncodingEnum.Adapter.class)
+  public enum EncodingEnum {
+    XML("Xml"),
+    
+    BASE64("Base64");
+
+    private String value;
+
+    EncodingEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EncodingEnum fromValue(String value) {
+      for (EncodingEnum b : EncodingEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<EncodingEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EncodingEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EncodingEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EncodingEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EncodingEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ENCODING = "encoding";
+  @SerializedName(SERIALIZED_NAME_ENCODING)
+  @javax.annotation.Nullable
+  private EncodingEnum encoding;
+
   public static final String SERIALIZED_NAME_IS_READ = "is_read";
   @SerializedName(SERIALIZED_NAME_IS_READ)
   @javax.annotation.Nullable
   private Boolean isRead;
+
+  public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
+  @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  @javax.annotation.Nullable
+  private String messageId;
 
   public Receive() {
   }
@@ -410,6 +472,25 @@ public class Receive implements Serializable {
   }
 
 
+  public Receive encoding(@javax.annotation.Nullable EncodingEnum encoding) {
+    this.encoding = encoding;
+    return this;
+  }
+
+  /**
+   * Whether the payload is Base64 encoded or a plain XML (text).
+   * @return encoding
+   */
+  @javax.annotation.Nullable
+  public EncodingEnum getEncoding() {
+    return encoding;
+  }
+
+  public void setEncoding(@javax.annotation.Nullable EncodingEnum encoding) {
+    this.encoding = encoding;
+  }
+
+
   public Receive isRead(@javax.annotation.Nullable Boolean isRead) {
     this.isRead = isRead;
     return this;
@@ -426,6 +507,25 @@ public class Receive implements Serializable {
 
   public void setIsRead(@javax.annotation.Nullable Boolean isRead) {
     this.isRead = isRead;
+  }
+
+
+  public Receive messageId(@javax.annotation.Nullable String messageId) {
+    this.messageId = messageId;
+    return this;
+  }
+
+  /**
+   * SDI message id.
+   * @return messageId
+   */
+  @javax.annotation.Nullable
+  public String getMessageId() {
+    return messageId;
+  }
+
+  public void setMessageId(@javax.annotation.Nullable String messageId) {
+    this.messageId = messageId;
   }
 
 
@@ -453,7 +553,9 @@ public class Receive implements Serializable {
         Objects.equals(this.lastUpdate, receive.lastUpdate) &&
         Objects.equals(this.dateSent, receive.dateSent) &&
         Objects.equals(this.documents, receive.documents) &&
-        Objects.equals(this.isRead, receive.isRead);
+        Objects.equals(this.encoding, receive.encoding) &&
+        Objects.equals(this.isRead, receive.isRead) &&
+        Objects.equals(this.messageId, receive.messageId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -462,7 +564,7 @@ public class Receive implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, isRead);
+    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, encoding, isRead, messageId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -490,7 +592,9 @@ public class Receive implements Serializable {
     sb.append("    lastUpdate: ").append(toIndentedString(lastUpdate)).append("\n");
     sb.append("    dateSent: ").append(toIndentedString(dateSent)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
     sb.append("    isRead: ").append(toIndentedString(isRead)).append("\n");
+    sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -527,7 +631,9 @@ public class Receive implements Serializable {
     openapiFields.add("last_update");
     openapiFields.add("date_sent");
     openapiFields.add("documents");
+    openapiFields.add("encoding");
     openapiFields.add("is_read");
+    openapiFields.add("message_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -585,6 +691,16 @@ public class Receive implements Serializable {
             DocumentData.validateJsonElement(jsonArraydocuments.get(i));
           };
         }
+      }
+      if ((jsonObj.get("encoding") != null && !jsonObj.get("encoding").isJsonNull()) && !jsonObj.get("encoding").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `encoding` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encoding").toString()));
+      }
+      // validate the optional field `encoding`
+      if (jsonObj.get("encoding") != null && !jsonObj.get("encoding").isJsonNull()) {
+        EncodingEnum.validateJsonElement(jsonObj.get("encoding"));
+      }
+      if ((jsonObj.get("message_id") != null && !jsonObj.get("message_id").isJsonNull()) && !jsonObj.get("message_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_id").toString()));
       }
   }
 

@@ -15,8 +15,6 @@ Webhook history.
 |**userId** | **Integer** | User id. |  [optional] |
 |**event** | **String** | Event name. |  [optional] |
 |**statusCode** | **Integer** | Status code. |  [optional] |
-|**requestBody** | **String** | Webhook request body. |  [optional] |
-|**responseBody** | **String** | Webhook response body. |  [optional] |
 |**dateTime** | **OffsetDateTime** | Date and time of the request. |  [optional] |
 |**success** | **Boolean** | Wether the request was successful. |  [optional] [readonly] |
 

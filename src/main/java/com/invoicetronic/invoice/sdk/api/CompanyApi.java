@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -75,8 +75,8 @@ public class CompanyApi {
 
     /**
      * Build call for invoiceV1CompanyGet
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -119,7 +119,7 @@ public class CompanyApi {
         }
 
         if (pageSize != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pageSize", pageSize));
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
         }
 
         final String[] localVarAccepts = {
@@ -149,9 +149,9 @@ public class CompanyApi {
 
     /**
      * List companies
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return List&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,9 +170,9 @@ public class CompanyApi {
 
     /**
      * List companies
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return ApiResponse&lt;List&lt;Company&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -192,9 +192,9 @@ public class CompanyApi {
 
     /**
      * List companies (asynchronously)
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -216,7 +216,7 @@ public class CompanyApi {
     }
     /**
      * Build call for invoiceV1CompanyIdDelete
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -288,8 +288,8 @@ public class CompanyApi {
 
     /**
      * Delete a company
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param id Item id. (required)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param id Item id (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -309,8 +309,8 @@ public class CompanyApi {
 
     /**
      * Delete a company
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param id Item id. (required)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param id Item id (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -331,8 +331,8 @@ public class CompanyApi {
 
     /**
      * Delete a company (asynchronously)
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param id Item id. (required)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -355,7 +355,7 @@ public class CompanyApi {
     }
     /**
      * Build call for invoiceV1CompanyIdGet
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -425,8 +425,8 @@ public class CompanyApi {
 
     /**
      * Get a company by id
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param id Item id. (required)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param id Item id (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -444,8 +444,8 @@ public class CompanyApi {
 
     /**
      * Get a company by id
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param id Item id. (required)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param id Item id (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -464,8 +464,8 @@ public class CompanyApi {
 
     /**
      * Get a company by id (asynchronously)
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-     * @param id Item id. (required)
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -557,7 +557,7 @@ public class CompanyApi {
 
     /**
      * Add a company
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
      * @param company  (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -577,7 +577,7 @@ public class CompanyApi {
 
     /**
      * Add a company
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
      * @param company  (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -598,7 +598,7 @@ public class CompanyApi {
 
     /**
      * Add a company (asynchronously)
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
      * @param company  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -692,7 +692,7 @@ public class CompanyApi {
 
     /**
      * Update a company
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
      * @param company  (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -712,7 +712,7 @@ public class CompanyApi {
 
     /**
      * Update a company
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
      * @param company  (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -733,7 +733,7 @@ public class CompanyApi {
 
     /**
      * Update a company (asynchronously)
-     * Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
      * @param company  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

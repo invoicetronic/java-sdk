@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -76,11 +76,11 @@ public class ReceiveApi {
 
     /**
      * Build call for invoiceV1ReceiveGet
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -89,8 +89,8 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -216,11 +216,11 @@ public class ReceiveApi {
     /**
      * List incoming invoices
      * Receive invoices are the invoices that are received from other companies.
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -229,8 +229,8 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return List&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -250,11 +250,11 @@ public class ReceiveApi {
     /**
      * List incoming invoices
      * Receive invoices are the invoices that are received from other companies.
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -263,8 +263,8 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return ApiResponse&lt;List&lt;Receive&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -285,11 +285,11 @@ public class ReceiveApi {
     /**
      * List incoming invoices (asynchronously)
      * Receive invoices are the invoices that are received from other companies.
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -298,8 +298,8 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -321,7 +321,7 @@ public class ReceiveApi {
     }
     /**
      * Build call for invoiceV1ReceiveIdDelete
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -394,7 +394,7 @@ public class ReceiveApi {
     /**
      * Delete an incoming invoice by id
      * Receive invoices are the invoices that are received from other companies.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return Receive
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -415,7 +415,7 @@ public class ReceiveApi {
     /**
      * Delete an incoming invoice by id
      * Receive invoices are the invoices that are received from other companies.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -437,7 +437,7 @@ public class ReceiveApi {
     /**
      * Delete an incoming invoice by id (asynchronously)
      * Receive invoices are the invoices that are received from other companies.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -460,7 +460,7 @@ public class ReceiveApi {
     }
     /**
      * Build call for invoiceV1ReceiveIdGet
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -531,7 +531,7 @@ public class ReceiveApi {
     /**
      * Get an incoming invoice by id
      * Receive invoices are the invoices that are received from other companies.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return Receive
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -550,7 +550,7 @@ public class ReceiveApi {
     /**
      * Get an incoming invoice by id
      * Receive invoices are the invoices that are received from other companies.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -570,7 +570,7 @@ public class ReceiveApi {
     /**
      * Get an incoming invoice by id (asynchronously)
      * Receive invoices are the invoices that are received from other companies.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

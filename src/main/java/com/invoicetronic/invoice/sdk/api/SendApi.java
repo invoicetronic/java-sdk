@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -80,6 +80,7 @@ public class SendApi {
      * Build call for invoiceV1SendFilesPost
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +93,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendFilesPostCall(List<File> files, Boolean validate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendFilesPostCall(List<File> files, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -125,6 +126,10 @@ public class SendApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("validate", validate));
         }
 
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -146,13 +151,13 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoiceV1SendFilesPostValidateBeforeCall(List<File> files, Boolean validate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call invoiceV1SendFilesPostValidateBeforeCall(List<File> files, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'files' is set
         if (files == null) {
             throw new ApiException("Missing the required parameter 'files' when calling invoiceV1SendFilesPost(Async)");
         }
 
-        return invoiceV1SendFilesPostCall(files, validate, _callback);
+        return invoiceV1SendFilesPostCall(files, validate, signature, _callback);
 
     }
 
@@ -161,6 +166,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return Send
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -172,8 +178,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send invoiceV1SendFilesPost(List<File> files, Boolean validate) throws ApiException {
-        ApiResponse<Send> localVarResp = invoiceV1SendFilesPostWithHttpInfo(files, validate);
+    public Send invoiceV1SendFilesPost(List<File> files, Boolean validate, String signature) throws ApiException {
+        ApiResponse<Send> localVarResp = invoiceV1SendFilesPostWithHttpInfo(files, validate, signature);
         return localVarResp.getData();
     }
 
@@ -182,6 +188,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return ApiResponse&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -193,8 +200,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> invoiceV1SendFilesPostWithHttpInfo(List<File> files, Boolean validate) throws ApiException {
-        okhttp3.Call localVarCall = invoiceV1SendFilesPostValidateBeforeCall(files, validate, null);
+    public ApiResponse<Send> invoiceV1SendFilesPostWithHttpInfo(List<File> files, Boolean validate, String signature) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendFilesPostValidateBeforeCall(files, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -204,6 +211,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param files  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -216,19 +224,19 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendFilesPostAsync(List<File> files, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendFilesPostAsync(List<File> files, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invoiceV1SendFilesPostValidateBeforeCall(files, validate, _callback);
+        okhttp3.Call localVarCall = invoiceV1SendFilesPostValidateBeforeCall(files, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for invoiceV1SendGet
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -237,8 +245,8 @@ public class SendApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -360,10 +368,10 @@ public class SendApi {
     /**
      * List invoices
      * test **markdown**.
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -372,8 +380,8 @@ public class SendApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return List&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -393,10 +401,10 @@ public class SendApi {
     /**
      * List invoices
      * test **markdown**.
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -405,8 +413,8 @@ public class SendApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return ApiResponse&lt;List&lt;Send&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -427,10 +435,10 @@ public class SendApi {
     /**
      * List invoices (asynchronously)
      * test **markdown**.
-     * @param companyId Company id. (optional)
+     * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
-     * @param committente VAT number or fiscal code. (optional)
-     * @param prestatore VAT number or fiscal code. (optional)
+     * @param committente Vat number or fiscal code. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param fileName File name. (optional)
      * @param lastUpdateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param lastUpdateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
@@ -439,8 +447,8 @@ public class SendApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -462,7 +470,7 @@ public class SendApi {
     }
     /**
      * Build call for invoiceV1SendIdGet
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -533,7 +541,7 @@ public class SendApi {
     /**
      * Get a invoice by id
      * Send invoices are the invoices that are sent to the SDI.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return Send
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -552,7 +560,7 @@ public class SendApi {
     /**
      * Get a invoice by id
      * Send invoices are the invoices that are sent to the SDI.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -572,7 +580,7 @@ public class SendApi {
     /**
      * Get a invoice by id (asynchronously)
      * Send invoices are the invoices that are sent to the SDI.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -595,6 +603,7 @@ public class SendApi {
      * Build call for invoiceV1SendJsonPost
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -607,7 +616,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendJsonPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendJsonPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -636,6 +645,10 @@ public class SendApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("validate", validate));
         }
 
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -657,13 +670,13 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoiceV1SendJsonPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call invoiceV1SendJsonPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fatturaOrdinaria' is set
         if (fatturaOrdinaria == null) {
             throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling invoiceV1SendJsonPost(Async)");
         }
 
-        return invoiceV1SendJsonPostCall(fatturaOrdinaria, validate, _callback);
+        return invoiceV1SendJsonPostCall(fatturaOrdinaria, validate, signature, _callback);
 
     }
 
@@ -672,6 +685,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return Send
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -683,8 +697,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send invoiceV1SendJsonPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
-        ApiResponse<Send> localVarResp = invoiceV1SendJsonPostWithHttpInfo(fatturaOrdinaria, validate);
+    public Send invoiceV1SendJsonPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+        ApiResponse<Send> localVarResp = invoiceV1SendJsonPostWithHttpInfo(fatturaOrdinaria, validate, signature);
         return localVarResp.getData();
     }
 
@@ -693,6 +707,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return ApiResponse&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -704,8 +719,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> invoiceV1SendJsonPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
-        okhttp3.Call localVarCall = invoiceV1SendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, null);
+    public ApiResponse<Send> invoiceV1SendJsonPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -715,6 +730,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -727,9 +743,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendJsonPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendJsonPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invoiceV1SendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, _callback);
+        okhttp3.Call localVarCall = invoiceV1SendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -738,6 +754,7 @@ public class SendApi {
      * Build call for invoiceV1SendPost
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -750,7 +767,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendPostCall(Send send, Boolean validate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendPostCall(Send send, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -779,6 +796,10 @@ public class SendApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("validate", validate));
         }
 
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -800,13 +821,13 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoiceV1SendPostValidateBeforeCall(Send send, Boolean validate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call invoiceV1SendPostValidateBeforeCall(Send send, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'send' is set
         if (send == null) {
             throw new ApiException("Missing the required parameter 'send' when calling invoiceV1SendPost(Async)");
         }
 
-        return invoiceV1SendPostCall(send, validate, _callback);
+        return invoiceV1SendPostCall(send, validate, signature, _callback);
 
     }
 
@@ -815,6 +836,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return Send
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -826,8 +848,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send invoiceV1SendPost(Send send, Boolean validate) throws ApiException {
-        ApiResponse<Send> localVarResp = invoiceV1SendPostWithHttpInfo(send, validate);
+    public Send invoiceV1SendPost(Send send, Boolean validate, String signature) throws ApiException {
+        ApiResponse<Send> localVarResp = invoiceV1SendPostWithHttpInfo(send, validate, signature);
         return localVarResp.getData();
     }
 
@@ -836,6 +858,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return ApiResponse&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -847,8 +870,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> invoiceV1SendPostWithHttpInfo(Send send, Boolean validate) throws ApiException {
-        okhttp3.Call localVarCall = invoiceV1SendPostValidateBeforeCall(send, validate, null);
+    public ApiResponse<Send> invoiceV1SendPostWithHttpInfo(Send send, Boolean validate, String signature) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendPostValidateBeforeCall(send, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -858,6 +881,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param send  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -870,9 +894,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendPostAsync(Send send, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendPostAsync(Send send, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invoiceV1SendPostValidateBeforeCall(send, validate, _callback);
+        okhttp3.Call localVarCall = invoiceV1SendPostValidateBeforeCall(send, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1409,6 +1433,7 @@ public class SendApi {
      * Build call for invoiceV1SendXmlPost
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1421,7 +1446,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendXmlPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendXmlPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1450,6 +1475,10 @@ public class SendApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("validate", validate));
         }
 
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1471,13 +1500,13 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoiceV1SendXmlPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call invoiceV1SendXmlPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fatturaOrdinaria' is set
         if (fatturaOrdinaria == null) {
             throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling invoiceV1SendXmlPost(Async)");
         }
 
-        return invoiceV1SendXmlPostCall(fatturaOrdinaria, validate, _callback);
+        return invoiceV1SendXmlPostCall(fatturaOrdinaria, validate, signature, _callback);
 
     }
 
@@ -1486,6 +1515,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return Send
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1497,8 +1527,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send invoiceV1SendXmlPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
-        ApiResponse<Send> localVarResp = invoiceV1SendXmlPostWithHttpInfo(fatturaOrdinaria, validate);
+    public Send invoiceV1SendXmlPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+        ApiResponse<Send> localVarResp = invoiceV1SendXmlPostWithHttpInfo(fatturaOrdinaria, validate, signature);
         return localVarResp.getData();
     }
 
@@ -1507,6 +1537,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return ApiResponse&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1518,8 +1549,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> invoiceV1SendXmlPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate) throws ApiException {
-        okhttp3.Call localVarCall = invoiceV1SendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, null);
+    public ApiResponse<Send> invoiceV1SendXmlPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1SendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1529,6 +1560,7 @@ public class SendApi {
      * Send invoices are the invoices that are sent to the SDI.
      * @param fatturaOrdinaria  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
+     * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1541,9 +1573,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1SendXmlPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call invoiceV1SendXmlPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invoiceV1SendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, _callback);
+        okhttp3.Call localVarCall = invoiceV1SendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

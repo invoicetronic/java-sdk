@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -51,7 +51,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * Webhook history.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-11T15:14:49.837999Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T07:50:13.390706Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class WebHookHistory implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -89,16 +89,6 @@ public class WebHookHistory implements Serializable {
   @SerializedName(SERIALIZED_NAME_STATUS_CODE)
   @javax.annotation.Nullable
   private Integer statusCode;
-
-  public static final String SERIALIZED_NAME_REQUEST_BODY = "request_body";
-  @SerializedName(SERIALIZED_NAME_REQUEST_BODY)
-  @javax.annotation.Nullable
-  private String requestBody;
-
-  public static final String SERIALIZED_NAME_RESPONSE_BODY = "response_body";
-  @SerializedName(SERIALIZED_NAME_RESPONSE_BODY)
-  @javax.annotation.Nullable
-  private String responseBody;
 
   public static final String SERIALIZED_NAME_DATE_TIME = "date_time";
   @SerializedName(SERIALIZED_NAME_DATE_TIME)
@@ -253,44 +243,6 @@ public class WebHookHistory implements Serializable {
   }
 
 
-  public WebHookHistory requestBody(@javax.annotation.Nullable String requestBody) {
-    this.requestBody = requestBody;
-    return this;
-  }
-
-  /**
-   * Webhook request body.
-   * @return requestBody
-   */
-  @javax.annotation.Nullable
-  public String getRequestBody() {
-    return requestBody;
-  }
-
-  public void setRequestBody(@javax.annotation.Nullable String requestBody) {
-    this.requestBody = requestBody;
-  }
-
-
-  public WebHookHistory responseBody(@javax.annotation.Nullable String responseBody) {
-    this.responseBody = responseBody;
-    return this;
-  }
-
-  /**
-   * Webhook response body.
-   * @return responseBody
-   */
-  @javax.annotation.Nullable
-  public String getResponseBody() {
-    return responseBody;
-  }
-
-  public void setResponseBody(@javax.annotation.Nullable String responseBody) {
-    this.responseBody = responseBody;
-  }
-
-
   public WebHookHistory dateTime(@javax.annotation.Nullable OffsetDateTime dateTime) {
     this.dateTime = dateTime;
     return this;
@@ -338,8 +290,6 @@ public class WebHookHistory implements Serializable {
         Objects.equals(this.userId, webHookHistory.userId) &&
         Objects.equals(this.event, webHookHistory.event) &&
         Objects.equals(this.statusCode, webHookHistory.statusCode) &&
-        Objects.equals(this.requestBody, webHookHistory.requestBody) &&
-        Objects.equals(this.responseBody, webHookHistory.responseBody) &&
         Objects.equals(this.dateTime, webHookHistory.dateTime) &&
         Objects.equals(this.success, webHookHistory.success);
   }
@@ -350,7 +300,7 @@ public class WebHookHistory implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, webHookId, userId, event, statusCode, requestBody, responseBody, dateTime, success);
+    return Objects.hash(id, created, version, webHookId, userId, event, statusCode, dateTime, success);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -371,8 +321,6 @@ public class WebHookHistory implements Serializable {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    event: ").append(toIndentedString(event)).append("\n");
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("    requestBody: ").append(toIndentedString(requestBody)).append("\n");
-    sb.append("    responseBody: ").append(toIndentedString(responseBody)).append("\n");
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("}");
@@ -404,8 +352,6 @@ public class WebHookHistory implements Serializable {
     openapiFields.add("user_id");
     openapiFields.add("event");
     openapiFields.add("status_code");
-    openapiFields.add("request_body");
-    openapiFields.add("response_body");
     openapiFields.add("date_time");
     openapiFields.add("success");
 
@@ -436,12 +382,6 @@ public class WebHookHistory implements Serializable {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("event") != null && !jsonObj.get("event").isJsonNull()) && !jsonObj.get("event").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `event` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event").toString()));
-      }
-      if ((jsonObj.get("request_body") != null && !jsonObj.get("request_body").isJsonNull()) && !jsonObj.get("request_body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `request_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_body").toString()));
-      }
-      if ((jsonObj.get("response_body") != null && !jsonObj.get("response_body").isJsonNull()) && !jsonObj.get("response_body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `response_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_body").toString()));
       }
   }
 

@@ -1,6 +1,6 @@
 /*
  * Italian eInvoice API
- * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@invoicetronic.com
@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.invoicetronic.invoice.sdk.model.Event;
+import java.time.OffsetDateTime;
 import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 
 import java.lang.reflect.Type;
@@ -75,8 +76,15 @@ public class LogApi {
 
     /**
      * Build call for invoiceV1LogGet
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param companyId Company id (optional)
+     * @param endpoint  (optional)
+     * @param method  (optional)
+     * @param apiVerion Api version (optional)
+     * @param statusCode Response status code (optional)
+     * @param dateCreatedFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param dateCreatedTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -89,7 +97,7 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1LogGetCall(Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invoiceV1LogGetCall(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -113,6 +121,34 @@ public class LogApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (companyId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("company_id", companyId));
+        }
+
+        if (endpoint != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("endpoint", endpoint));
+        }
+
+        if (method != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("method", method));
+        }
+
+        if (apiVerion != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("api_verion", apiVerion));
+        }
+
+        if (statusCode != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("status_code", statusCode));
+        }
+
+        if (dateCreatedFrom != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("date_created_from", dateCreatedFrom));
+        }
+
+        if (dateCreatedTo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("date_created_to", dateCreatedTo));
+        }
 
         if (page != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
@@ -142,16 +178,23 @@ public class LogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invoiceV1LogGetValidateBeforeCall(Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
-        return invoiceV1LogGetCall(page, pageSize, _callback);
+    private okhttp3.Call invoiceV1LogGetValidateBeforeCall(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return invoiceV1LogGetCall(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, _callback);
 
     }
 
     /**
      * List events
      * Every API operation is logged and can be retrieved here.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param companyId Company id (optional)
+     * @param endpoint  (optional)
+     * @param method  (optional)
+     * @param apiVerion Api version (optional)
+     * @param statusCode Response status code (optional)
+     * @param dateCreatedFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param dateCreatedTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return List&lt;Event&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -163,16 +206,23 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Event> invoiceV1LogGet(Integer page, Integer pageSize) throws ApiException {
-        ApiResponse<List<Event>> localVarResp = invoiceV1LogGetWithHttpInfo(page, pageSize);
+    public List<Event> invoiceV1LogGet(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<List<Event>> localVarResp = invoiceV1LogGetWithHttpInfo(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize);
         return localVarResp.getData();
     }
 
     /**
      * List events
      * Every API operation is logged and can be retrieved here.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param companyId Company id (optional)
+     * @param endpoint  (optional)
+     * @param method  (optional)
+     * @param apiVerion Api version (optional)
+     * @param statusCode Response status code (optional)
+     * @param dateCreatedFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param dateCreatedTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @return ApiResponse&lt;List&lt;Event&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -184,8 +234,8 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Event>> invoiceV1LogGetWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = invoiceV1LogGetValidateBeforeCall(page, pageSize, null);
+    public ApiResponse<List<Event>> invoiceV1LogGetWithHttpInfo(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = invoiceV1LogGetValidateBeforeCall(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, null);
         Type localVarReturnType = new TypeToken<List<Event>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -193,8 +243,15 @@ public class LogApi {
     /**
      * List events (asynchronously)
      * Every API operation is logged and can be retrieved here.
-     * @param page Page number. (optional, default to 1)
-     * @param pageSize Items per page. (optional, default to 100)
+     * @param companyId Company id (optional)
+     * @param endpoint  (optional)
+     * @param method  (optional)
+     * @param apiVerion Api version (optional)
+     * @param statusCode Response status code (optional)
+     * @param dateCreatedFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param dateCreatedTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
+     * @param page Page number. Defaults to 1. (optional, default to 1)
+     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -207,16 +264,16 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invoiceV1LogGetAsync(Integer page, Integer pageSize, final ApiCallback<List<Event>> _callback) throws ApiException {
+    public okhttp3.Call invoiceV1LogGetAsync(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, final ApiCallback<List<Event>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invoiceV1LogGetValidateBeforeCall(page, pageSize, _callback);
+        okhttp3.Call localVarCall = invoiceV1LogGetValidateBeforeCall(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, _callback);
         Type localVarReturnType = new TypeToken<List<Event>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for invoiceV1LogIdGet
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -287,7 +344,7 @@ public class LogApi {
     /**
      * Get an event by id
      * Every API operation is logged and can be retrieved here.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return Event
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -306,7 +363,7 @@ public class LogApi {
     /**
      * Get an event by id
      * Every API operation is logged and can be retrieved here.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @return ApiResponse&lt;Event&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -326,7 +383,7 @@ public class LogApi {
     /**
      * Get an event by id (asynchronously)
      * Every API operation is logged and can be retrieved here.
-     * @param id Item id. (required)
+     * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
