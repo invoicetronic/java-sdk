@@ -51,7 +51,7 @@ import com.invoicetronic.invoice.sdk.JSON;
 /**
  * ProblemHttpResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T16:10:21.843557Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-23T10:00:36.842213Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ProblemHttpResult implements Serializable {
   private static final long serialVersionUID = 1L;
 
