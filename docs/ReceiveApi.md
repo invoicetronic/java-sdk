@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**invoiceV1ReceiveGet**](ReceiveApi.md#invoiceV1ReceiveGet) | **GET** /invoice/v1/receive | List incoming invoices |
-| [**invoiceV1ReceiveIdDelete**](ReceiveApi.md#invoiceV1ReceiveIdDelete) | **DELETE** /invoice/v1/receive/{id} | Delete an incoming invoice by id |
-| [**invoiceV1ReceiveIdGet**](ReceiveApi.md#invoiceV1ReceiveIdGet) | **GET** /invoice/v1/receive/{id} | Get an incoming invoice by id |
+| [**receiveGet**](ReceiveApi.md#receiveGet) | **GET** /receive | List incoming invoices |
+| [**receiveIdDelete**](ReceiveApi.md#receiveIdDelete) | **DELETE** /receive/{id} | Delete an incoming invoice by id |
+| [**receiveIdGet**](ReceiveApi.md#receiveIdGet) | **GET** /receive/{id} | Get an incoming invoice by id |
 
 
-<a id="invoiceV1ReceiveGet"></a>
-# **invoiceV1ReceiveGet**
-> List&lt;Receive&gt; invoiceV1ReceiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize)
+<a id="receiveGet"></a>
+# **receiveGet**
+> List&lt;Receive&gt; receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort)
 
 List incoming invoices
 
@@ -53,11 +53,12 @@ public class Example {
     String documentNumber = "documentNumber_example"; // String | Document number.
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<Receive> result = apiInstance.invoiceV1ReceiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize);
+      List<Receive> result = apiInstance.receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReceiveApi#invoiceV1ReceiveGet");
+      System.err.println("Exception when calling ReceiveApi#receiveGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -86,6 +87,7 @@ public class Example {
 | **documentNumber** | **String**| Document number. | [optional] |
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -107,9 +109,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1ReceiveIdDelete"></a>
-# **invoiceV1ReceiveIdDelete**
-> Receive invoiceV1ReceiveIdDelete(id)
+<a id="receiveIdDelete"></a>
+# **receiveIdDelete**
+> Receive receiveIdDelete(id)
 
 Delete an incoming invoice by id
 
@@ -138,10 +140,10 @@ public class Example {
     ReceiveApi apiInstance = new ReceiveApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Receive result = apiInstance.invoiceV1ReceiveIdDelete(id);
+      Receive result = apiInstance.receiveIdDelete(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReceiveApi#invoiceV1ReceiveIdDelete");
+      System.err.println("Exception when calling ReceiveApi#receiveIdDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -178,9 +180,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 
-<a id="invoiceV1ReceiveIdGet"></a>
-# **invoiceV1ReceiveIdGet**
-> Receive invoiceV1ReceiveIdGet(id)
+<a id="receiveIdGet"></a>
+# **receiveIdGet**
+> Receive receiveIdGet(id)
 
 Get an incoming invoice by id
 
@@ -209,10 +211,10 @@ public class Example {
     ReceiveApi apiInstance = new ReceiveApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Receive result = apiInstance.invoiceV1ReceiveIdGet(id);
+      Receive result = apiInstance.receiveIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReceiveApi#invoiceV1ReceiveIdGet");
+      System.err.println("Exception when calling ReceiveApi#receiveIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

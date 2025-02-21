@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**invoiceV1UpdateGet**](UpdateApi.md#invoiceV1UpdateGet) | **GET** /invoice/v1/update | List updates |
-| [**invoiceV1UpdateIdGet**](UpdateApi.md#invoiceV1UpdateIdGet) | **GET** /invoice/v1/update/{id} | Get an update by id |
+| [**updateGet**](UpdateApi.md#updateGet) | **GET** /update | List updates |
+| [**updateIdGet**](UpdateApi.md#updateIdGet) | **GET** /update/{id} | Get an update by id |
 
 
-<a id="invoiceV1UpdateGet"></a>
-# **invoiceV1UpdateGet**
-> List&lt;Update&gt; invoiceV1UpdateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize)
+<a id="updateGet"></a>
+# **updateGet**
+> List&lt;Update&gt; updateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort)
 
 List updates
 
@@ -48,11 +48,12 @@ public class Example {
     OffsetDateTime dateSentTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<Update> result = apiInstance.invoiceV1UpdateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize);
+      List<Update> result = apiInstance.updateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling UpdateApi#invoiceV1UpdateGet");
+      System.err.println("Exception when calling UpdateApi#updateGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -77,6 +78,7 @@ public class Example {
 | **dateSentTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -98,9 +100,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1UpdateIdGet"></a>
-# **invoiceV1UpdateIdGet**
-> Update invoiceV1UpdateIdGet(id)
+<a id="updateIdGet"></a>
+# **updateIdGet**
+> Update updateIdGet(id)
 
 Get an update by id
 
@@ -129,10 +131,10 @@ public class Example {
     UpdateApi apiInstance = new UpdateApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Update result = apiInstance.invoiceV1UpdateIdGet(id);
+      Update result = apiInstance.updateIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling UpdateApi#invoiceV1UpdateIdGet");
+      System.err.println("Exception when calling UpdateApi#updateIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

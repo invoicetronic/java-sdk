@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**invoiceV1LogGet**](LogApi.md#invoiceV1LogGet) | **GET** /invoice/v1/log | List events |
-| [**invoiceV1LogIdGet**](LogApi.md#invoiceV1LogIdGet) | **GET** /invoice/v1/log/{id} | Get an event by id |
+| [**logGet**](LogApi.md#logGet) | **GET** /log | List events |
+| [**logIdGet**](LogApi.md#logIdGet) | **GET** /log/{id} | Get an event by id |
 
 
-<a id="invoiceV1LogGet"></a>
-# **invoiceV1LogGet**
-> List&lt;Event&gt; invoiceV1LogGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize)
+<a id="logGet"></a>
+# **logGet**
+> List&lt;Event&gt; logGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo)
 
 List events
 
@@ -46,11 +46,16 @@ public class Example {
     OffsetDateTime dateCreatedTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+    String query = "query_example"; // String | 
+    Boolean success = true; // Boolean | 
+    OffsetDateTime dateTimeFrom = OffsetDateTime.now(); // OffsetDateTime | Date and time of the event
+    OffsetDateTime dateTimeTo = OffsetDateTime.now(); // OffsetDateTime | Date and time of the event
     try {
-      List<Event> result = apiInstance.invoiceV1LogGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize);
+      List<Event> result = apiInstance.logGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling LogApi#invoiceV1LogGet");
+      System.err.println("Exception when calling LogApi#logGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -73,6 +78,11 @@ public class Example {
 | **dateCreatedTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **query** | **String**|  | [optional] |
+| **success** | **Boolean**|  | [optional] |
+| **dateTimeFrom** | **OffsetDateTime**| Date and time of the event | [optional] |
+| **dateTimeTo** | **OffsetDateTime**| Date and time of the event | [optional] |
 
 ### Return type
 
@@ -94,9 +104,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1LogIdGet"></a>
-# **invoiceV1LogIdGet**
-> Event invoiceV1LogIdGet(id)
+<a id="logIdGet"></a>
+# **logIdGet**
+> Event logIdGet(id)
 
 Get an event by id
 
@@ -125,10 +135,10 @@ public class Example {
     LogApi apiInstance = new LogApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Event result = apiInstance.invoiceV1LogIdGet(id);
+      Event result = apiInstance.logIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling LogApi#invoiceV1LogIdGet");
+      System.err.println("Exception when calling LogApi#logIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

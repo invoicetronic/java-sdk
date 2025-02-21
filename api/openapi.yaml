@@ -5,18 +5,14 @@ info:
     name: Invoicetronic
     url: https://invoicetronic.com
   description: |-
-    The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the
-    Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple
-    and easy to use, abstracting away SDI complexity while providing complete control over the
-    invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation,
-    multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.
+    The [Italian eInvoice API][2] is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.
 
     For more information, see  [Invoicetronic website][2]
 
     [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/
     [2]: https://invoicetronic.com/
-  title: Italian eInvoice API
-  version: 1.0.0
+  title: Italian eInvoice API v1
+  version: "1"
   x-logo:
     url: https://gestionaleamica.com/assets/img/Logo_Amica_Scritta.png
     altText: "Amica: tutto il software che serve per gestire la tua azienda"
@@ -25,7 +21,7 @@ servers:
 security:
 - Basic: []
 paths:
-  /invoice/v1/company/{id}:
+  /company/{id}:
     delete:
       description: |-
         Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You
@@ -94,7 +90,7 @@ paths:
       - company
       x-accepts:
       - application/json
-  /invoice/v1/company:
+  /company:
     get:
       description: |-
         Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You
@@ -119,6 +115,14 @@ paths:
           default: 100
           format: int32
           type: integer
+        style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
         style: form
       responses:
         "200":
@@ -212,7 +216,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /invoice/v1/log/{id}:
+  /log/{id}:
     get:
       description: Every API operation is logged and can be retrieved here.
       parameters:
@@ -239,7 +243,7 @@ paths:
       - log
       x-accepts:
       - application/json
-  /invoice/v1/log:
+  /log:
     get:
       description: Every API operation is logged and can be retrieved here.
       parameters:
@@ -322,6 +326,46 @@ paths:
           format: int32
           type: integer
         style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: success
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: Date and time of the event
+        explode: true
+        in: query
+        name: date_time_from
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - description: Date and time of the event
+        explode: true
+        in: query
+        name: date_time_to
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -344,7 +388,7 @@ paths:
       - log
       x-accepts:
       - application/json
-  /invoice/v1/receive/{id}:
+  /receive/{id}:
     delete:
       description: Receive invoices are the invoices that are received from other
         companies.
@@ -411,7 +455,7 @@ paths:
       - receive
       x-accepts:
       - application/json
-  /invoice/v1/receive:
+  /receive:
     get:
       description: Receive invoices are the invoices that are received from other
         companies.
@@ -547,6 +591,14 @@ paths:
           format: int32
           type: integer
         style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -569,7 +621,7 @@ paths:
       - receive
       x-accepts:
       - application/json
-  /invoice/v1/send/{id}:
+  /send/{id}:
     get:
       description: Send invoices are the invoices that are sent to the SDI.
       parameters:
@@ -596,7 +648,7 @@ paths:
       - send
       x-accepts:
       - application/json
-  /invoice/v1/send:
+  /send:
     get:
       description: test **markdown**.
       parameters:
@@ -723,6 +775,14 @@ paths:
           format: int32
           type: integer
         style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -802,7 +862,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /invoice/v1/send/xml:
+  /send/xml:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       parameters:
@@ -860,7 +920,7 @@ paths:
       x-content-type: application/xml
       x-accepts:
       - application/json
-  /invoice/v1/send/files:
+  /send/file:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       parameters:
@@ -891,10 +951,10 @@ paths:
         content:
           multipart/form-data:
             encoding:
-              files:
+              file:
                 style: form
             schema:
-              $ref: '#/components/schemas/_invoice_v1_send_files_post_request'
+              $ref: '#/components/schemas/_send_file_post_request'
       responses:
         "201":
           content:
@@ -920,7 +980,7 @@ paths:
       x-content-type: multipart/form-data
       x-accepts:
       - application/json
-  /invoice/v1/send/json:
+  /send/json:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       parameters:
@@ -978,7 +1038,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /invoice/v1/send/validate:
+  /send/validate:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       requestBody:
@@ -1008,7 +1068,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /invoice/v1/send/validate/xml:
+  /send/validate/xml:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       requestBody:
@@ -1038,7 +1098,7 @@ paths:
       x-content-type: application/xml
       x-accepts:
       - application/json
-  /invoice/v1/send/validate/files:
+  /send/validate/files:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       requestBody:
@@ -1048,7 +1108,7 @@ paths:
               files:
                 style: form
             schema:
-              $ref: '#/components/schemas/_invoice_v1_send_files_post_request'
+              $ref: '#/components/schemas/_send_validate_files_post_request'
       responses:
         "204":
           description: No Content
@@ -1070,7 +1130,7 @@ paths:
       x-content-type: multipart/form-data
       x-accepts:
       - application/json
-  /invoice/v1/send/validate/json:
+  /send/validate/json:
     post:
       description: Send invoices are the invoices that are sent to the SDI.
       requestBody:
@@ -1100,7 +1160,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /invoice/v1/update/{id}:
+  /update/{id}:
     get:
       description: Updates are notifications that are sent by the SDI about the status
         of sent invoices.
@@ -1128,7 +1188,7 @@ paths:
       - update
       x-accepts:
       - application/json
-  /invoice/v1/update:
+  /update:
     get:
       description: Updates are notifications that are sent by the SDI about the status
         of sent invoices.
@@ -1241,6 +1301,14 @@ paths:
           format: int32
           type: integer
         style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1263,7 +1331,7 @@ paths:
       - update
       x-accepts:
       - application/json
-  /invoice/v1/webhook/{id}:
+  /webhook/{id}:
     delete:
       description: Webhooks are used to notify external services about write events
         that occur in the API. You can subscribe to specific events and receive a
@@ -1332,7 +1400,7 @@ paths:
       - webhook
       x-accepts:
       - application/json
-  /invoice/v1/webhook:
+  /webhook:
     get:
       description: Webhooks are used to notify external services about write events
         that occur in the API. You can subscribe to specific events and receive a
@@ -1357,6 +1425,14 @@ paths:
           default: 100
           format: int32
           type: integer
+        style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
         style: form
       responses:
         "200":
@@ -1450,7 +1526,7 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /invoice/v1/webhookhistory/{id}:
+  /webhookhistory/{id}:
     get:
       parameters:
       - description: Item id
@@ -1476,7 +1552,7 @@ paths:
       - webhook
       x-accepts:
       - application/json
-  /invoice/v1/webhookhistory:
+  /webhookhistory:
     get:
       parameters:
       - description: Page number. Defaults to 1.
@@ -1498,6 +1574,14 @@ paths:
           default: 100
           format: int32
           type: integer
+        style: form
+      - description: Sort by field. Prefix with '-' for descending order.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
         style: form
       responses:
         "200":
@@ -5346,7 +5430,15 @@ components:
           readOnly: true
           type: boolean
       type: object
-    _invoice_v1_send_files_post_request:
+    _send_file_post_request:
+      properties:
+        file:
+          format: binary
+          type: string
+      required:
+      - file
+      type: object
+    _send_validate_files_post_request:
       properties:
         files:
           items:

@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**invoiceV1CompanyGet**](CompanyApi.md#invoiceV1CompanyGet) | **GET** /invoice/v1/company | List companies |
-| [**invoiceV1CompanyIdDelete**](CompanyApi.md#invoiceV1CompanyIdDelete) | **DELETE** /invoice/v1/company/{id} | Delete a company |
-| [**invoiceV1CompanyIdGet**](CompanyApi.md#invoiceV1CompanyIdGet) | **GET** /invoice/v1/company/{id} | Get a company by id |
-| [**invoiceV1CompanyPost**](CompanyApi.md#invoiceV1CompanyPost) | **POST** /invoice/v1/company | Add a company |
-| [**invoiceV1CompanyPut**](CompanyApi.md#invoiceV1CompanyPut) | **PUT** /invoice/v1/company | Update a company |
+| [**companyGet**](CompanyApi.md#companyGet) | **GET** /company | List companies |
+| [**companyIdDelete**](CompanyApi.md#companyIdDelete) | **DELETE** /company/{id} | Delete a company |
+| [**companyIdGet**](CompanyApi.md#companyIdGet) | **GET** /company/{id} | Get a company by id |
+| [**companyPost**](CompanyApi.md#companyPost) | **POST** /company | Add a company |
+| [**companyPut**](CompanyApi.md#companyPut) | **PUT** /company | Update a company |
 
 
-<a id="invoiceV1CompanyGet"></a>
-# **invoiceV1CompanyGet**
-> List&lt;Company&gt; invoiceV1CompanyGet(page, pageSize)
+<a id="companyGet"></a>
+# **companyGet**
+> List&lt;Company&gt; companyGet(page, pageSize, sort)
 
 List companies
 
@@ -42,11 +42,12 @@ public class Example {
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<Company> result = apiInstance.invoiceV1CompanyGet(page, pageSize);
+      List<Company> result = apiInstance.companyGet(page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CompanyApi#invoiceV1CompanyGet");
+      System.err.println("Exception when calling CompanyApi#companyGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -62,6 +63,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -83,9 +85,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1CompanyIdDelete"></a>
-# **invoiceV1CompanyIdDelete**
-> Company invoiceV1CompanyIdDelete(id)
+<a id="companyIdDelete"></a>
+# **companyIdDelete**
+> Company companyIdDelete(id)
 
 Delete a company
 
@@ -114,10 +116,10 @@ public class Example {
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Company result = apiInstance.invoiceV1CompanyIdDelete(id);
+      Company result = apiInstance.companyIdDelete(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CompanyApi#invoiceV1CompanyIdDelete");
+      System.err.println("Exception when calling CompanyApi#companyIdDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -154,9 +156,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 
-<a id="invoiceV1CompanyIdGet"></a>
-# **invoiceV1CompanyIdGet**
-> Company invoiceV1CompanyIdGet(id)
+<a id="companyIdGet"></a>
+# **companyIdGet**
+> Company companyIdGet(id)
 
 Get a company by id
 
@@ -185,10 +187,10 @@ public class Example {
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Company result = apiInstance.invoiceV1CompanyIdGet(id);
+      Company result = apiInstance.companyIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CompanyApi#invoiceV1CompanyIdGet");
+      System.err.println("Exception when calling CompanyApi#companyIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -223,9 +225,9 @@ public class Example {
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
 
-<a id="invoiceV1CompanyPost"></a>
-# **invoiceV1CompanyPost**
-> Company invoiceV1CompanyPost(company)
+<a id="companyPost"></a>
+# **companyPost**
+> Company companyPost(company)
 
 Add a company
 
@@ -254,10 +256,10 @@ public class Example {
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Company company = new Company(); // Company | 
     try {
-      Company result = apiInstance.invoiceV1CompanyPost(company);
+      Company result = apiInstance.companyPost(company);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CompanyApi#invoiceV1CompanyPost");
+      System.err.println("Exception when calling CompanyApi#companyPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -293,9 +295,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1CompanyPut"></a>
-# **invoiceV1CompanyPut**
-> Company invoiceV1CompanyPut(company)
+<a id="companyPut"></a>
+# **companyPut**
+> Company companyPut(company)
 
 Update a company
 
@@ -324,10 +326,10 @@ public class Example {
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Company company = new Company(); // Company | 
     try {
-      Company result = apiInstance.invoiceV1CompanyPut(company);
+      Company result = apiInstance.companyPut(company);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CompanyApi#invoiceV1CompanyPut");
+      System.err.println("Exception when calling CompanyApi#companyPut");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**invoiceV1WebhookGet**](WebhookApi.md#invoiceV1WebhookGet) | **GET** /invoice/v1/webhook | List webhooks |
-| [**invoiceV1WebhookIdDelete**](WebhookApi.md#invoiceV1WebhookIdDelete) | **DELETE** /invoice/v1/webhook/{id} | Delete a webhook by id |
-| [**invoiceV1WebhookIdGet**](WebhookApi.md#invoiceV1WebhookIdGet) | **GET** /invoice/v1/webhook/{id} | Get a webhook by id |
-| [**invoiceV1WebhookPost**](WebhookApi.md#invoiceV1WebhookPost) | **POST** /invoice/v1/webhook | Add a webhook |
-| [**invoiceV1WebhookPut**](WebhookApi.md#invoiceV1WebhookPut) | **PUT** /invoice/v1/webhook | Update a webhook |
-| [**invoiceV1WebhookhistoryGet**](WebhookApi.md#invoiceV1WebhookhistoryGet) | **GET** /invoice/v1/webhookhistory | List webhook history items |
-| [**invoiceV1WebhookhistoryIdGet**](WebhookApi.md#invoiceV1WebhookhistoryIdGet) | **GET** /invoice/v1/webhookhistory/{id} | Get a webhook history item by id |
+| [**webhookGet**](WebhookApi.md#webhookGet) | **GET** /webhook | List webhooks |
+| [**webhookIdDelete**](WebhookApi.md#webhookIdDelete) | **DELETE** /webhook/{id} | Delete a webhook by id |
+| [**webhookIdGet**](WebhookApi.md#webhookIdGet) | **GET** /webhook/{id} | Get a webhook by id |
+| [**webhookPost**](WebhookApi.md#webhookPost) | **POST** /webhook | Add a webhook |
+| [**webhookPut**](WebhookApi.md#webhookPut) | **PUT** /webhook | Update a webhook |
+| [**webhookhistoryGet**](WebhookApi.md#webhookhistoryGet) | **GET** /webhookhistory | List webhook history items |
+| [**webhookhistoryIdGet**](WebhookApi.md#webhookhistoryIdGet) | **GET** /webhookhistory/{id} | Get a webhook history item by id |
 
 
-<a id="invoiceV1WebhookGet"></a>
-# **invoiceV1WebhookGet**
-> List&lt;WebHook&gt; invoiceV1WebhookGet(page, pageSize)
+<a id="webhookGet"></a>
+# **webhookGet**
+> List&lt;WebHook&gt; webhookGet(page, pageSize, sort)
 
 List webhooks
 
@@ -44,11 +44,12 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<WebHook> result = apiInstance.invoiceV1WebhookGet(page, pageSize);
+      List<WebHook> result = apiInstance.webhookGet(page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookGet");
+      System.err.println("Exception when calling WebhookApi#webhookGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -64,6 +65,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -85,9 +87,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1WebhookIdDelete"></a>
-# **invoiceV1WebhookIdDelete**
-> WebHook invoiceV1WebhookIdDelete(id)
+<a id="webhookIdDelete"></a>
+# **webhookIdDelete**
+> WebHook webhookIdDelete(id)
 
 Delete a webhook by id
 
@@ -116,10 +118,10 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      WebHook result = apiInstance.invoiceV1WebhookIdDelete(id);
+      WebHook result = apiInstance.webhookIdDelete(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookIdDelete");
+      System.err.println("Exception when calling WebhookApi#webhookIdDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -156,9 +158,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 
-<a id="invoiceV1WebhookIdGet"></a>
-# **invoiceV1WebhookIdGet**
-> WebHook invoiceV1WebhookIdGet(id)
+<a id="webhookIdGet"></a>
+# **webhookIdGet**
+> WebHook webhookIdGet(id)
 
 Get a webhook by id
 
@@ -187,10 +189,10 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      WebHook result = apiInstance.invoiceV1WebhookIdGet(id);
+      WebHook result = apiInstance.webhookIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookIdGet");
+      System.err.println("Exception when calling WebhookApi#webhookIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -225,9 +227,9 @@ public class Example {
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
 
-<a id="invoiceV1WebhookPost"></a>
-# **invoiceV1WebhookPost**
-> WebHook invoiceV1WebhookPost(webHook)
+<a id="webhookPost"></a>
+# **webhookPost**
+> WebHook webhookPost(webHook)
 
 Add a webhook
 
@@ -256,10 +258,10 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     WebHook webHook = new WebHook(); // WebHook | 
     try {
-      WebHook result = apiInstance.invoiceV1WebhookPost(webHook);
+      WebHook result = apiInstance.webhookPost(webHook);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookPost");
+      System.err.println("Exception when calling WebhookApi#webhookPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -295,9 +297,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1WebhookPut"></a>
-# **invoiceV1WebhookPut**
-> WebHook invoiceV1WebhookPut(webHook)
+<a id="webhookPut"></a>
+# **webhookPut**
+> WebHook webhookPut(webHook)
 
 Update a webhook
 
@@ -326,10 +328,10 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     WebHook webHook = new WebHook(); // WebHook | 
     try {
-      WebHook result = apiInstance.invoiceV1WebhookPut(webHook);
+      WebHook result = apiInstance.webhookPut(webHook);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookPut");
+      System.err.println("Exception when calling WebhookApi#webhookPut");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -365,9 +367,9 @@ public class Example {
 | **422** | Unprocessable Content |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1WebhookhistoryGet"></a>
-# **invoiceV1WebhookhistoryGet**
-> List&lt;WebHookHistory&gt; invoiceV1WebhookhistoryGet(page, pageSize)
+<a id="webhookhistoryGet"></a>
+# **webhookhistoryGet**
+> List&lt;WebHookHistory&gt; webhookhistoryGet(page, pageSize, sort)
 
 List webhook history items
 
@@ -394,11 +396,12 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<WebHookHistory> result = apiInstance.invoiceV1WebhookhistoryGet(page, pageSize);
+      List<WebHookHistory> result = apiInstance.webhookhistoryGet(page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookhistoryGet");
+      System.err.println("Exception when calling WebhookApi#webhookhistoryGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -414,6 +417,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -435,9 +439,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1WebhookhistoryIdGet"></a>
-# **invoiceV1WebhookhistoryIdGet**
-> WebHookHistory invoiceV1WebhookhistoryIdGet(id)
+<a id="webhookhistoryIdGet"></a>
+# **webhookhistoryIdGet**
+> WebHookHistory webhookhistoryIdGet(id)
 
 Get a webhook history item by id
 
@@ -464,10 +468,10 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      WebHookHistory result = apiInstance.invoiceV1WebhookhistoryIdGet(id);
+      WebHookHistory result = apiInstance.webhookhistoryIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhookApi#invoiceV1WebhookhistoryIdGet");
+      System.err.println("Exception when calling WebhookApi#webhookhistoryIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

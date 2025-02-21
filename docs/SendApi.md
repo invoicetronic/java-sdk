@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**invoiceV1SendFilesPost**](SendApi.md#invoiceV1SendFilesPost) | **POST** /invoice/v1/send/files | Add an invoice by file |
-| [**invoiceV1SendGet**](SendApi.md#invoiceV1SendGet) | **GET** /invoice/v1/send | List invoices |
-| [**invoiceV1SendIdGet**](SendApi.md#invoiceV1SendIdGet) | **GET** /invoice/v1/send/{id} | Get a invoice by id |
-| [**invoiceV1SendJsonPost**](SendApi.md#invoiceV1SendJsonPost) | **POST** /invoice/v1/send/json | Add an invoice by json |
-| [**invoiceV1SendPost**](SendApi.md#invoiceV1SendPost) | **POST** /invoice/v1/send | Add an invoice |
-| [**invoiceV1SendValidateFilesPost**](SendApi.md#invoiceV1SendValidateFilesPost) | **POST** /invoice/v1/send/validate/files | Validate an invoice by file |
-| [**invoiceV1SendValidateJsonPost**](SendApi.md#invoiceV1SendValidateJsonPost) | **POST** /invoice/v1/send/validate/json | Validate an invoice by json |
-| [**invoiceV1SendValidatePost**](SendApi.md#invoiceV1SendValidatePost) | **POST** /invoice/v1/send/validate | Validate an invoice |
-| [**invoiceV1SendValidateXmlPost**](SendApi.md#invoiceV1SendValidateXmlPost) | **POST** /invoice/v1/send/validate/xml | Validate an invoice by xml |
-| [**invoiceV1SendXmlPost**](SendApi.md#invoiceV1SendXmlPost) | **POST** /invoice/v1/send/xml | Add an invoice by xml |
+| [**sendFilePost**](SendApi.md#sendFilePost) | **POST** /send/file | Add an invoice by file |
+| [**sendGet**](SendApi.md#sendGet) | **GET** /send | List invoices |
+| [**sendIdGet**](SendApi.md#sendIdGet) | **GET** /send/{id} | Get a invoice by id |
+| [**sendJsonPost**](SendApi.md#sendJsonPost) | **POST** /send/json | Add an invoice by json |
+| [**sendPost**](SendApi.md#sendPost) | **POST** /send | Add an invoice |
+| [**sendValidateFilesPost**](SendApi.md#sendValidateFilesPost) | **POST** /send/validate/files | Validate an invoice by file |
+| [**sendValidateJsonPost**](SendApi.md#sendValidateJsonPost) | **POST** /send/validate/json | Validate an invoice by json |
+| [**sendValidatePost**](SendApi.md#sendValidatePost) | **POST** /send/validate | Validate an invoice |
+| [**sendValidateXmlPost**](SendApi.md#sendValidateXmlPost) | **POST** /send/validate/xml | Validate an invoice by xml |
+| [**sendXmlPost**](SendApi.md#sendXmlPost) | **POST** /send/xml | Add an invoice by xml |
 
 
-<a id="invoiceV1SendFilesPost"></a>
-# **invoiceV1SendFilesPost**
-> Send invoiceV1SendFilesPost(files, validate, signature)
+<a id="sendFilePost"></a>
+# **sendFilePost**
+> Send sendFilePost(_file, validate, signature)
 
 Add an invoice by file
 
@@ -45,14 +45,14 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    List<File> files = Arrays.asList(); // List<File> | 
+    File _file = new File("/path/to/file"); // File | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
     String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendFilesPost(files, validate, signature);
+      Send result = apiInstance.sendFilePost(_file, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendFilesPost");
+      System.err.println("Exception when calling SendApi#sendFilePost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -66,7 +66,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **files** | **List&lt;File&gt;**|  | |
+| **_file** | **File**|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
 | **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 
@@ -90,9 +90,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendGet"></a>
-# **invoiceV1SendGet**
-> List&lt;Send&gt; invoiceV1SendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize)
+<a id="sendGet"></a>
+# **sendGet**
+> List&lt;Send&gt; sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort)
 
 List invoices
 
@@ -133,11 +133,12 @@ public class Example {
     String documentNumber = "documentNumber_example"; // String | Document number.
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<Send> result = apiInstance.invoiceV1SendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize);
+      List<Send> result = apiInstance.sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendGet");
+      System.err.println("Exception when calling SendApi#sendGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -165,6 +166,7 @@ public class Example {
 | **documentNumber** | **String**| Document number. | [optional] |
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -186,9 +188,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 
-<a id="invoiceV1SendIdGet"></a>
-# **invoiceV1SendIdGet**
-> Send invoiceV1SendIdGet(id)
+<a id="sendIdGet"></a>
+# **sendIdGet**
+> Send sendIdGet(id)
 
 Get a invoice by id
 
@@ -217,10 +219,10 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     Integer id = 56; // Integer | Item id
     try {
-      Send result = apiInstance.invoiceV1SendIdGet(id);
+      Send result = apiInstance.sendIdGet(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendIdGet");
+      System.err.println("Exception when calling SendApi#sendIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -255,9 +257,9 @@ public class Example {
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
 
-<a id="invoiceV1SendJsonPost"></a>
-# **invoiceV1SendJsonPost**
-> Send invoiceV1SendJsonPost(fatturaOrdinaria, validate, signature)
+<a id="sendJsonPost"></a>
+# **sendJsonPost**
+> Send sendJsonPost(fatturaOrdinaria, validate, signature)
 
 Add an invoice by json
 
@@ -288,10 +290,10 @@ public class Example {
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
     String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendJsonPost(fatturaOrdinaria, validate, signature);
+      Send result = apiInstance.sendJsonPost(fatturaOrdinaria, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendJsonPost");
+      System.err.println("Exception when calling SendApi#sendJsonPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -329,9 +331,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendPost"></a>
-# **invoiceV1SendPost**
-> Send invoiceV1SendPost(send, validate, signature)
+<a id="sendPost"></a>
+# **sendPost**
+> Send sendPost(send, validate, signature)
 
 Add an invoice
 
@@ -362,10 +364,10 @@ public class Example {
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
     String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendPost(send, validate, signature);
+      Send result = apiInstance.sendPost(send, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendPost");
+      System.err.println("Exception when calling SendApi#sendPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -403,9 +405,9 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendValidateFilesPost"></a>
-# **invoiceV1SendValidateFilesPost**
-> invoiceV1SendValidateFilesPost(files)
+<a id="sendValidateFilesPost"></a>
+# **sendValidateFilesPost**
+> sendValidateFilesPost(files)
 
 Validate an invoice by file
 
@@ -434,9 +436,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     List<File> files = Arrays.asList(); // List<File> | 
     try {
-      apiInstance.invoiceV1SendValidateFilesPost(files);
+      apiInstance.sendValidateFilesPost(files);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendValidateFilesPost");
+      System.err.println("Exception when calling SendApi#sendValidateFilesPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -472,9 +474,9 @@ null (empty response body)
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendValidateJsonPost"></a>
-# **invoiceV1SendValidateJsonPost**
-> invoiceV1SendValidateJsonPost(fatturaOrdinaria)
+<a id="sendValidateJsonPost"></a>
+# **sendValidateJsonPost**
+> sendValidateJsonPost(fatturaOrdinaria)
 
 Validate an invoice by json
 
@@ -503,9 +505,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
     try {
-      apiInstance.invoiceV1SendValidateJsonPost(fatturaOrdinaria);
+      apiInstance.sendValidateJsonPost(fatturaOrdinaria);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendValidateJsonPost");
+      System.err.println("Exception when calling SendApi#sendValidateJsonPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -541,9 +543,9 @@ null (empty response body)
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendValidatePost"></a>
-# **invoiceV1SendValidatePost**
-> invoiceV1SendValidatePost(send)
+<a id="sendValidatePost"></a>
+# **sendValidatePost**
+> sendValidatePost(send)
 
 Validate an invoice
 
@@ -572,9 +574,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     Send send = new Send(); // Send | 
     try {
-      apiInstance.invoiceV1SendValidatePost(send);
+      apiInstance.sendValidatePost(send);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendValidatePost");
+      System.err.println("Exception when calling SendApi#sendValidatePost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -610,9 +612,9 @@ null (empty response body)
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendValidateXmlPost"></a>
-# **invoiceV1SendValidateXmlPost**
-> invoiceV1SendValidateXmlPost(fatturaOrdinaria)
+<a id="sendValidateXmlPost"></a>
+# **sendValidateXmlPost**
+> sendValidateXmlPost(fatturaOrdinaria)
 
 Validate an invoice by xml
 
@@ -641,9 +643,9 @@ public class Example {
     SendApi apiInstance = new SendApi(defaultClient);
     FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
     try {
-      apiInstance.invoiceV1SendValidateXmlPost(fatturaOrdinaria);
+      apiInstance.sendValidateXmlPost(fatturaOrdinaria);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendValidateXmlPost");
+      System.err.println("Exception when calling SendApi#sendValidateXmlPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -679,9 +681,9 @@ null (empty response body)
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="invoiceV1SendXmlPost"></a>
-# **invoiceV1SendXmlPost**
-> Send invoiceV1SendXmlPost(fatturaOrdinaria, validate, signature)
+<a id="sendXmlPost"></a>
+# **sendXmlPost**
+> Send sendXmlPost(fatturaOrdinaria, validate, signature)
 
 Add an invoice by xml
 
@@ -712,10 +714,10 @@ public class Example {
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
     String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.invoiceV1SendXmlPost(fatturaOrdinaria, validate, signature);
+      Send result = apiInstance.sendXmlPost(fatturaOrdinaria, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#invoiceV1SendXmlPost");
+      System.err.println("Exception when calling SendApi#sendXmlPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
