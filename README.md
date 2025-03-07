@@ -1,4 +1,4 @@
-# Java SDK for the Italian eInvoice API
+# Java SDK for the Italian Invoicetronic API
 
 The [Invoicetronic API][2] is a RESTful service that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. It provides advanced features as encryption at rest, multi-language pre-flight invoice validation, multiple upload formats, webhooks, event logging, client SDKs, and CLI tools.
 
@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2025-03-07T10:29:38.811798Z[Etc/UTC]
+- Build date: 2025-03-07T14:03:32.321851Z[Etc/UTC]
 
 - Generator version: 7.12.0
 
