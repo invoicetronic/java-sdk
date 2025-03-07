@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 List events
 
-Every API operation is logged and can be retrieved here.
+Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
 
 ### Example
 ```java
@@ -110,7 +110,7 @@ public class Example {
 
 Get an event by id
 
-Every API operation is logged and can be retrieved here.
+Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
 
 ### Example
 ```java

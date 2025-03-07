@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 List updates
 
-Updates are notifications that are sent by the SDI about the status of sent invoices.
+Updates are notifications sent by the SDI about the status of invoices you sent.
 
 ### Example
 ```java
@@ -106,7 +106,7 @@ public class Example {
 
 Get an update by id
 
-Updates are notifications that are sent by the SDI about the status of sent invoices.
+Updates are notifications sent by the SDI about the status of invoices you sent.
 
 ### Example
 ```java

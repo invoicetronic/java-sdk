@@ -1,6 +1,6 @@
 /*
- * Italian eInvoice API v1
- * The [Italian eInvoice API][2] is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * Invoicetronic API
+ * The [Invoicetronic API][2] is a RESTful service that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. It provides advanced features as encryption at rest, multi-language pre-flight invoice validation, multiple upload formats, webhooks, event logging, client SDKs, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1
  * Contact: support@invoicetronic.com
@@ -220,7 +220,7 @@ public class ReceiveApi {
 
     /**
      * List incoming invoices
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
@@ -255,7 +255,7 @@ public class ReceiveApi {
 
     /**
      * List incoming invoices
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
@@ -291,7 +291,7 @@ public class ReceiveApi {
 
     /**
      * List incoming invoices (asynchronously)
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
@@ -401,7 +401,7 @@ public class ReceiveApi {
 
     /**
      * Delete an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
      * @return Receive
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -422,7 +422,7 @@ public class ReceiveApi {
 
     /**
      * Delete an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
      * @return ApiResponse&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -444,7 +444,7 @@ public class ReceiveApi {
 
     /**
      * Delete an incoming invoice by id (asynchronously)
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -538,7 +538,7 @@ public class ReceiveApi {
 
     /**
      * Get an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
      * @return Receive
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -557,7 +557,7 @@ public class ReceiveApi {
 
     /**
      * Get an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
      * @return ApiResponse&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -577,7 +577,7 @@ public class ReceiveApi {
 
     /**
      * Get an incoming invoice by id (asynchronously)
-     * Receive invoices are the invoices that are received from other companies.
+     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

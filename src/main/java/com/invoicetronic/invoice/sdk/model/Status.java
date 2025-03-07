@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 
 import com.google.gson.Gson;
@@ -48,60 +47,60 @@ import java.util.Set;
 import com.invoicetronic.invoice.sdk.JSON;
 
 /**
- * IdTrasmittente
+ * Status
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-07T08:35:17.954315Z[Etc/UTC]", comments = "Generator version: 7.12.0")
-public class IdTrasmittente implements Serializable {
+public class Status implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  public static final String SERIALIZED_NAME_ID_PAESE = "id_paese";
-  @SerializedName(SERIALIZED_NAME_ID_PAESE)
+  public static final String SERIALIZED_NAME_OPERATION_LEFT = "operation_left";
+  @SerializedName(SERIALIZED_NAME_OPERATION_LEFT)
   @javax.annotation.Nullable
-  private String idPaese;
+  private Integer operationLeft;
 
-  public static final String SERIALIZED_NAME_ID_CODICE = "id_codice";
-  @SerializedName(SERIALIZED_NAME_ID_CODICE)
+  public static final String SERIALIZED_NAME_SIGNATURE_LEFT = "signature_left";
+  @SerializedName(SERIALIZED_NAME_SIGNATURE_LEFT)
   @javax.annotation.Nullable
-  private String idCodice;
+  private Integer signatureLeft;
 
-  public IdTrasmittente() {
+  public Status() {
   }
 
-  public IdTrasmittente idPaese(@javax.annotation.Nullable String idPaese) {
-    this.idPaese = idPaese;
+  public Status operationLeft(@javax.annotation.Nullable Integer operationLeft) {
+    this.operationLeft = operationLeft;
     return this;
   }
 
   /**
-   * Get idPaese
-   * @return idPaese
+   * Operations (invoices and validations) left.
+   * @return operationLeft
    */
   @javax.annotation.Nullable
-  public String getIdPaese() {
-    return idPaese;
+  public Integer getOperationLeft() {
+    return operationLeft;
   }
 
-  public void setIdPaese(@javax.annotation.Nullable String idPaese) {
-    this.idPaese = idPaese;
+  public void setOperationLeft(@javax.annotation.Nullable Integer operationLeft) {
+    this.operationLeft = operationLeft;
   }
 
 
-  public IdTrasmittente idCodice(@javax.annotation.Nullable String idCodice) {
-    this.idCodice = idCodice;
+  public Status signatureLeft(@javax.annotation.Nullable Integer signatureLeft) {
+    this.signatureLeft = signatureLeft;
     return this;
   }
 
   /**
-   * Get idCodice
-   * @return idCodice
+   * Signatures left.
+   * @return signatureLeft
    */
   @javax.annotation.Nullable
-  public String getIdCodice() {
-    return idCodice;
+  public Integer getSignatureLeft() {
+    return signatureLeft;
   }
 
-  public void setIdCodice(@javax.annotation.Nullable String idCodice) {
-    this.idCodice = idCodice;
+  public void setSignatureLeft(@javax.annotation.Nullable Integer signatureLeft) {
+    this.signatureLeft = signatureLeft;
   }
 
 
@@ -114,33 +113,22 @@ public class IdTrasmittente implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IdTrasmittente idTrasmittente = (IdTrasmittente) o;
-    return Objects.equals(this.idPaese, idTrasmittente.idPaese) &&
-        Objects.equals(this.idCodice, idTrasmittente.idCodice);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    Status status = (Status) o;
+    return Objects.equals(this.operationLeft, status.operationLeft) &&
+        Objects.equals(this.signatureLeft, status.signatureLeft);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idPaese, idCodice);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(operationLeft, signatureLeft);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class IdTrasmittente {\n");
-    sb.append("    idPaese: ").append(toIndentedString(idPaese)).append("\n");
-    sb.append("    idCodice: ").append(toIndentedString(idCodice)).append("\n");
+    sb.append("class Status {\n");
+    sb.append("    operationLeft: ").append(toIndentedString(operationLeft)).append("\n");
+    sb.append("    signatureLeft: ").append(toIndentedString(signatureLeft)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -163,8 +151,8 @@ public class IdTrasmittente implements Serializable {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id_paese");
-    openapiFields.add("id_codice");
+    openapiFields.add("operation_left");
+    openapiFields.add("signature_left");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -174,51 +162,45 @@ public class IdTrasmittente implements Serializable {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to IdTrasmittente
+   * @throws IOException if the JSON Element is invalid with respect to Status
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!IdTrasmittente.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IdTrasmittente is not found in the empty JSON string", IdTrasmittente.openapiRequiredFields.toString()));
+        if (!Status.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Status is not found in the empty JSON string", Status.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!IdTrasmittente.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `IdTrasmittente` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Status.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Status` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id_paese") != null && !jsonObj.get("id_paese").isJsonNull()) && !jsonObj.get("id_paese").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id_paese` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id_paese").toString()));
-      }
-      if ((jsonObj.get("id_codice") != null && !jsonObj.get("id_codice").isJsonNull()) && !jsonObj.get("id_codice").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id_codice` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id_codice").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!IdTrasmittente.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'IdTrasmittente' and its subtypes
+       if (!Status.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Status' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<IdTrasmittente> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(IdTrasmittente.class));
+       final TypeAdapter<Status> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Status.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<IdTrasmittente>() {
+       return (TypeAdapter<T>) new TypeAdapter<Status>() {
            @Override
-           public void write(JsonWriter out, IdTrasmittente value) throws IOException {
+           public void write(JsonWriter out, Status value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public IdTrasmittente read(JsonReader in) throws IOException {
+           public Status read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -229,18 +211,18 @@ public class IdTrasmittente implements Serializable {
   }
 
   /**
-   * Create an instance of IdTrasmittente given an JSON string
+   * Create an instance of Status given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of IdTrasmittente
-   * @throws IOException if the JSON string is invalid with respect to IdTrasmittente
+   * @return An instance of Status
+   * @throws IOException if the JSON string is invalid with respect to Status
    */
-  public static IdTrasmittente fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, IdTrasmittente.class);
+  public static Status fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Status.class);
   }
 
   /**
-   * Convert an instance of IdTrasmittente to an JSON string
+   * Convert an instance of Status to an JSON string
    *
    * @return JSON string
    */

@@ -7,7 +7,7 @@
     <name>invoice-java-sdk</name>
     <version>1</version>
     <url>https://github.com/invoicetronic/invoice-java-sdk</url>
-    <description>Java SDK for the Italian eInvoice API</description>
+    <description>Java SDK for the Invoicetronic API</description>
     <scm>
         <connection>scm:git:git@github.com:invoicetronic/invoice-java-sdk.git</connection>
         <developerConnection>scm:git:git@github.com:invoicetronic/invoice-java-sdk.git</developerConnection>
@@ -24,7 +24,7 @@
 
     <developers>
         <developer>
-            <name>Invoicetronic API Team</name>
+            <name>Invoicetronic DevTeam</name>
             <email>info@invoicetronic.com</email>
             <organization>Invoicetronic</organization>
             <organizationUrl>https://invoicetronic.com</organizationUrl>

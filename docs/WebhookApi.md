@@ -373,6 +373,8 @@ public class Example {
 
 List webhook history items
 
+Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
+
 ### Example
 ```java
 // Import classes:
@@ -444,6 +446,8 @@ public class Example {
 > WebHookHistory webhookhistoryIdGet(id)
 
 Get a webhook history item by id
+
+Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
 
 ### Example
 ```java

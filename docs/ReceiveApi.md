@@ -15,7 +15,7 @@ All URIs are relative to *http://localhost*
 
 List incoming invoices
 
-Receive invoices are the invoices that are received from other companies.
+Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
 
 ### Example
 ```java
@@ -115,7 +115,7 @@ public class Example {
 
 Delete an incoming invoice by id
 
-Receive invoices are the invoices that are received from other companies.
+Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
 
 ### Example
 ```java
@@ -186,7 +186,7 @@ public class Example {
 
 Get an incoming invoice by id
 
-Receive invoices are the invoices that are received from other companies.
+Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
 
 ### Example
 ```java

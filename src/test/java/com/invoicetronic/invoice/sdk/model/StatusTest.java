@@ -20,38 +20,37 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for DatiBollo
+ * Model tests for Status
  */
-public class DatiBolloTest {
-    private final DatiBollo model = new DatiBollo();
+public class StatusTest {
+    private final Status model = new Status();
 
     /**
-     * Model tests for DatiBollo
+     * Model tests for Status
      */
     @Test
-    public void testDatiBollo() {
-        // TODO: test DatiBollo
+    public void testStatus() {
+        // TODO: test Status
     }
 
     /**
-     * Test the property 'bolloVirtuale'
+     * Test the property 'operationLeft'
      */
     @Test
-    public void bolloVirtualeTest() {
-        // TODO: test bolloVirtuale
+    public void operationLeftTest() {
+        // TODO: test operationLeft
     }
 
     /**
-     * Test the property 'importoBollo'
+     * Test the property 'signatureLeft'
      */
     @Test
-    public void importoBolloTest() {
-        // TODO: test importoBollo
+    public void signatureLeftTest() {
+        // TODO: test signatureLeft
     }
 
 }

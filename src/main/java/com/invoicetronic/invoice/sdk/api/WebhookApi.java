@@ -1,6 +1,6 @@
 /*
- * Italian eInvoice API v1
- * The [Italian eInvoice API][2] is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+ * Invoicetronic API
+ * The [Invoicetronic API][2] is a RESTful service that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. It provides advanced features as encryption at rest, multi-language pre-flight invoice validation, multiple upload formats, webhooks, event logging, client SDKs, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
  *
  * The version of the OpenAPI document: 1
  * Contact: support@invoicetronic.com
@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.invoicetronic.invoice.sdk.model.ProblemDetails;
 import com.invoicetronic.invoice.sdk.model.ProblemHttpResult;
 import com.invoicetronic.invoice.sdk.model.WebHook;
 import com.invoicetronic.invoice.sdk.model.WebHookHistory;
@@ -844,7 +845,7 @@ public class WebhookApi {
 
     /**
      * List webhook history items
-     * 
+     * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -866,7 +867,7 @@ public class WebhookApi {
 
     /**
      * List webhook history items
-     * 
+     * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -889,7 +890,7 @@ public class WebhookApi {
 
     /**
      * List webhook history items (asynchronously)
-     * 
+     * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -984,7 +985,7 @@ public class WebhookApi {
 
     /**
      * Get a webhook history item by id
-     * 
+     * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
      * @param id Item id (required)
      * @return WebHookHistory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1003,7 +1004,7 @@ public class WebhookApi {
 
     /**
      * Get a webhook history item by id
-     * 
+     * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
      * @param id Item id (required)
      * @return ApiResponse&lt;WebHookHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1023,7 +1024,7 @@ public class WebhookApi {
 
     /**
      * Get a webhook history item by id (asynchronously)
-     * 
+     * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

@@ -22,7 +22,7 @@ All URIs are relative to *http://localhost*
 
 Add an invoice by file
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -194,7 +194,7 @@ public class Example {
 
 Get a invoice by id
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -263,7 +263,7 @@ public class Example {
 
 Add an invoice by json
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -337,7 +337,7 @@ public class Example {
 
 Add an invoice
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -411,7 +411,7 @@ public class Example {
 
 Validate an invoice by file
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -480,7 +480,7 @@ null (empty response body)
 
 Validate an invoice by json
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -549,7 +549,7 @@ null (empty response body)
 
 Validate an invoice
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -618,7 +618,7 @@ null (empty response body)
 
 Validate an invoice by xml
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
@@ -687,7 +687,7 @@ null (empty response body)
 
 Add an invoice by xml
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Example
 ```java
