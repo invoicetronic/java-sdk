@@ -16,7 +16,7 @@ package com.invoicetronic.sdk;
 import java.util.Collection;
 import java.util.Iterator;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-07T08:47:51.107933Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-07T10:19:42.499940Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).
