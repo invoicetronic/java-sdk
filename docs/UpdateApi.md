@@ -19,12 +19,12 @@ Updates are notifications sent by the SDI about the status of invoices you sent.
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.UpdateApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.UpdateApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -111,12 +111,12 @@ Updates are notifications sent by the SDI about the status of invoices you sent.
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.UpdateApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.UpdateApi;
 
 public class Example {
   public static void main(String[] args) {

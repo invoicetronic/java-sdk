@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2025-03-07T08:35:17.954315Z[Etc/UTC]
+- Build date: 2025-03-07T08:47:51.107933Z[Etc/UTC]
 
 - Generator version: 7.12.0
 
@@ -44,8 +44,8 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.invoicetronic.invoice</groupId>
-  <artifactId>invoice-java-sdk</artifactId>
+  <groupId>com.invoicetronic</groupId>
+  <artifactId>java-sdk</artifactId>
   <version>1</version>
   <scope>compile</scope>
 </dependency>
@@ -57,12 +57,12 @@ Add this dependency to your project's build file:
 
 ```groovy
   repositories {
-    mavenCentral()     // Needed if the 'invoice-java-sdk' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'invoice-java-sdk' jar has been published to the local maven repo.
+    mavenCentral()     // Needed if the 'java-sdk' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'java-sdk' jar has been published to the local maven repo.
   }
 
   dependencies {
-     implementation "com.invoicetronic.invoice:invoice-java-sdk:1"
+     implementation "com.invoicetronic:java-sdk:1"
   }
 ```
 
@@ -76,7 +76,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/invoice-java-sdk-1.jar`
+- `target/java-sdk-1.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -85,10 +85,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.invoicetronic.invoice.sdk.*;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.model.*;
-import com.invoicetronic.invoice.sdk.api.CompanyApi;
+import com.invoicetronic.sdk.*;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.model.*;
+import com.invoicetronic.sdk.api.CompanyApi;
 
 public class CompanyApiExample {
 

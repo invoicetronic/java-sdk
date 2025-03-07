@@ -20,12 +20,12 @@ Receive invoices are the invoices that are received from other companies. They a
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.ReceiveApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.ReceiveApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -120,12 +120,12 @@ Receive invoices are the invoices that are received from other companies. They a
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.ReceiveApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.ReceiveApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -191,12 +191,12 @@ Receive invoices are the invoices that are received from other companies. They a
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.ReceiveApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.ReceiveApi;
 
 public class Example {
   public static void main(String[] args) {

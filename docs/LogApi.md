@@ -19,12 +19,12 @@ Every API operation is logged and can be retrieved here. Log records are preserv
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.LogApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.LogApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -115,12 +115,12 @@ Every API operation is logged and can be retrieved here. Log records are preserv
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.LogApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.LogApi;
 
 public class Example {
   public static void main(String[] args) {

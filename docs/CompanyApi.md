@@ -22,12 +22,12 @@ Companies are the entities that send and receive invoices. As you send invoices,
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.CompanyApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.CompanyApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -96,12 +96,12 @@ Companies are the entities that send and receive invoices. As you send invoices,
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.CompanyApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.CompanyApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -167,12 +167,12 @@ Companies are the entities that send and receive invoices. As you send invoices,
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.CompanyApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.CompanyApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -236,12 +236,12 @@ Companies are the entities that send and receive invoices. As you send invoices,
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.CompanyApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.CompanyApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -306,12 +306,12 @@ Companies are the entities that send and receive invoices. As you send invoices,
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.CompanyApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.CompanyApi;
 
 public class Example {
   public static void main(String[] args) {

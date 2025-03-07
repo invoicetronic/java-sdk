@@ -1,7 +1,7 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "com.invoicetronic.invoice",
-    name := "invoice-java-sdk",
+    organization := "com.invoicetronic",
+    name := "java-sdk",
     version := "1",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),

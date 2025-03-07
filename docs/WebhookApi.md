@@ -24,12 +24,12 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -98,12 +98,12 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -169,12 +169,12 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -238,12 +238,12 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -308,12 +308,12 @@ Webhooks are used to notify external services about write events that occur in t
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -378,12 +378,12 @@ Webhook history items are stored in the database and can be accessed via the API
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -452,12 +452,12 @@ Webhook history items are stored in the database and can be accessed via the API
 ### Example
 ```java
 // Import classes:
-import com.invoicetronic.invoice.sdk.ApiClient;
-import com.invoicetronic.invoice.sdk.ApiException;
-import com.invoicetronic.invoice.sdk.Configuration;
-import com.invoicetronic.invoice.sdk.auth.*;
-import com.invoicetronic.invoice.sdk.models.*;
-import com.invoicetronic.invoice.sdk.api.WebhookApi;
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
