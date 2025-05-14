@@ -91,7 +91,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyGetCall(Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call companyGetCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +148,7 @@ public class CompanyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call companyGetValidateBeforeCall(Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call companyGetValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return companyGetCall(page, pageSize, sort, _callback);
 
     }
@@ -170,7 +170,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Company> companyGet(Integer page, Integer pageSize, String sort) throws ApiException {
+    public List<Company> companyGet(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<List<Company>> localVarResp = companyGetWithHttpInfo(page, pageSize, sort);
         return localVarResp.getData();
     }
@@ -192,7 +192,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Company>> companyGetWithHttpInfo(Integer page, Integer pageSize, String sort) throws ApiException {
+    public ApiResponse<List<Company>> companyGetWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = companyGetValidateBeforeCall(page, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<List<Company>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -216,7 +216,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyGetAsync(Integer page, Integer pageSize, String sort, final ApiCallback<List<Company>> _callback) throws ApiException {
+    public okhttp3.Call companyGetAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Company>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = companyGetValidateBeforeCall(page, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<List<Company>>(){}.getType();
@@ -239,7 +239,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyIdDeleteCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call companyIdDeleteCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,7 +285,7 @@ public class CompanyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call companyIdDeleteValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call companyIdDeleteValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling companyIdDelete(Async)");
@@ -311,7 +311,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Company companyIdDelete(Integer id) throws ApiException {
+    public Company companyIdDelete(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Company> localVarResp = companyIdDeleteWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -332,7 +332,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Company> companyIdDeleteWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Company> companyIdDeleteWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = companyIdDeleteValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -355,7 +355,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyIdDeleteAsync(Integer id, final ApiCallback<Company> _callback) throws ApiException {
+    public okhttp3.Call companyIdDeleteAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Company> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = companyIdDeleteValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
@@ -376,7 +376,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call companyIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -422,7 +422,7 @@ public class CompanyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call companyIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call companyIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling companyIdGet(Async)");
@@ -446,7 +446,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Company companyIdGet(Integer id) throws ApiException {
+    public Company companyIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Company> localVarResp = companyIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -465,7 +465,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Company> companyIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Company> companyIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = companyIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -486,7 +486,7 @@ public class CompanyApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyIdGetAsync(Integer id, final ApiCallback<Company> _callback) throws ApiException {
+    public okhttp3.Call companyIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Company> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = companyIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
@@ -508,7 +508,7 @@ public class CompanyApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyPostCall(Company company, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call companyPostCall(@javax.annotation.Nonnull Company company, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -554,7 +554,7 @@ public class CompanyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call companyPostValidateBeforeCall(Company company, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call companyPostValidateBeforeCall(@javax.annotation.Nonnull Company company, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'company' is set
         if (company == null) {
             throw new ApiException("Missing the required parameter 'company' when calling companyPost(Async)");
@@ -579,7 +579,7 @@ public class CompanyApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Company companyPost(Company company) throws ApiException {
+    public Company companyPost(@javax.annotation.Nonnull Company company) throws ApiException {
         ApiResponse<Company> localVarResp = companyPostWithHttpInfo(company);
         return localVarResp.getData();
     }
@@ -599,7 +599,7 @@ public class CompanyApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Company> companyPostWithHttpInfo(Company company) throws ApiException {
+    public ApiResponse<Company> companyPostWithHttpInfo(@javax.annotation.Nonnull Company company) throws ApiException {
         okhttp3.Call localVarCall = companyPostValidateBeforeCall(company, null);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -621,7 +621,7 @@ public class CompanyApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyPostAsync(Company company, final ApiCallback<Company> _callback) throws ApiException {
+    public okhttp3.Call companyPostAsync(@javax.annotation.Nonnull Company company, final ApiCallback<Company> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = companyPostValidateBeforeCall(company, _callback);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
@@ -643,7 +643,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyPutCall(Company company, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call companyPutCall(@javax.annotation.Nonnull Company company, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -689,7 +689,7 @@ public class CompanyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call companyPutValidateBeforeCall(Company company, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call companyPutValidateBeforeCall(@javax.annotation.Nonnull Company company, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'company' is set
         if (company == null) {
             throw new ApiException("Missing the required parameter 'company' when calling companyPut(Async)");
@@ -714,7 +714,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public Company companyPut(Company company) throws ApiException {
+    public Company companyPut(@javax.annotation.Nonnull Company company) throws ApiException {
         ApiResponse<Company> localVarResp = companyPutWithHttpInfo(company);
         return localVarResp.getData();
     }
@@ -734,7 +734,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Company> companyPutWithHttpInfo(Company company) throws ApiException {
+    public ApiResponse<Company> companyPutWithHttpInfo(@javax.annotation.Nonnull Company company) throws ApiException {
         okhttp3.Call localVarCall = companyPutValidateBeforeCall(company, null);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -756,7 +756,7 @@ public class CompanyApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyPutAsync(Company company, final ApiCallback<Company> _callback) throws ApiException {
+    public okhttp3.Call companyPutAsync(@javax.annotation.Nonnull Company company, final ApiCallback<Company> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = companyPutValidateBeforeCall(company, _callback);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();

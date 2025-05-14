@@ -77,9 +77,14 @@ public class WebhookApi {
 
     /**
      * Build call for webhookGet
+     * @param companyId Company id (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param description  (optional)
+     * @param enabled  (optional)
+     * @param events  (optional)
+     * @param url  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +97,7 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookGetCall(Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String description, @javax.annotation.Nullable Boolean enabled, @javax.annotation.Nullable String events, @javax.annotation.Nullable String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -117,6 +122,10 @@ public class WebhookApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (companyId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("company_id", companyId));
+        }
+
         if (page != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
         }
@@ -127,6 +136,22 @@ public class WebhookApi {
 
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (description != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("description", description));
+        }
+
+        if (enabled != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("enabled", enabled));
+        }
+
+        if (events != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("events", events));
+        }
+
+        if (url != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("url", url));
         }
 
         final String[] localVarAccepts = {
@@ -149,17 +174,22 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookGetValidateBeforeCall(Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
-        return webhookGetCall(page, pageSize, sort, _callback);
+    private okhttp3.Call webhookGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String description, @javax.annotation.Nullable Boolean enabled, @javax.annotation.Nullable String events, @javax.annotation.Nullable String url, final ApiCallback _callback) throws ApiException {
+        return webhookGetCall(companyId, page, pageSize, sort, description, enabled, events, url, _callback);
 
     }
 
     /**
      * List webhooks
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * @param companyId Company id (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param description  (optional)
+     * @param enabled  (optional)
+     * @param events  (optional)
+     * @param url  (optional)
      * @return List&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -171,17 +201,22 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<WebHook> webhookGet(Integer page, Integer pageSize, String sort) throws ApiException {
-        ApiResponse<List<WebHook>> localVarResp = webhookGetWithHttpInfo(page, pageSize, sort);
+    public List<WebHook> webhookGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String description, @javax.annotation.Nullable Boolean enabled, @javax.annotation.Nullable String events, @javax.annotation.Nullable String url) throws ApiException {
+        ApiResponse<List<WebHook>> localVarResp = webhookGetWithHttpInfo(companyId, page, pageSize, sort, description, enabled, events, url);
         return localVarResp.getData();
     }
 
     /**
      * List webhooks
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * @param companyId Company id (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param description  (optional)
+     * @param enabled  (optional)
+     * @param events  (optional)
+     * @param url  (optional)
      * @return ApiResponse&lt;List&lt;WebHook&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -193,8 +228,8 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WebHook>> webhookGetWithHttpInfo(Integer page, Integer pageSize, String sort) throws ApiException {
-        okhttp3.Call localVarCall = webhookGetValidateBeforeCall(page, pageSize, sort, null);
+    public ApiResponse<List<WebHook>> webhookGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String description, @javax.annotation.Nullable Boolean enabled, @javax.annotation.Nullable String events, @javax.annotation.Nullable String url) throws ApiException {
+        okhttp3.Call localVarCall = webhookGetValidateBeforeCall(companyId, page, pageSize, sort, description, enabled, events, url, null);
         Type localVarReturnType = new TypeToken<List<WebHook>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -202,9 +237,14 @@ public class WebhookApi {
     /**
      * List webhooks (asynchronously)
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * @param companyId Company id (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param description  (optional)
+     * @param enabled  (optional)
+     * @param events  (optional)
+     * @param url  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -217,9 +257,9 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookGetAsync(Integer page, Integer pageSize, String sort, final ApiCallback<List<WebHook>> _callback) throws ApiException {
+    public okhttp3.Call webhookGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String description, @javax.annotation.Nullable Boolean enabled, @javax.annotation.Nullable String events, @javax.annotation.Nullable String url, final ApiCallback<List<WebHook>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webhookGetValidateBeforeCall(page, pageSize, sort, _callback);
+        okhttp3.Call localVarCall = webhookGetValidateBeforeCall(companyId, page, pageSize, sort, description, enabled, events, url, _callback);
         Type localVarReturnType = new TypeToken<List<WebHook>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -240,7 +280,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookIdDeleteCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookIdDeleteCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +326,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookIdDeleteValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webhookIdDeleteValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling webhookIdDelete(Async)");
@@ -312,7 +352,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public WebHook webhookIdDelete(Integer id) throws ApiException {
+    public WebHook webhookIdDelete(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<WebHook> localVarResp = webhookIdDeleteWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -333,7 +373,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebHook> webhookIdDeleteWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<WebHook> webhookIdDeleteWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = webhookIdDeleteValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -356,7 +396,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookIdDeleteAsync(Integer id, final ApiCallback<WebHook> _callback) throws ApiException {
+    public okhttp3.Call webhookIdDeleteAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<WebHook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = webhookIdDeleteValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
@@ -377,7 +417,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -423,7 +463,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webhookIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling webhookIdGet(Async)");
@@ -447,7 +487,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public WebHook webhookIdGet(Integer id) throws ApiException {
+    public WebHook webhookIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<WebHook> localVarResp = webhookIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -466,7 +506,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebHook> webhookIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<WebHook> webhookIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = webhookIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -487,7 +527,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookIdGetAsync(Integer id, final ApiCallback<WebHook> _callback) throws ApiException {
+    public okhttp3.Call webhookIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<WebHook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = webhookIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
@@ -509,7 +549,7 @@ public class WebhookApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookPostCall(WebHook webHook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookPostCall(@javax.annotation.Nonnull WebHook webHook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -555,7 +595,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookPostValidateBeforeCall(WebHook webHook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webhookPostValidateBeforeCall(@javax.annotation.Nonnull WebHook webHook, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webHook' is set
         if (webHook == null) {
             throw new ApiException("Missing the required parameter 'webHook' when calling webhookPost(Async)");
@@ -580,7 +620,7 @@ public class WebhookApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public WebHook webhookPost(WebHook webHook) throws ApiException {
+    public WebHook webhookPost(@javax.annotation.Nonnull WebHook webHook) throws ApiException {
         ApiResponse<WebHook> localVarResp = webhookPostWithHttpInfo(webHook);
         return localVarResp.getData();
     }
@@ -600,7 +640,7 @@ public class WebhookApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebHook> webhookPostWithHttpInfo(WebHook webHook) throws ApiException {
+    public ApiResponse<WebHook> webhookPostWithHttpInfo(@javax.annotation.Nonnull WebHook webHook) throws ApiException {
         okhttp3.Call localVarCall = webhookPostValidateBeforeCall(webHook, null);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -622,7 +662,7 @@ public class WebhookApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookPostAsync(WebHook webHook, final ApiCallback<WebHook> _callback) throws ApiException {
+    public okhttp3.Call webhookPostAsync(@javax.annotation.Nonnull WebHook webHook, final ApiCallback<WebHook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = webhookPostValidateBeforeCall(webHook, _callback);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
@@ -644,7 +684,7 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookPutCall(WebHook webHook, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookPutCall(@javax.annotation.Nonnull WebHook webHook, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -690,7 +730,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookPutValidateBeforeCall(WebHook webHook, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webhookPutValidateBeforeCall(@javax.annotation.Nonnull WebHook webHook, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webHook' is set
         if (webHook == null) {
             throw new ApiException("Missing the required parameter 'webHook' when calling webhookPut(Async)");
@@ -715,7 +755,7 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public WebHook webhookPut(WebHook webHook) throws ApiException {
+    public WebHook webhookPut(@javax.annotation.Nonnull WebHook webHook) throws ApiException {
         ApiResponse<WebHook> localVarResp = webhookPutWithHttpInfo(webHook);
         return localVarResp.getData();
     }
@@ -735,7 +775,7 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebHook> webhookPutWithHttpInfo(WebHook webHook) throws ApiException {
+    public ApiResponse<WebHook> webhookPutWithHttpInfo(@javax.annotation.Nonnull WebHook webHook) throws ApiException {
         okhttp3.Call localVarCall = webhookPutValidateBeforeCall(webHook, null);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -757,7 +797,7 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookPutAsync(WebHook webHook, final ApiCallback<WebHook> _callback) throws ApiException {
+    public okhttp3.Call webhookPutAsync(@javax.annotation.Nonnull WebHook webHook, final ApiCallback<WebHook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = webhookPutValidateBeforeCall(webHook, _callback);
         Type localVarReturnType = new TypeToken<WebHook>(){}.getType();
@@ -769,6 +809,7 @@ public class WebhookApi {
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param webhookId WebHook id (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -781,7 +822,7 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookhistoryGetCall(Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookhistoryGetCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -818,6 +859,10 @@ public class WebhookApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
 
+        if (webhookId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("webhook_id", webhookId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -838,8 +883,8 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookhistoryGetValidateBeforeCall(Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
-        return webhookhistoryGetCall(page, pageSize, sort, _callback);
+    private okhttp3.Call webhookhistoryGetValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer webhookId, final ApiCallback _callback) throws ApiException {
+        return webhookhistoryGetCall(page, pageSize, sort, webhookId, _callback);
 
     }
 
@@ -849,6 +894,7 @@ public class WebhookApi {
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param webhookId WebHook id (optional)
      * @return List&lt;WebHookHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -860,8 +906,8 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<WebHookHistory> webhookhistoryGet(Integer page, Integer pageSize, String sort) throws ApiException {
-        ApiResponse<List<WebHookHistory>> localVarResp = webhookhistoryGetWithHttpInfo(page, pageSize, sort);
+    public List<WebHookHistory> webhookhistoryGet(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer webhookId) throws ApiException {
+        ApiResponse<List<WebHookHistory>> localVarResp = webhookhistoryGetWithHttpInfo(page, pageSize, sort, webhookId);
         return localVarResp.getData();
     }
 
@@ -871,6 +917,7 @@ public class WebhookApi {
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param webhookId WebHook id (optional)
      * @return ApiResponse&lt;List&lt;WebHookHistory&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -882,8 +929,8 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WebHookHistory>> webhookhistoryGetWithHttpInfo(Integer page, Integer pageSize, String sort) throws ApiException {
-        okhttp3.Call localVarCall = webhookhistoryGetValidateBeforeCall(page, pageSize, sort, null);
+    public ApiResponse<List<WebHookHistory>> webhookhistoryGetWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer webhookId) throws ApiException {
+        okhttp3.Call localVarCall = webhookhistoryGetValidateBeforeCall(page, pageSize, sort, webhookId, null);
         Type localVarReturnType = new TypeToken<List<WebHookHistory>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -894,6 +941,7 @@ public class WebhookApi {
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param webhookId WebHook id (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -906,9 +954,9 @@ public class WebhookApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookhistoryGetAsync(Integer page, Integer pageSize, String sort, final ApiCallback<List<WebHookHistory>> _callback) throws ApiException {
+    public okhttp3.Call webhookhistoryGetAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer webhookId, final ApiCallback<List<WebHookHistory>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webhookhistoryGetValidateBeforeCall(page, pageSize, sort, _callback);
+        okhttp3.Call localVarCall = webhookhistoryGetValidateBeforeCall(page, pageSize, sort, webhookId, _callback);
         Type localVarReturnType = new TypeToken<List<WebHookHistory>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -927,7 +975,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookhistoryIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookhistoryIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -973,7 +1021,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookhistoryIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webhookhistoryIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling webhookhistoryIdGet(Async)");
@@ -997,7 +1045,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public WebHookHistory webhookhistoryIdGet(Integer id) throws ApiException {
+    public WebHookHistory webhookhistoryIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<WebHookHistory> localVarResp = webhookhistoryIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -1016,7 +1064,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebHookHistory> webhookhistoryIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<WebHookHistory> webhookhistoryIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = webhookhistoryIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebHookHistory>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1037,7 +1085,7 @@ public class WebhookApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookhistoryIdGetAsync(Integer id, final ApiCallback<WebHookHistory> _callback) throws ApiException {
+    public okhttp3.Call webhookhistoryIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<WebHookHistory> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = webhookhistoryIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebHookHistory>(){}.getType();

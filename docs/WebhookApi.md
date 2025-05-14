@@ -15,7 +15,7 @@ All URIs are relative to *http://localhost*
 
 <a id="webhookGet"></a>
 # **webhookGet**
-> List&lt;WebHook&gt; webhookGet(page, pageSize, sort)
+> List&lt;WebHook&gt; webhookGet(companyId, page, pageSize, sort, description, enabled, events, url)
 
 List webhooks
 
@@ -42,11 +42,16 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
+    Integer companyId = 56; // Integer | Company id
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+    String description = "description_example"; // String | 
+    Boolean enabled = true; // Boolean | 
+    String events = "events_example"; // String | 
+    String url = "url_example"; // String | 
     try {
-      List<WebHook> result = apiInstance.webhookGet(page, pageSize, sort);
+      List<WebHook> result = apiInstance.webhookGet(companyId, page, pageSize, sort, description, enabled, events, url);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#webhookGet");
@@ -63,9 +68,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| Company id | [optional] |
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **description** | **String**|  | [optional] |
+| **enabled** | **Boolean**|  | [optional] |
+| **events** | **String**|  | [optional] |
+| **url** | **String**|  | [optional] |
 
 ### Return type
 
@@ -369,7 +379,7 @@ public class Example {
 
 <a id="webhookhistoryGet"></a>
 # **webhookhistoryGet**
-> List&lt;WebHookHistory&gt; webhookhistoryGet(page, pageSize, sort)
+> List&lt;WebHookHistory&gt; webhookhistoryGet(page, pageSize, sort, webhookId)
 
 List webhook history items
 
@@ -399,8 +409,9 @@ public class Example {
     Integer page = 1; // Integer | Page number. Defaults to 1.
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+    Integer webhookId = 56; // Integer | WebHook id
     try {
-      List<WebHookHistory> result = apiInstance.webhookhistoryGet(page, pageSize, sort);
+      List<WebHookHistory> result = apiInstance.webhookhistoryGet(page, pageSize, sort, webhookId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#webhookhistoryGet");
@@ -420,6 +431,7 @@ public class Example {
 | **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **webhookId** | **Integer**| WebHook id | [optional] |
 
 ### Return type
 

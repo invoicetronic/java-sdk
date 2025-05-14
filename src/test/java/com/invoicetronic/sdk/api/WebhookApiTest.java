@@ -43,10 +43,15 @@ public class WebhookApiTest {
      */
     @Test
     public void webhookGetTest() throws ApiException {
+        Integer companyId = null;
         Integer page = null;
         Integer pageSize = null;
         String sort = null;
-        List<WebHook> response = api.webhookGet(page, pageSize, sort);
+        String description = null;
+        Boolean enabled = null;
+        String events = null;
+        String url = null;
+        List<WebHook> response = api.webhookGet(companyId, page, pageSize, sort, description, enabled, events, url);
         // TODO: test validations
     }
 
@@ -118,7 +123,8 @@ public class WebhookApiTest {
         Integer page = null;
         Integer pageSize = null;
         String sort = null;
-        List<WebHookHistory> response = api.webhookhistoryGet(page, pageSize, sort);
+        Integer webhookId = null;
+        List<WebHookHistory> response = api.webhookhistoryGet(page, pageSize, sort, webhookId);
         // TODO: test validations
     }
 

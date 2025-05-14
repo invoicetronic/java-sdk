@@ -102,7 +102,7 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call logGetCall(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, String sort, String query, Boolean success, OffsetDateTime dateTimeFrom, OffsetDateTime dateTimeTo, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call logGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String endpoint, @javax.annotation.Nullable String method, @javax.annotation.Nullable Integer apiVerion, @javax.annotation.Nullable Integer statusCode, @javax.annotation.Nullable OffsetDateTime dateCreatedFrom, @javax.annotation.Nullable OffsetDateTime dateCreatedTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean success, @javax.annotation.Nullable OffsetDateTime dateTimeFrom, @javax.annotation.Nullable OffsetDateTime dateTimeTo, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -203,7 +203,7 @@ public class LogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call logGetValidateBeforeCall(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, String sort, String query, Boolean success, OffsetDateTime dateTimeFrom, OffsetDateTime dateTimeTo, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call logGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String endpoint, @javax.annotation.Nullable String method, @javax.annotation.Nullable Integer apiVerion, @javax.annotation.Nullable Integer statusCode, @javax.annotation.Nullable OffsetDateTime dateCreatedFrom, @javax.annotation.Nullable OffsetDateTime dateCreatedTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean success, @javax.annotation.Nullable OffsetDateTime dateTimeFrom, @javax.annotation.Nullable OffsetDateTime dateTimeTo, final ApiCallback _callback) throws ApiException {
         return logGetCall(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo, _callback);
 
     }
@@ -236,7 +236,7 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Event> logGet(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, String sort, String query, Boolean success, OffsetDateTime dateTimeFrom, OffsetDateTime dateTimeTo) throws ApiException {
+    public List<Event> logGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String endpoint, @javax.annotation.Nullable String method, @javax.annotation.Nullable Integer apiVerion, @javax.annotation.Nullable Integer statusCode, @javax.annotation.Nullable OffsetDateTime dateCreatedFrom, @javax.annotation.Nullable OffsetDateTime dateCreatedTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean success, @javax.annotation.Nullable OffsetDateTime dateTimeFrom, @javax.annotation.Nullable OffsetDateTime dateTimeTo) throws ApiException {
         ApiResponse<List<Event>> localVarResp = logGetWithHttpInfo(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo);
         return localVarResp.getData();
     }
@@ -269,7 +269,7 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Event>> logGetWithHttpInfo(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, String sort, String query, Boolean success, OffsetDateTime dateTimeFrom, OffsetDateTime dateTimeTo) throws ApiException {
+    public ApiResponse<List<Event>> logGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String endpoint, @javax.annotation.Nullable String method, @javax.annotation.Nullable Integer apiVerion, @javax.annotation.Nullable Integer statusCode, @javax.annotation.Nullable OffsetDateTime dateCreatedFrom, @javax.annotation.Nullable OffsetDateTime dateCreatedTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean success, @javax.annotation.Nullable OffsetDateTime dateTimeFrom, @javax.annotation.Nullable OffsetDateTime dateTimeTo) throws ApiException {
         okhttp3.Call localVarCall = logGetValidateBeforeCall(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo, null);
         Type localVarReturnType = new TypeToken<List<Event>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -304,7 +304,7 @@ public class LogApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call logGetAsync(Integer companyId, String endpoint, String method, Integer apiVerion, Integer statusCode, OffsetDateTime dateCreatedFrom, OffsetDateTime dateCreatedTo, Integer page, Integer pageSize, String sort, String query, Boolean success, OffsetDateTime dateTimeFrom, OffsetDateTime dateTimeTo, final ApiCallback<List<Event>> _callback) throws ApiException {
+    public okhttp3.Call logGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String endpoint, @javax.annotation.Nullable String method, @javax.annotation.Nullable Integer apiVerion, @javax.annotation.Nullable Integer statusCode, @javax.annotation.Nullable OffsetDateTime dateCreatedFrom, @javax.annotation.Nullable OffsetDateTime dateCreatedTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable Boolean success, @javax.annotation.Nullable OffsetDateTime dateTimeFrom, @javax.annotation.Nullable OffsetDateTime dateTimeTo, final ApiCallback<List<Event>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = logGetValidateBeforeCall(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo, _callback);
         Type localVarReturnType = new TypeToken<List<Event>>(){}.getType();
@@ -325,7 +325,7 @@ public class LogApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call logIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call logIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -371,7 +371,7 @@ public class LogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call logIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call logIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling logIdGet(Async)");
@@ -395,7 +395,7 @@ public class LogApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Event logIdGet(Integer id) throws ApiException {
+    public Event logIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Event> localVarResp = logIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -414,7 +414,7 @@ public class LogApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Event> logIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Event> logIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = logIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Event>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -435,7 +435,7 @@ public class LogApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call logIdGetAsync(Integer id, final ApiCallback<Event> _callback) throws ApiException {
+    public okhttp3.Call logIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Event> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = logIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Event>(){}.getType();

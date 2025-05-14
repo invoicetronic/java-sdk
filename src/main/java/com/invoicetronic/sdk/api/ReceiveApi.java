@@ -104,7 +104,7 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveGetCall(Integer companyId, String identifier, Boolean unread, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call receiveGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -213,7 +213,7 @@ public class ReceiveApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call receiveGetValidateBeforeCall(Integer companyId, String identifier, Boolean unread, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call receiveGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return receiveGetCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, _callback);
 
     }
@@ -248,7 +248,7 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Receive> receiveGet(Integer companyId, String identifier, Boolean unread, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort) throws ApiException {
+    public List<Receive> receiveGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<List<Receive>> localVarResp = receiveGetWithHttpInfo(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort);
         return localVarResp.getData();
     }
@@ -283,7 +283,7 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Receive>> receiveGetWithHttpInfo(Integer companyId, String identifier, Boolean unread, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort) throws ApiException {
+    public ApiResponse<List<Receive>> receiveGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = receiveGetValidateBeforeCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<List<Receive>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -320,7 +320,7 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveGetAsync(Integer companyId, String identifier, Boolean unread, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort, final ApiCallback<List<Receive>> _callback) throws ApiException {
+    public okhttp3.Call receiveGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Receive>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = receiveGetValidateBeforeCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<List<Receive>>(){}.getType();
@@ -343,7 +343,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveIdDeleteCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call receiveIdDeleteCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -389,7 +389,7 @@ public class ReceiveApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call receiveIdDeleteValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call receiveIdDeleteValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling receiveIdDelete(Async)");
@@ -415,7 +415,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Receive receiveIdDelete(Integer id) throws ApiException {
+    public Receive receiveIdDelete(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Receive> localVarResp = receiveIdDeleteWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -436,7 +436,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Receive> receiveIdDeleteWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Receive> receiveIdDeleteWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = receiveIdDeleteValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Receive>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -459,7 +459,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveIdDeleteAsync(Integer id, final ApiCallback<Receive> _callback) throws ApiException {
+    public okhttp3.Call receiveIdDeleteAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Receive> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = receiveIdDeleteValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Receive>(){}.getType();
@@ -480,7 +480,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call receiveIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -526,7 +526,7 @@ public class ReceiveApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call receiveIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call receiveIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling receiveIdGet(Async)");
@@ -550,7 +550,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Receive receiveIdGet(Integer id) throws ApiException {
+    public Receive receiveIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Receive> localVarResp = receiveIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -569,7 +569,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Receive> receiveIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Receive> receiveIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = receiveIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Receive>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -590,7 +590,7 @@ public class ReceiveApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveIdGetAsync(Integer id, final ApiCallback<Receive> _callback) throws ApiException {
+    public okhttp3.Call receiveIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Receive> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = receiveIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Receive>(){}.getType();

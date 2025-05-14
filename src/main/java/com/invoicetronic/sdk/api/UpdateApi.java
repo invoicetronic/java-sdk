@@ -100,7 +100,7 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGetCall(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -193,7 +193,7 @@ public class UpdateApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateGetValidateBeforeCall(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return updateGetCall(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, _callback);
 
     }
@@ -224,7 +224,7 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Update> updateGet(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, String sort) throws ApiException {
+    public List<Update> updateGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<List<Update>> localVarResp = updateGetWithHttpInfo(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
         return localVarResp.getData();
     }
@@ -255,7 +255,7 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Update>> updateGetWithHttpInfo(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, String sort) throws ApiException {
+    public ApiResponse<List<Update>> updateGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = updateGetValidateBeforeCall(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<List<Update>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -288,7 +288,7 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGetAsync(Integer companyId, String identifier, Boolean unread, Integer sendId, String state, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, Integer page, Integer pageSize, String sort, final ApiCallback<List<Update>> _callback) throws ApiException {
+    public okhttp3.Call updateGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Update>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateGetValidateBeforeCall(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<List<Update>>(){}.getType();
@@ -309,7 +309,7 @@ public class UpdateApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -355,7 +355,7 @@ public class UpdateApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIdGet(Async)");
@@ -379,7 +379,7 @@ public class UpdateApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Update updateIdGet(Integer id) throws ApiException {
+    public Update updateIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Update> localVarResp = updateIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -398,7 +398,7 @@ public class UpdateApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Update> updateIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Update> updateIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = updateIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Update>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -419,7 +419,7 @@ public class UpdateApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIdGetAsync(Integer id, final ApiCallback<Update> _callback) throws ApiException {
+    public okhttp3.Call updateIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Update> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Update>(){}.getType();

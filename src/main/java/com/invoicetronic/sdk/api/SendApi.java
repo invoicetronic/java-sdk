@@ -94,7 +94,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendFilePostCall(File _file, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendFilePostCall(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -152,7 +152,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendFilePostValidateBeforeCall(File _file, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendFilePostValidateBeforeCall(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter '_file' is set
         if (_file == null) {
             throw new ApiException("Missing the required parameter '_file' when calling sendFilePost(Async)");
@@ -179,7 +179,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendFilePost(File _file, Boolean validate, String signature) throws ApiException {
+    public Send sendFilePost(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         ApiResponse<Send> localVarResp = sendFilePostWithHttpInfo(_file, validate, signature);
         return localVarResp.getData();
     }
@@ -201,7 +201,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendFilePostWithHttpInfo(File _file, Boolean validate, String signature) throws ApiException {
+    public ApiResponse<Send> sendFilePostWithHttpInfo(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         okhttp3.Call localVarCall = sendFilePostValidateBeforeCall(_file, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -225,7 +225,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendFilePostAsync(File _file, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendFilePostAsync(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendFilePostValidateBeforeCall(_file, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
@@ -261,7 +261,7 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendGetCall(Integer companyId, String identifier, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -366,7 +366,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendGetValidateBeforeCall(Integer companyId, String identifier, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return sendGetCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, _callback);
 
     }
@@ -400,7 +400,7 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Send> sendGet(Integer companyId, String identifier, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort) throws ApiException {
+    public List<Send> sendGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<List<Send>> localVarResp = sendGetWithHttpInfo(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort);
         return localVarResp.getData();
     }
@@ -434,7 +434,7 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Send>> sendGetWithHttpInfo(Integer companyId, String identifier, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort) throws ApiException {
+    public ApiResponse<List<Send>> sendGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = sendGetValidateBeforeCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<List<Send>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -470,7 +470,7 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendGetAsync(Integer companyId, String identifier, String committente, String prestatore, String fileName, OffsetDateTime lastUpdateFrom, OffsetDateTime lastUpdateTo, OffsetDateTime dateSentFrom, OffsetDateTime dateSentTo, OffsetDateTime documentDateFrom, OffsetDateTime documentDateTo, String documentNumber, Integer page, Integer pageSize, String sort, final ApiCallback<List<Send>> _callback) throws ApiException {
+    public okhttp3.Call sendGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Send>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendGetValidateBeforeCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<List<Send>>(){}.getType();
@@ -491,7 +491,7 @@ public class SendApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendIdGetCall(Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendIdGetCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -537,7 +537,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendIdGetValidateBeforeCall(Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendIdGetValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling sendIdGet(Async)");
@@ -561,7 +561,7 @@ public class SendApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendIdGet(Integer id) throws ApiException {
+    public Send sendIdGet(@javax.annotation.Nonnull Integer id) throws ApiException {
         ApiResponse<Send> localVarResp = sendIdGetWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -580,7 +580,7 @@ public class SendApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendIdGetWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<Send> sendIdGetWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
         okhttp3.Call localVarCall = sendIdGetValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -601,7 +601,7 @@ public class SendApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendIdGetAsync(Integer id, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendIdGetAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Send> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendIdGetValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
@@ -625,7 +625,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendJsonPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendJsonPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -679,7 +679,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendJsonPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendJsonPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fatturaOrdinaria' is set
         if (fatturaOrdinaria == null) {
             throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendJsonPost(Async)");
@@ -706,7 +706,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendJsonPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+    public Send sendJsonPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         ApiResponse<Send> localVarResp = sendJsonPostWithHttpInfo(fatturaOrdinaria, validate, signature);
         return localVarResp.getData();
     }
@@ -728,7 +728,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendJsonPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+    public ApiResponse<Send> sendJsonPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         okhttp3.Call localVarCall = sendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -752,7 +752,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendJsonPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendJsonPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
@@ -776,7 +776,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendPostCall(Send send, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendPostCall(@javax.annotation.Nonnull Send send, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -830,7 +830,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendPostValidateBeforeCall(Send send, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendPostValidateBeforeCall(@javax.annotation.Nonnull Send send, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'send' is set
         if (send == null) {
             throw new ApiException("Missing the required parameter 'send' when calling sendPost(Async)");
@@ -857,7 +857,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendPost(Send send, Boolean validate, String signature) throws ApiException {
+    public Send sendPost(@javax.annotation.Nonnull Send send, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         ApiResponse<Send> localVarResp = sendPostWithHttpInfo(send, validate, signature);
         return localVarResp.getData();
     }
@@ -879,7 +879,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendPostWithHttpInfo(Send send, Boolean validate, String signature) throws ApiException {
+    public ApiResponse<Send> sendPostWithHttpInfo(@javax.annotation.Nonnull Send send, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         okhttp3.Call localVarCall = sendPostValidateBeforeCall(send, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -903,7 +903,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendPostAsync(Send send, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendPostAsync(@javax.annotation.Nonnull Send send, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendPostValidateBeforeCall(send, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
@@ -925,7 +925,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateFilesPostCall(List<File> files, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidateFilesPostCall(@javax.annotation.Nonnull List<File> files, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -975,7 +975,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidateFilesPostValidateBeforeCall(List<File> files, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendValidateFilesPostValidateBeforeCall(@javax.annotation.Nonnull List<File> files, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'files' is set
         if (files == null) {
             throw new ApiException("Missing the required parameter 'files' when calling sendValidateFilesPost(Async)");
@@ -999,7 +999,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidateFilesPost(List<File> files) throws ApiException {
+    public void sendValidateFilesPost(@javax.annotation.Nonnull List<File> files) throws ApiException {
         sendValidateFilesPostWithHttpInfo(files);
     }
 
@@ -1018,7 +1018,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidateFilesPostWithHttpInfo(List<File> files) throws ApiException {
+    public ApiResponse<Void> sendValidateFilesPostWithHttpInfo(@javax.annotation.Nonnull List<File> files) throws ApiException {
         okhttp3.Call localVarCall = sendValidateFilesPostValidateBeforeCall(files, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1039,7 +1039,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateFilesPostAsync(List<File> files, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidateFilesPostAsync(@javax.annotation.Nonnull List<File> files, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendValidateFilesPostValidateBeforeCall(files, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1060,7 +1060,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateJsonPostCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidateJsonPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1106,7 +1106,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidateJsonPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendValidateJsonPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fatturaOrdinaria' is set
         if (fatturaOrdinaria == null) {
             throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendValidateJsonPost(Async)");
@@ -1130,7 +1130,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidateJsonPost(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+    public void sendValidateJsonPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
         sendValidateJsonPostWithHttpInfo(fatturaOrdinaria);
     }
 
@@ -1149,7 +1149,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidateJsonPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+    public ApiResponse<Void> sendValidateJsonPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
         okhttp3.Call localVarCall = sendValidateJsonPostValidateBeforeCall(fatturaOrdinaria, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1170,7 +1170,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateJsonPostAsync(FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidateJsonPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendValidateJsonPostValidateBeforeCall(fatturaOrdinaria, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1191,7 +1191,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidatePostCall(Send send, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidatePostCall(@javax.annotation.Nonnull Send send, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1237,7 +1237,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidatePostValidateBeforeCall(Send send, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendValidatePostValidateBeforeCall(@javax.annotation.Nonnull Send send, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'send' is set
         if (send == null) {
             throw new ApiException("Missing the required parameter 'send' when calling sendValidatePost(Async)");
@@ -1261,7 +1261,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidatePost(Send send) throws ApiException {
+    public void sendValidatePost(@javax.annotation.Nonnull Send send) throws ApiException {
         sendValidatePostWithHttpInfo(send);
     }
 
@@ -1280,7 +1280,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidatePostWithHttpInfo(Send send) throws ApiException {
+    public ApiResponse<Void> sendValidatePostWithHttpInfo(@javax.annotation.Nonnull Send send) throws ApiException {
         okhttp3.Call localVarCall = sendValidatePostValidateBeforeCall(send, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1301,7 +1301,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidatePostAsync(Send send, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidatePostAsync(@javax.annotation.Nonnull Send send, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendValidatePostValidateBeforeCall(send, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1322,7 +1322,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateXmlPostCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidateXmlPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1368,7 +1368,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidateXmlPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendValidateXmlPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fatturaOrdinaria' is set
         if (fatturaOrdinaria == null) {
             throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendValidateXmlPost(Async)");
@@ -1392,7 +1392,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidateXmlPost(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+    public void sendValidateXmlPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
         sendValidateXmlPostWithHttpInfo(fatturaOrdinaria);
     }
 
@@ -1411,7 +1411,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidateXmlPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria) throws ApiException {
+    public ApiResponse<Void> sendValidateXmlPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
         okhttp3.Call localVarCall = sendValidateXmlPostValidateBeforeCall(fatturaOrdinaria, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1432,7 +1432,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateXmlPostAsync(FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidateXmlPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendValidateXmlPostValidateBeforeCall(fatturaOrdinaria, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1455,7 +1455,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendXmlPostCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendXmlPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1509,7 +1509,7 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendXmlPostValidateBeforeCall(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendXmlPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fatturaOrdinaria' is set
         if (fatturaOrdinaria == null) {
             throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendXmlPost(Async)");
@@ -1536,7 +1536,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendXmlPost(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+    public Send sendXmlPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         ApiResponse<Send> localVarResp = sendXmlPostWithHttpInfo(fatturaOrdinaria, validate, signature);
         return localVarResp.getData();
     }
@@ -1558,7 +1558,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendXmlPostWithHttpInfo(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature) throws ApiException {
+    public ApiResponse<Send> sendXmlPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
         okhttp3.Call localVarCall = sendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1582,7 +1582,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendXmlPostAsync(FatturaOrdinaria fatturaOrdinaria, Boolean validate, String signature, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendXmlPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = sendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
