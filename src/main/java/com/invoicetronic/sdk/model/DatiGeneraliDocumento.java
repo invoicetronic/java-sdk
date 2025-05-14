@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiGeneraliDocumento
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-14T08:19:19.099042Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-14T09:45:36.217815Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DatiGeneraliDocumento implements Serializable {
   private static final long serialVersionUID = 1L;
 
