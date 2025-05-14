@@ -127,16 +127,16 @@ public class SendApiTest {
     }
 
     /**
-     * Validate an invoice by file
+     * Validate an invoice file
      *
      * Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void sendValidateFilesPostTest() throws ApiException {
-        List<File> files = null;
-        api.sendValidateFilesPost(files);
+    public void sendValidateFilePostTest() throws ApiException {
+        File _file = null;
+        api.sendValidateFilePost(_file);
         // TODO: test validations
     }
 

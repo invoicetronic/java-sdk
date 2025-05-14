@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2025-05-14T07:01:51.470491Z[Etc/UTC]
+- Build date: 2025-05-14T07:18:42.324082Z[Etc/UTC]
 
 - Generator version: 7.13.0
 
@@ -141,7 +141,7 @@ Class | Method | HTTP request | Description
 *SendApi* | [**sendIdGet**](docs/SendApi.md#sendIdGet) | **GET** /send/{id} | Get a invoice by id
 *SendApi* | [**sendJsonPost**](docs/SendApi.md#sendJsonPost) | **POST** /send/json | Add an invoice by json
 *SendApi* | [**sendPost**](docs/SendApi.md#sendPost) | **POST** /send | Add an invoice
-*SendApi* | [**sendValidateFilesPost**](docs/SendApi.md#sendValidateFilesPost) | **POST** /send/validate/files | Validate an invoice by file
+*SendApi* | [**sendValidateFilePost**](docs/SendApi.md#sendValidateFilePost) | **POST** /send/validate/file | Validate an invoice file
 *SendApi* | [**sendValidateJsonPost**](docs/SendApi.md#sendValidateJsonPost) | **POST** /send/validate/json | Validate an invoice by json
 *SendApi* | [**sendValidatePost**](docs/SendApi.md#sendValidatePost) | **POST** /send/validate | Validate an invoice
 *SendApi* | [**sendValidateXmlPost**](docs/SendApi.md#sendValidateXmlPost) | **POST** /send/validate/xml | Validate an invoice by xml

@@ -911,8 +911,8 @@ public class SendApi {
         return localVarCall;
     }
     /**
-     * Build call for sendValidateFilesPost
-     * @param files  (required)
+     * Build call for sendValidateFilePost
+     * @param _file  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -925,7 +925,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateFilesPostCall(@javax.annotation.Nonnull List<File> files, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidateFilePostCall(@javax.annotation.Nonnull File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -942,7 +942,7 @@ public class SendApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/send/validate/files";
+        String localVarPath = "/send/validate/file";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -950,8 +950,8 @@ public class SendApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (files != null) {
-            localVarFormParams.put("files", files);
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
         }
 
         final String[] localVarAccepts = {
@@ -975,20 +975,20 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidateFilesPostValidateBeforeCall(@javax.annotation.Nonnull List<File> files, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'files' is set
-        if (files == null) {
-            throw new ApiException("Missing the required parameter 'files' when calling sendValidateFilesPost(Async)");
+    private okhttp3.Call sendValidateFilePostValidateBeforeCall(@javax.annotation.Nonnull File _file, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter '_file' is set
+        if (_file == null) {
+            throw new ApiException("Missing the required parameter '_file' when calling sendValidateFilePost(Async)");
         }
 
-        return sendValidateFilesPostCall(files, _callback);
+        return sendValidateFilePostCall(_file, _callback);
 
     }
 
     /**
-     * Validate an invoice by file
+     * Validate an invoice file
      * Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
-     * @param files  (required)
+     * @param _file  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -999,14 +999,14 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidateFilesPost(@javax.annotation.Nonnull List<File> files) throws ApiException {
-        sendValidateFilesPostWithHttpInfo(files);
+    public void sendValidateFilePost(@javax.annotation.Nonnull File _file) throws ApiException {
+        sendValidateFilePostWithHttpInfo(_file);
     }
 
     /**
-     * Validate an invoice by file
+     * Validate an invoice file
      * Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
-     * @param files  (required)
+     * @param _file  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1018,15 +1018,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidateFilesPostWithHttpInfo(@javax.annotation.Nonnull List<File> files) throws ApiException {
-        okhttp3.Call localVarCall = sendValidateFilesPostValidateBeforeCall(files, null);
+    public ApiResponse<Void> sendValidateFilePostWithHttpInfo(@javax.annotation.Nonnull File _file) throws ApiException {
+        okhttp3.Call localVarCall = sendValidateFilePostValidateBeforeCall(_file, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * Validate an invoice by file (asynchronously)
+     * Validate an invoice file (asynchronously)
      * Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
-     * @param files  (required)
+     * @param _file  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1039,9 +1039,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateFilesPostAsync(@javax.annotation.Nonnull List<File> files, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidateFilePostAsync(@javax.annotation.Nonnull File _file, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendValidateFilesPostValidateBeforeCall(files, _callback);
+        okhttp3.Call localVarCall = sendValidateFilePostValidateBeforeCall(_file, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

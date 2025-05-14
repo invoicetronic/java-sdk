@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**sendIdGet**](SendApi.md#sendIdGet) | **GET** /send/{id} | Get a invoice by id |
 | [**sendJsonPost**](SendApi.md#sendJsonPost) | **POST** /send/json | Add an invoice by json |
 | [**sendPost**](SendApi.md#sendPost) | **POST** /send | Add an invoice |
-| [**sendValidateFilesPost**](SendApi.md#sendValidateFilesPost) | **POST** /send/validate/files | Validate an invoice by file |
+| [**sendValidateFilePost**](SendApi.md#sendValidateFilePost) | **POST** /send/validate/file | Validate an invoice file |
 | [**sendValidateJsonPost**](SendApi.md#sendValidateJsonPost) | **POST** /send/validate/json | Validate an invoice by json |
 | [**sendValidatePost**](SendApi.md#sendValidatePost) | **POST** /send/validate | Validate an invoice |
 | [**sendValidateXmlPost**](SendApi.md#sendValidateXmlPost) | **POST** /send/validate/xml | Validate an invoice by xml |
@@ -405,11 +405,11 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
-<a id="sendValidateFilesPost"></a>
-# **sendValidateFilesPost**
-> sendValidateFilesPost(files)
+<a id="sendValidateFilePost"></a>
+# **sendValidateFilePost**
+> sendValidateFilePost(_file)
 
-Validate an invoice by file
+Validate an invoice file
 
 Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
@@ -434,11 +434,11 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    List<File> files = Arrays.asList(); // List<File> | 
+    File _file = new File("/path/to/file"); // File | 
     try {
-      apiInstance.sendValidateFilesPost(files);
+      apiInstance.sendValidateFilePost(_file);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SendApi#sendValidateFilesPost");
+      System.err.println("Exception when calling SendApi#sendValidateFilePost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -452,7 +452,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **files** | **List&lt;File&gt;**|  | |
+| **_file** | **File**|  | |
 
 ### Return type
 
