@@ -19,12 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.invoicetronic.sdk.model.DocumentData;
 import com.invoicetronic.sdk.model.Error;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 
@@ -54,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Update
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-14T09:45:36.217815Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-15T16:50:08.624913Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Update implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -193,6 +196,16 @@ public class Update implements Serializable {
   @SerializedName(SERIALIZED_NAME_IS_READ)
   @javax.annotation.Nullable
   private Boolean isRead;
+
+  public static final String SERIALIZED_NAME_META_DATA = "meta_data";
+  @SerializedName(SERIALIZED_NAME_META_DATA)
+  @javax.annotation.Nullable
+  private Map<String, String> metaData;
+
+  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nullable
+  private List<DocumentData> documents;
 
   public Update() {
   }
@@ -471,6 +484,60 @@ public class Update implements Serializable {
   }
 
 
+  public Update metaData(@javax.annotation.Nullable Map<String, String> metaData) {
+    this.metaData = metaData;
+    return this;
+  }
+
+  public Update putMetaDataItem(String key, String metaDataItem) {
+    if (this.metaData == null) {
+      this.metaData = new HashMap<>();
+    }
+    this.metaData.put(key, metaDataItem);
+    return this;
+  }
+
+  /**
+   * Metadata from the Send item this update refers to.
+   * @return metaData
+   */
+  @javax.annotation.Nullable
+  public Map<String, String> getMetaData() {
+    return metaData;
+  }
+
+  public void setMetaData(@javax.annotation.Nullable Map<String, String> metaData) {
+    this.metaData = metaData;
+  }
+
+
+  public Update documents(@javax.annotation.Nullable List<DocumentData> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public Update addDocumentsItem(DocumentData documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
+    }
+    this.documents.add(documentsItem);
+    return this;
+  }
+
+  /**
+   * Invoice references from the Send item this update refers to.
+   * @return documents
+   */
+  @javax.annotation.Nullable
+  public List<DocumentData> getDocuments() {
+    return documents;
+  }
+
+  public void setDocuments(@javax.annotation.Nullable List<DocumentData> documents) {
+    this.documents = documents;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -494,7 +561,9 @@ public class Update implements Serializable {
         Objects.equals(this.description, update.description) &&
         Objects.equals(this.messageId, update.messageId) &&
         Objects.equals(this.errors, update.errors) &&
-        Objects.equals(this.isRead, update.isRead);
+        Objects.equals(this.isRead, update.isRead) &&
+        Objects.equals(this.metaData, update.metaData) &&
+        Objects.equals(this.documents, update.documents);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -503,7 +572,7 @@ public class Update implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, sendId, dateSent, lastUpdate, identifier, state, description, messageId, errors, isRead);
+    return Objects.hash(id, created, version, userId, companyId, sendId, dateSent, lastUpdate, identifier, state, description, messageId, errors, isRead, metaData, documents);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -531,6 +600,8 @@ public class Update implements Serializable {
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    isRead: ").append(toIndentedString(isRead)).append("\n");
+    sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -567,6 +638,8 @@ public class Update implements Serializable {
     openapiFields.add("message_id");
     openapiFields.add("errors");
     openapiFields.add("is_read");
+    openapiFields.add("meta_data");
+    openapiFields.add("documents");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -620,6 +693,20 @@ public class Update implements Serializable {
           // validate the optional field `errors` (array)
           for (int i = 0; i < jsonArrayerrors.size(); i++) {
             Error.validateJsonElement(jsonArrayerrors.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
+        JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
+        if (jsonArraydocuments != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("documents").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
+          }
+
+          // validate the optional field `documents` (array)
+          for (int i = 0; i < jsonArraydocuments.size(); i++) {
+            DocumentData.validateJsonElement(jsonArraydocuments.get(i));
           };
         }
       }

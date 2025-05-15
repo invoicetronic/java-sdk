@@ -18,12 +18,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.invoicetronic.sdk.model.DocumentData;
 import com.invoicetronic.sdk.model.Error;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -152,6 +155,22 @@ public class UpdateTest {
     @Test
     public void isReadTest() {
         // TODO: test isRead
+    }
+
+    /**
+     * Test the property 'metaData'
+     */
+    @Test
+    public void metaDataTest() {
+        // TODO: test metaData
+    }
+
+    /**
+     * Test the property 'documents'
+     */
+    @Test
+    public void documentsTest() {
+        // TODO: test documents
     }
 
 }

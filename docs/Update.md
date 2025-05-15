@@ -21,6 +21,8 @@
 |**messageId** | **String** | SDI message id. |  [optional] |
 |**errors** | [**List&lt;Error&gt;**](Error.md) | SDI errors, if any. |  [optional] |
 |**isRead** | **Boolean** | Wether the item has been read at least once. |  [optional] |
+|**metaData** | **Map&lt;String, String&gt;** | Metadata from the Send item this update refers to. |  [optional] |
+|**documents** | [**List&lt;DocumentData&gt;**](DocumentData.md) | Invoice references from the Send item this update refers to. |  [optional] |
 
 
 
