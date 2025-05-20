@@ -173,4 +173,12 @@ public class UpdateTest {
         // TODO: test documents
     }
 
+    /**
+     * Test the property 'prestatore'
+     */
+    @Test
+    public void prestatoreTest() {
+        // TODO: test prestatore
+    }
+
 }

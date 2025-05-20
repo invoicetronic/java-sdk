@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Update
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-15T16:50:08.624913Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Update implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -206,6 +206,11 @@ public class Update implements Serializable {
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
   @javax.annotation.Nullable
   private List<DocumentData> documents;
+
+  public static final String SERIALIZED_NAME_PRESTATORE = "prestatore";
+  @SerializedName(SERIALIZED_NAME_PRESTATORE)
+  @javax.annotation.Nullable
+  private String prestatore;
 
   public Update() {
   }
@@ -538,6 +543,25 @@ public class Update implements Serializable {
   }
 
 
+  public Update prestatore(@javax.annotation.Nullable String prestatore) {
+    this.prestatore = prestatore;
+    return this;
+  }
+
+  /**
+   * Prestatore reference from the Send item this status refers to.
+   * @return prestatore
+   */
+  @javax.annotation.Nullable
+  public String getPrestatore() {
+    return prestatore;
+  }
+
+  public void setPrestatore(@javax.annotation.Nullable String prestatore) {
+    this.prestatore = prestatore;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -563,7 +587,8 @@ public class Update implements Serializable {
         Objects.equals(this.errors, update.errors) &&
         Objects.equals(this.isRead, update.isRead) &&
         Objects.equals(this.metaData, update.metaData) &&
-        Objects.equals(this.documents, update.documents);
+        Objects.equals(this.documents, update.documents) &&
+        Objects.equals(this.prestatore, update.prestatore);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -572,7 +597,7 @@ public class Update implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, sendId, dateSent, lastUpdate, identifier, state, description, messageId, errors, isRead, metaData, documents);
+    return Objects.hash(id, created, version, userId, companyId, sendId, dateSent, lastUpdate, identifier, state, description, messageId, errors, isRead, metaData, documents, prestatore);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -602,6 +627,7 @@ public class Update implements Serializable {
     sb.append("    isRead: ").append(toIndentedString(isRead)).append("\n");
     sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    prestatore: ").append(toIndentedString(prestatore)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -640,6 +666,7 @@ public class Update implements Serializable {
     openapiFields.add("is_read");
     openapiFields.add("meta_data");
     openapiFields.add("documents");
+    openapiFields.add("prestatore");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -709,6 +736,9 @@ public class Update implements Serializable {
             DocumentData.validateJsonElement(jsonArraydocuments.get(i));
           };
         }
+      }
+      if ((jsonObj.get("prestatore") != null && !jsonObj.get("prestatore").isJsonNull()) && !jsonObj.get("prestatore").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `prestatore` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prestatore").toString()));
       }
   }
 

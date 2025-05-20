@@ -44,6 +44,7 @@ public class UpdateApiTest {
     public void updateGetTest() throws ApiException {
         Integer companyId = null;
         String identifier = null;
+        String prestatore = null;
         Boolean unread = null;
         Integer sendId = null;
         String state = null;
@@ -54,7 +55,7 @@ public class UpdateApiTest {
         Integer page = null;
         Integer pageSize = null;
         String sort = null;
-        List<Update> response = api.updateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
+        List<Update> response = api.updateGet(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
         // TODO: test validations
     }
 

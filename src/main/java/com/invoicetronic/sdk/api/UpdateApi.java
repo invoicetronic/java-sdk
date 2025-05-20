@@ -78,6 +78,7 @@ public class UpdateApi {
      * Build call for updateGet
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param unread Unread items only. (optional)
      * @param sendId Send item&#39;s id. (optional)
      * @param state SDI state (optional)
@@ -100,7 +101,7 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -131,6 +132,10 @@ public class UpdateApi {
 
         if (identifier != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("identifier", identifier));
+        }
+
+        if (prestatore != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("prestatore", prestatore));
         }
 
         if (unread != null) {
@@ -193,8 +198,8 @@ public class UpdateApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return updateGetCall(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, _callback);
+    private okhttp3.Call updateGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return updateGetCall(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, _callback);
 
     }
 
@@ -203,6 +208,7 @@ public class UpdateApi {
      * Updates are notifications sent by the SDI about the status of invoices you sent.
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param unread Unread items only. (optional)
      * @param sendId Send item&#39;s id. (optional)
      * @param state SDI state (optional)
@@ -224,8 +230,8 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Update> updateGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<List<Update>> localVarResp = updateGetWithHttpInfo(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
+    public List<Update> updateGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<List<Update>> localVarResp = updateGetWithHttpInfo(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
         return localVarResp.getData();
     }
 
@@ -234,6 +240,7 @@ public class UpdateApi {
      * Updates are notifications sent by the SDI about the status of invoices you sent.
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param unread Unread items only. (optional)
      * @param sendId Send item&#39;s id. (optional)
      * @param state SDI state (optional)
@@ -255,8 +262,8 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Update>> updateGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = updateGetValidateBeforeCall(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, null);
+    public ApiResponse<List<Update>> updateGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = updateGetValidateBeforeCall(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<List<Update>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -266,6 +273,7 @@ public class UpdateApi {
      * Updates are notifications sent by the SDI about the status of invoices you sent.
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
+     * @param prestatore Vat number or fiscal code. (optional)
      * @param unread Unread items only. (optional)
      * @param sendId Send item&#39;s id. (optional)
      * @param state SDI state (optional)
@@ -288,9 +296,9 @@ public class UpdateApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Update>> _callback) throws ApiException {
+    public okhttp3.Call updateGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable Integer sendId, @javax.annotation.Nullable String state, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Update>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateGetValidateBeforeCall(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, _callback);
+        okhttp3.Call localVarCall = updateGetValidateBeforeCall(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<List<Update>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

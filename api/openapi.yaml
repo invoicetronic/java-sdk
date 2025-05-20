@@ -831,6 +831,7 @@ paths:
         required: false
         schema:
           default: Auto
+          description: Definisce le modalità di firma per le fatture.
           enum:
           - None
           - Apply
@@ -890,6 +891,7 @@ paths:
         required: false
         schema:
           default: Auto
+          description: Definisce le modalità di firma per le fatture.
           enum:
           - None
           - Apply
@@ -949,6 +951,7 @@ paths:
         required: false
         schema:
           default: Auto
+          description: Definisce le modalità di firma per le fatture.
           enum:
           - None
           - Apply
@@ -1010,6 +1013,7 @@ paths:
         required: false
         schema:
           default: Auto
+          description: Definisce le modalità di firma per le fatture.
           enum:
           - None
           - Apply
@@ -1243,6 +1247,14 @@ paths:
         explode: true
         in: query
         name: identifier
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Vat number or fiscal code.
+        explode: true
+        in: query
+        name: prestatore
         required: false
         schema:
           type: string
@@ -5337,6 +5349,7 @@ components:
         is_read: true
         send_id: 5
         user_id: 1
+        prestatore: prestatore
         last_update: 2000-01-23T04:56:07.000+00:00
         meta_data:
           key: meta_data
@@ -5433,6 +5446,11 @@ components:
             $ref: '#/components/schemas/DocumentData'
           nullable: true
           type: array
+        prestatore:
+          description: Prestatore reference from the Send item this status refers
+            to.
+          nullable: true
+          type: string
       type: object
     WebHook:
       additionalProperties: false

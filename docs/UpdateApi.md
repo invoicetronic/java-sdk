@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="updateGet"></a>
 # **updateGet**
-> List&lt;Update&gt; updateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort)
+> List&lt;Update&gt; updateGet(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort)
 
 List updates
 
@@ -39,6 +39,7 @@ public class Example {
     UpdateApi apiInstance = new UpdateApi(defaultClient);
     Integer companyId = 56; // Integer | Company id
     String identifier = "identifier_example"; // String | SDI identifier.
+    String prestatore = "prestatore_example"; // String | Vat number or fiscal code.
     Boolean unread = true; // Boolean | Unread items only.
     Integer sendId = 56; // Integer | Send item's id.
     String state = "Inviato"; // String | SDI state
@@ -50,7 +51,7 @@ public class Example {
     Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
-      List<Update> result = apiInstance.updateGet(companyId, identifier, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
+      List<Update> result = apiInstance.updateGet(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UpdateApi#updateGet");
@@ -69,6 +70,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **companyId** | **Integer**| Company id | [optional] |
 | **identifier** | **String**| SDI identifier. | [optional] |
+| **prestatore** | **String**| Vat number or fiscal code. | [optional] |
 | **unread** | **Boolean**| Unread items only. | [optional] |
 | **sendId** | **Integer**| Send item&#39;s id. | [optional] |
 | **state** | **String**| SDI state | [optional] [enum: Inviato, Consegnato, NonConsegnato, Scartato, AccettatoDalDestinatario, RifiutatoDalDestinatario, ImpossibilitàDiRecapito, DecorrenzaTermini, AttestazioneTrasmissioneFattura] |
