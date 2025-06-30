@@ -55,10 +55,11 @@ public class ReceiveApiTest {
         OffsetDateTime documentDateFrom = null;
         OffsetDateTime documentDateTo = null;
         String documentNumber = null;
+        Boolean includePayload = null;
         Integer page = null;
         Integer pageSize = null;
         String sort = null;
-        List<Receive> response = api.receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort);
+        List<Receive> response = api.receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort);
         // TODO: test validations
     }
 

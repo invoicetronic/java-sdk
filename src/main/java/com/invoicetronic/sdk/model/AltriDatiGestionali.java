@@ -51,7 +51,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * AltriDatiGestionali
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AltriDatiGestionali implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -215,14 +215,10 @@ public class AltriDatiGestionali implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("tipo_dato");
-    openapiFields.add("riferimento_testo");
-    openapiFields.add("riferimento_numero");
-    openapiFields.add("riferimento_data");
+    openapiFields = new HashSet<String>(Arrays.asList("tipo_dato", "riferimento_testo", "riferimento_numero", "riferimento_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

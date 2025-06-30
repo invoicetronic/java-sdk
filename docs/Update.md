@@ -13,17 +13,13 @@
 |**userId** | **Integer** | User id. |  [optional] |
 |**companyId** | **Integer** | Company id. |  [optional] |
 |**sendId** | **Integer** | Send id. This is the id of the sent invoice to which this update refers to. |  [optional] |
-|**dateSent** | **OffsetDateTime** | When the document was sent to the SDI. |  [optional] |
 |**lastUpdate** | **OffsetDateTime** | Last update from SDI. |  [optional] |
-|**identifier** | **String** | SDI identifier. This is set by the SDI and it is unique within the SDI system. |  [optional] |
 |**state** | [**StateEnum**](#StateEnum) | State of the document. Theses are the possible values, as per the SDI documentation: |  [optional] |
 |**description** | **String** | Description for the state. |  [optional] |
 |**messageId** | **String** | SDI message id. |  [optional] |
 |**errors** | [**List&lt;Error&gt;**](Error.md) | SDI errors, if any. |  [optional] |
 |**isRead** | **Boolean** | Wether the item has been read at least once. |  [optional] |
-|**metaData** | **Map&lt;String, String&gt;** | Metadata from the Send item this update refers to. |  [optional] |
-|**documents** | [**List&lt;DocumentData&gt;**](DocumentData.md) | Invoice references from the Send item this update refers to. |  [optional] |
-|**prestatore** | **String** | Prestatore reference from the Send item this status refers to. |  [optional] |
+|**send** | [**SendReduced**](SendReduced.md) |  |  [optional] |
 
 
 

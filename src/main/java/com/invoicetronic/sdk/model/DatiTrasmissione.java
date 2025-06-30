@@ -52,7 +52,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiTrasmissione
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiTrasmissione implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -268,16 +268,10 @@ public class DatiTrasmissione implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id_trasmittente");
-    openapiFields.add("progressivo_invio");
-    openapiFields.add("formato_trasmissione");
-    openapiFields.add("codice_destinatario");
-    openapiFields.add("contatti_trasmittente");
-    openapiFields.add("pec_destinatario");
+    openapiFields = new HashSet<String>(Arrays.asList("id_trasmittente", "progressivo_invio", "formato_trasmissione", "codice_destinatario", "contatti_trasmittente", "pec_destinatario"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -51,7 +51,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Event
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Event implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -500,25 +500,10 @@ public class Event implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("created");
-    openapiFields.add("version");
-    openapiFields.add("user_id");
-    openapiFields.add("api_key_id");
-    openapiFields.add("company_id");
-    openapiFields.add("method");
-    openapiFields.add("query");
-    openapiFields.add("endpoint");
-    openapiFields.add("api_version");
-    openapiFields.add("status_code");
-    openapiFields.add("date_time");
-    openapiFields.add("error");
-    openapiFields.add("success");
-    openapiFields.add("response_body");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "api_key_id", "company_id", "method", "query", "endpoint", "api_version", "status_code", "date_time", "error", "success", "response_body"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

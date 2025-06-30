@@ -53,7 +53,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiTrasporto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiTrasporto implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -451,23 +451,10 @@ public class DatiTrasporto implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dati_anagrafici_vettore");
-    openapiFields.add("mezzo_trasporto");
-    openapiFields.add("causale_trasporto");
-    openapiFields.add("numero_colli");
-    openapiFields.add("descrizione");
-    openapiFields.add("unita_misura_peso");
-    openapiFields.add("peso_lordo");
-    openapiFields.add("peso_netto");
-    openapiFields.add("data_ora_ritiro");
-    openapiFields.add("data_inizio_trasporto");
-    openapiFields.add("tipo_resa");
-    openapiFields.add("indirizzo_resa");
-    openapiFields.add("data_ora_consegna");
+    openapiFields = new HashSet<String>(Arrays.asList("dati_anagrafici_vettore", "mezzo_trasporto", "causale_trasporto", "numero_colli", "descrizione", "unita_misura_peso", "peso_lordo", "peso_netto", "data_ora_ritiro", "data_inizio_trasporto", "tipo_resa", "indirizzo_resa", "data_ora_consegna"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

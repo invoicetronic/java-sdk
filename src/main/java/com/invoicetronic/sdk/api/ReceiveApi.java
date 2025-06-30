@@ -89,6 +89,7 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
+     * @param includePayload Include payload in the response. Defaults to false. (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -104,7 +105,7 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call receiveGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -181,6 +182,10 @@ public class ReceiveApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("document_number", documentNumber));
         }
 
+        if (includePayload != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_payload", includePayload));
+        }
+
         if (page != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
         }
@@ -213,8 +218,8 @@ public class ReceiveApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call receiveGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return receiveGetCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, _callback);
+    private okhttp3.Call receiveGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return receiveGetCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, _callback);
 
     }
 
@@ -234,6 +239,7 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
+     * @param includePayload Include payload in the response. Defaults to false. (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -248,8 +254,8 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Receive> receiveGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<List<Receive>> localVarResp = receiveGetWithHttpInfo(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort);
+    public List<Receive> receiveGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<List<Receive>> localVarResp = receiveGetWithHttpInfo(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort);
         return localVarResp.getData();
     }
 
@@ -269,6 +275,7 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
+     * @param includePayload Include payload in the response. Defaults to false. (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -283,8 +290,8 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Receive>> receiveGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = receiveGetValidateBeforeCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, null);
+    public ApiResponse<List<Receive>> receiveGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = receiveGetValidateBeforeCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<List<Receive>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -305,6 +312,7 @@ public class ReceiveApi {
      * @param documentDateFrom UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
+     * @param includePayload Include payload in the response. Defaults to false. (optional)
      * @param page Page number. Defaults to 1. (optional, default to 1)
      * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -320,9 +328,9 @@ public class ReceiveApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call receiveGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Receive>> _callback) throws ApiException {
+    public okhttp3.Call receiveGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable Boolean unread, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Receive>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = receiveGetValidateBeforeCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, page, pageSize, sort, _callback);
+        okhttp3.Call localVarCall = receiveGetValidateBeforeCall(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<List<Receive>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -53,7 +53,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiContratto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiContratto implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -303,17 +303,10 @@ public class DatiContratto implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("riferimento_numero_linea");
-    openapiFields.add("id_documento");
-    openapiFields.add("data");
-    openapiFields.add("num_item");
-    openapiFields.add("codice_commessa_convenzione");
-    openapiFields.add("codice_cup");
-    openapiFields.add("codice_cig");
+    openapiFields = new HashSet<String>(Arrays.asList("riferimento_numero_linea", "id_documento", "data", "num_item", "codice_commessa_convenzione", "codice_cup", "codice_cig"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

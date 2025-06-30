@@ -19,15 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.invoicetronic.sdk.model.DocumentData;
 import com.invoicetronic.sdk.model.Error;
+import com.invoicetronic.sdk.model.SendReduced;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 
@@ -57,7 +55,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Update
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Update implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -91,20 +89,10 @@ public class Update implements Serializable {
   @javax.annotation.Nullable
   private Integer sendId;
 
-  public static final String SERIALIZED_NAME_DATE_SENT = "date_sent";
-  @SerializedName(SERIALIZED_NAME_DATE_SENT)
-  @javax.annotation.Nullable
-  private OffsetDateTime dateSent;
-
   public static final String SERIALIZED_NAME_LAST_UPDATE = "last_update";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATE)
   @javax.annotation.Nullable
   private OffsetDateTime lastUpdate;
-
-  public static final String SERIALIZED_NAME_IDENTIFIER = "identifier";
-  @SerializedName(SERIALIZED_NAME_IDENTIFIER)
-  @javax.annotation.Nullable
-  private String identifier;
 
   /**
    * State of the document. Theses are the possible values, as per the SDI documentation:
@@ -197,20 +185,10 @@ public class Update implements Serializable {
   @javax.annotation.Nullable
   private Boolean isRead;
 
-  public static final String SERIALIZED_NAME_META_DATA = "meta_data";
-  @SerializedName(SERIALIZED_NAME_META_DATA)
+  public static final String SERIALIZED_NAME_SEND = "send";
+  @SerializedName(SERIALIZED_NAME_SEND)
   @javax.annotation.Nullable
-  private Map<String, String> metaData;
-
-  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
-  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
-  @javax.annotation.Nullable
-  private List<DocumentData> documents;
-
-  public static final String SERIALIZED_NAME_PRESTATORE = "prestatore";
-  @SerializedName(SERIALIZED_NAME_PRESTATORE)
-  @javax.annotation.Nullable
-  private String prestatore;
+  private SendReduced send;
 
   public Update() {
   }
@@ -329,25 +307,6 @@ public class Update implements Serializable {
   }
 
 
-  public Update dateSent(@javax.annotation.Nullable OffsetDateTime dateSent) {
-    this.dateSent = dateSent;
-    return this;
-  }
-
-  /**
-   * When the document was sent to the SDI.
-   * @return dateSent
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getDateSent() {
-    return dateSent;
-  }
-
-  public void setDateSent(@javax.annotation.Nullable OffsetDateTime dateSent) {
-    this.dateSent = dateSent;
-  }
-
-
   public Update lastUpdate(@javax.annotation.Nullable OffsetDateTime lastUpdate) {
     this.lastUpdate = lastUpdate;
     return this;
@@ -364,25 +323,6 @@ public class Update implements Serializable {
 
   public void setLastUpdate(@javax.annotation.Nullable OffsetDateTime lastUpdate) {
     this.lastUpdate = lastUpdate;
-  }
-
-
-  public Update identifier(@javax.annotation.Nullable String identifier) {
-    this.identifier = identifier;
-    return this;
-  }
-
-  /**
-   * SDI identifier. This is set by the SDI and it is unique within the SDI system.
-   * @return identifier
-   */
-  @javax.annotation.Nullable
-  public String getIdentifier() {
-    return identifier;
-  }
-
-  public void setIdentifier(@javax.annotation.Nullable String identifier) {
-    this.identifier = identifier;
   }
 
 
@@ -489,76 +429,22 @@ public class Update implements Serializable {
   }
 
 
-  public Update metaData(@javax.annotation.Nullable Map<String, String> metaData) {
-    this.metaData = metaData;
-    return this;
-  }
-
-  public Update putMetaDataItem(String key, String metaDataItem) {
-    if (this.metaData == null) {
-      this.metaData = new HashMap<>();
-    }
-    this.metaData.put(key, metaDataItem);
+  public Update send(@javax.annotation.Nullable SendReduced send) {
+    this.send = send;
     return this;
   }
 
   /**
-   * Metadata from the Send item this update refers to.
-   * @return metaData
+   * Get send
+   * @return send
    */
   @javax.annotation.Nullable
-  public Map<String, String> getMetaData() {
-    return metaData;
+  public SendReduced getSend() {
+    return send;
   }
 
-  public void setMetaData(@javax.annotation.Nullable Map<String, String> metaData) {
-    this.metaData = metaData;
-  }
-
-
-  public Update documents(@javax.annotation.Nullable List<DocumentData> documents) {
-    this.documents = documents;
-    return this;
-  }
-
-  public Update addDocumentsItem(DocumentData documentsItem) {
-    if (this.documents == null) {
-      this.documents = new ArrayList<>();
-    }
-    this.documents.add(documentsItem);
-    return this;
-  }
-
-  /**
-   * Invoice references from the Send item this update refers to.
-   * @return documents
-   */
-  @javax.annotation.Nullable
-  public List<DocumentData> getDocuments() {
-    return documents;
-  }
-
-  public void setDocuments(@javax.annotation.Nullable List<DocumentData> documents) {
-    this.documents = documents;
-  }
-
-
-  public Update prestatore(@javax.annotation.Nullable String prestatore) {
-    this.prestatore = prestatore;
-    return this;
-  }
-
-  /**
-   * Prestatore reference from the Send item this status refers to.
-   * @return prestatore
-   */
-  @javax.annotation.Nullable
-  public String getPrestatore() {
-    return prestatore;
-  }
-
-  public void setPrestatore(@javax.annotation.Nullable String prestatore) {
-    this.prestatore = prestatore;
+  public void setSend(@javax.annotation.Nullable SendReduced send) {
+    this.send = send;
   }
 
 
@@ -578,17 +464,13 @@ public class Update implements Serializable {
         Objects.equals(this.userId, update.userId) &&
         Objects.equals(this.companyId, update.companyId) &&
         Objects.equals(this.sendId, update.sendId) &&
-        Objects.equals(this.dateSent, update.dateSent) &&
         Objects.equals(this.lastUpdate, update.lastUpdate) &&
-        Objects.equals(this.identifier, update.identifier) &&
         Objects.equals(this.state, update.state) &&
         Objects.equals(this.description, update.description) &&
         Objects.equals(this.messageId, update.messageId) &&
         Objects.equals(this.errors, update.errors) &&
         Objects.equals(this.isRead, update.isRead) &&
-        Objects.equals(this.metaData, update.metaData) &&
-        Objects.equals(this.documents, update.documents) &&
-        Objects.equals(this.prestatore, update.prestatore);
+        Objects.equals(this.send, update.send);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -597,7 +479,7 @@ public class Update implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, sendId, dateSent, lastUpdate, identifier, state, description, messageId, errors, isRead, metaData, documents, prestatore);
+    return Objects.hash(id, created, version, userId, companyId, sendId, lastUpdate, state, description, messageId, errors, isRead, send);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -617,17 +499,13 @@ public class Update implements Serializable {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    sendId: ").append(toIndentedString(sendId)).append("\n");
-    sb.append("    dateSent: ").append(toIndentedString(dateSent)).append("\n");
     sb.append("    lastUpdate: ").append(toIndentedString(lastUpdate)).append("\n");
-    sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    isRead: ").append(toIndentedString(isRead)).append("\n");
-    sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
-    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
-    sb.append("    prestatore: ").append(toIndentedString(prestatore)).append("\n");
+    sb.append("    send: ").append(toIndentedString(send)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -649,27 +527,10 @@ public class Update implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("created");
-    openapiFields.add("version");
-    openapiFields.add("user_id");
-    openapiFields.add("company_id");
-    openapiFields.add("send_id");
-    openapiFields.add("date_sent");
-    openapiFields.add("last_update");
-    openapiFields.add("identifier");
-    openapiFields.add("state");
-    openapiFields.add("description");
-    openapiFields.add("message_id");
-    openapiFields.add("errors");
-    openapiFields.add("is_read");
-    openapiFields.add("meta_data");
-    openapiFields.add("documents");
-    openapiFields.add("prestatore");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "company_id", "send_id", "last_update", "state", "description", "message_id", "errors", "is_read", "send"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -693,9 +554,6 @@ public class Update implements Serializable {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("identifier") != null && !jsonObj.get("identifier").isJsonNull()) && !jsonObj.get("identifier").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `identifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier").toString()));
-      }
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
@@ -723,22 +581,9 @@ public class Update implements Serializable {
           };
         }
       }
-      if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
-        JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
-        if (jsonArraydocuments != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("documents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
-          }
-
-          // validate the optional field `documents` (array)
-          for (int i = 0; i < jsonArraydocuments.size(); i++) {
-            DocumentData.validateJsonElement(jsonArraydocuments.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("prestatore") != null && !jsonObj.get("prestatore").isJsonNull()) && !jsonObj.get("prestatore").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prestatore` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prestatore").toString()));
+      // validate the optional field `send`
+      if (jsonObj.get("send") != null && !jsonObj.get("send").isJsonNull()) {
+        SendReduced.validateJsonElement(jsonObj.get("send"));
       }
   }
 

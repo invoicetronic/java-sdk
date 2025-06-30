@@ -18,15 +18,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.invoicetronic.sdk.model.DocumentData;
 import com.invoicetronic.sdk.model.Error;
+import com.invoicetronic.sdk.model.SendReduced;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -94,27 +92,11 @@ public class UpdateTest {
     }
 
     /**
-     * Test the property 'dateSent'
-     */
-    @Test
-    public void dateSentTest() {
-        // TODO: test dateSent
-    }
-
-    /**
      * Test the property 'lastUpdate'
      */
     @Test
     public void lastUpdateTest() {
         // TODO: test lastUpdate
-    }
-
-    /**
-     * Test the property 'identifier'
-     */
-    @Test
-    public void identifierTest() {
-        // TODO: test identifier
     }
 
     /**
@@ -158,27 +140,11 @@ public class UpdateTest {
     }
 
     /**
-     * Test the property 'metaData'
+     * Test the property 'send'
      */
     @Test
-    public void metaDataTest() {
-        // TODO: test metaData
-    }
-
-    /**
-     * Test the property 'documents'
-     */
-    @Test
-    public void documentsTest() {
-        // TODO: test documents
-    }
-
-    /**
-     * Test the property 'prestatore'
-     */
-    @Test
-    public void prestatoreTest() {
-        // TODO: test prestatore
+    public void sendTest() {
+        // TODO: test send
     }
 
 }

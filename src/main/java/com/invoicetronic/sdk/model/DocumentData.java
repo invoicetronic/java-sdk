@@ -51,7 +51,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DocumentData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DocumentData implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -163,12 +163,10 @@ public class DocumentData implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("number");
-    openapiFields.add("date");
+    openapiFields = new HashSet<String>(Arrays.asList("number", "date"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

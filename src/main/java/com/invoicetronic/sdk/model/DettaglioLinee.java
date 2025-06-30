@@ -56,7 +56,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DettaglioLinee
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DettaglioLinee implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -556,26 +556,10 @@ public class DettaglioLinee implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("numero_linea");
-    openapiFields.add("tipo_cessione_prestazione");
-    openapiFields.add("codice_articolo");
-    openapiFields.add("descrizione");
-    openapiFields.add("quantita");
-    openapiFields.add("unita_misura");
-    openapiFields.add("data_inizio_periodo");
-    openapiFields.add("data_fine_periodo");
-    openapiFields.add("prezzo_unitario");
-    openapiFields.add("sconto_maggiorazione");
-    openapiFields.add("prezzo_totale");
-    openapiFields.add("aliquota_iva");
-    openapiFields.add("ritenuta");
-    openapiFields.add("natura");
-    openapiFields.add("riferimento_amministrazione");
-    openapiFields.add("altri_dati_gestionali");
+    openapiFields = new HashSet<String>(Arrays.asList("numero_linea", "tipo_cessione_prestazione", "codice_articolo", "descrizione", "quantita", "unita_misura", "data_inizio_periodo", "data_fine_periodo", "prezzo_unitario", "sconto_maggiorazione", "prezzo_totale", "aliquota_iva", "ritenuta", "natura", "riferimento_amministrazione", "altri_dati_gestionali"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

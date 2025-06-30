@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiCassaPrevidenziale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiCassaPrevidenziale implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -318,18 +318,10 @@ public class DatiCassaPrevidenziale implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("tipo_cassa");
-    openapiFields.add("al_cassa");
-    openapiFields.add("importo_contributo_cassa");
-    openapiFields.add("imponibile_cassa");
-    openapiFields.add("aliquota_iva");
-    openapiFields.add("ritenuta");
-    openapiFields.add("natura");
-    openapiFields.add("riferimento_amministrazione");
+    openapiFields = new HashSet<String>(Arrays.asList("tipo_cassa", "al_cassa", "importo_contributo_cassa", "imponibile_cassa", "aliquota_iva", "ritenuta", "natura", "riferimento_amministrazione"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

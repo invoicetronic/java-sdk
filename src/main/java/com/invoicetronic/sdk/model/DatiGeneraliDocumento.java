@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiGeneraliDocumento
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiGeneraliDocumento implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -461,22 +461,10 @@ public class DatiGeneraliDocumento implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("tipo_documento");
-    openapiFields.add("divisa");
-    openapiFields.add("data");
-    openapiFields.add("numero");
-    openapiFields.add("dati_ritenuta");
-    openapiFields.add("dati_bollo");
-    openapiFields.add("dati_cassa_previdenziale");
-    openapiFields.add("sconto_maggiorazione");
-    openapiFields.add("importo_totale_documento");
-    openapiFields.add("arrotondamento");
-    openapiFields.add("causale");
-    openapiFields.add("art73");
+    openapiFields = new HashSet<String>(Arrays.asList("tipo_documento", "divisa", "data", "numero", "dati_ritenuta", "dati_bollo", "dati_cassa_previdenziale", "sconto_maggiorazione", "importo_totale_documento", "arrotondamento", "causale", "art73"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

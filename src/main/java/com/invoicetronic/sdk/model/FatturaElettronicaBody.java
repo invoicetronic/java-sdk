@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * FatturaElettronicaBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class FatturaElettronicaBody implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -263,15 +263,10 @@ public class FatturaElettronicaBody implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dati_generali");
-    openapiFields.add("dati_beni_servizi");
-    openapiFields.add("dati_veicoli");
-    openapiFields.add("dati_pagamento");
-    openapiFields.add("allegati");
+    openapiFields = new HashSet<String>(Arrays.asList("dati_generali", "dati_beni_servizi", "dati_veicoli", "dati_pagamento", "allegati"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

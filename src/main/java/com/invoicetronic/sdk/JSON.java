@@ -149,6 +149,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.SedeCedentePrestatore.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.SedeCessionarioCommittente.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Send.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.SendReduced.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.StabileOrganizzazione.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Status.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.TerzoIntermediarioOSoggettoEmittente.CustomTypeAdapterFactory());

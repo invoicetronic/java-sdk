@@ -62,7 +62,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiGenerali
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiGenerali implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -438,20 +438,10 @@ public class DatiGenerali implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dati_generali_documento");
-    openapiFields.add("dati_ordine_acquisto");
-    openapiFields.add("dati_contratto");
-    openapiFields.add("dati_convenzione");
-    openapiFields.add("dati_ricezione");
-    openapiFields.add("dati_fatture_collegate");
-    openapiFields.add("dati_sal");
-    openapiFields.add("dati_ddt");
-    openapiFields.add("dati_trasporto");
-    openapiFields.add("fattura_principale");
+    openapiFields = new HashSet<String>(Arrays.asList("dati_generali_documento", "dati_ordine_acquisto", "dati_contratto", "dati_convenzione", "dati_ricezione", "dati_fatture_collegate", "dati_sal", "dati_ddt", "dati_trasporto", "fattura_principale"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

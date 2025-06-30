@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * A company model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Company implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -307,21 +307,10 @@ public class Company implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("created");
-    openapiFields.add("version");
-    openapiFields.add("user_id");
-    openapiFields.add("vat");
-    openapiFields.add("fiscal_code");
-    openapiFields.add("name");
-    openapiFields.add("counter");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "vat", "fiscal_code", "name", "counter"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("vat");
-    openapiRequiredFields.add("fiscal_code");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("vat", "fiscal_code", "name"));
   }
 
   /**

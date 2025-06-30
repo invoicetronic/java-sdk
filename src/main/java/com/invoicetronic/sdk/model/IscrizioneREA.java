@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * IscrizioneREA
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class IscrizioneREA implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -240,15 +240,10 @@ public class IscrizioneREA implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ufficio");
-    openapiFields.add("numero_rea");
-    openapiFields.add("capitale_sociale");
-    openapiFields.add("socio_unico");
-    openapiFields.add("stato_liquidazione");
+    openapiFields = new HashSet<String>(Arrays.asList("ufficio", "numero_rea", "capitale_sociale", "socio_unico", "stato_liquidazione"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

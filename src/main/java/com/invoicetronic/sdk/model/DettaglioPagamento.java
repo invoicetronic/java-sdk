@@ -51,7 +51,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DettaglioPagamento
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T10:34:57.359230Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T08:13:14.679910Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DettaglioPagamento implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -657,31 +657,10 @@ public class DettaglioPagamento implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("beneficiario");
-    openapiFields.add("modalita_pagamento");
-    openapiFields.add("data_riferimento_termini_pagamento");
-    openapiFields.add("giorni_termini_pagamento");
-    openapiFields.add("data_scadenza_pagamento");
-    openapiFields.add("importo_pagamento");
-    openapiFields.add("cod_ufficio_postale");
-    openapiFields.add("cognome_quietanzante");
-    openapiFields.add("nome_quietanzante");
-    openapiFields.add("cf_quietanzante");
-    openapiFields.add("titolo_quietanzante");
-    openapiFields.add("istituto_finanziario");
-    openapiFields.add("iban");
-    openapiFields.add("abi");
-    openapiFields.add("cab");
-    openapiFields.add("bic");
-    openapiFields.add("sconto_pagamento_anticipato");
-    openapiFields.add("data_limite_pagamento_anticipato");
-    openapiFields.add("penalita_pagamenti_ritardati");
-    openapiFields.add("data_decorrenza_penale");
-    openapiFields.add("codice_pagamento");
+    openapiFields = new HashSet<String>(Arrays.asList("beneficiario", "modalita_pagamento", "data_riferimento_termini_pagamento", "giorni_termini_pagamento", "data_scadenza_pagamento", "importo_pagamento", "cod_ufficio_postale", "cognome_quietanzante", "nome_quietanzante", "cf_quietanzante", "titolo_quietanzante", "istituto_finanziario", "iban", "abi", "cab", "bic", "sconto_pagamento_anticipato", "data_limite_pagamento_anticipato", "penalita_pagamenti_ritardati", "data_decorrenza_penale", "codice_pagamento"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
