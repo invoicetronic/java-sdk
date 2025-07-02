@@ -96,7 +96,7 @@ paths:
         \ you send invoices, companies are added as needed (company details are extrapolated).\
         \ **You can only receive invoices for existing companies, so ensure they exist**."
       parameters:
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -106,7 +106,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size
@@ -308,7 +308,7 @@ paths:
           format: date-time
           type: string
         style: form
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -318,7 +318,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size
@@ -584,7 +584,7 @@ paths:
         schema:
           type: boolean
         style: form
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -594,7 +594,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size
@@ -777,7 +777,7 @@ paths:
         schema:
           type: boolean
         style: form
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -787,7 +787,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size
@@ -1346,7 +1346,7 @@ paths:
           format: date-time
           type: string
         style: form
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -1356,7 +1356,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size
@@ -1480,7 +1480,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -1490,7 +1490,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size
@@ -1661,7 +1661,7 @@ paths:
       description: Webhook history items are stored in the database and can be accessed
         via the API. They are preserved for 15 in both the live and sandbox environments.
       parameters:
-      - description: Page number. Defaults to 1.
+      - description: Page number.
         explode: true
         in: query
         name: page
@@ -1671,7 +1671,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Items per page. Defaults to 50. Cannot be greater than 200.
+      - description: Items per page. Cannot be greater than 200.
         explode: true
         in: query
         name: page_size

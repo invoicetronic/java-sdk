@@ -78,8 +78,8 @@ public class WebhookApi {
     /**
      * Build call for webhookGet
      * @param companyId Company id (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param description  (optional)
      * @param enabled  (optional)
@@ -183,8 +183,8 @@ public class WebhookApi {
      * List webhooks
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
      * @param companyId Company id (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param description  (optional)
      * @param enabled  (optional)
@@ -210,8 +210,8 @@ public class WebhookApi {
      * List webhooks
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
      * @param companyId Company id (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param description  (optional)
      * @param enabled  (optional)
@@ -238,8 +238,8 @@ public class WebhookApi {
      * List webhooks (asynchronously)
      * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
      * @param companyId Company id (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param description  (optional)
      * @param enabled  (optional)
@@ -806,8 +806,8 @@ public class WebhookApi {
     }
     /**
      * Build call for webhookhistoryGet
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param webhookId WebHook id (optional)
      * @param _callback Callback for upload/download progress
@@ -891,8 +891,8 @@ public class WebhookApi {
     /**
      * List webhook history items
      * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param webhookId WebHook id (optional)
      * @return List&lt;WebHookHistory&gt;
@@ -914,8 +914,8 @@ public class WebhookApi {
     /**
      * List webhook history items
      * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param webhookId WebHook id (optional)
      * @return ApiResponse&lt;List&lt;WebHookHistory&gt;&gt;
@@ -938,8 +938,8 @@ public class WebhookApi {
     /**
      * List webhook history items (asynchronously)
      * Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param webhookId WebHook id (optional)
      * @param _callback The callback to be executed when the API call finishes

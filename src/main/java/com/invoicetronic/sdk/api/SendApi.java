@@ -247,8 +247,8 @@ public class SendApi {
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
      * @param includePayload Include payload in the response. Defaults to false. (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -392,8 +392,8 @@ public class SendApi {
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
      * @param includePayload Include payload in the response. Defaults to false. (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @return List&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -427,8 +427,8 @@ public class SendApi {
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
      * @param includePayload Include payload in the response. Defaults to false. (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @return ApiResponse&lt;List&lt;Send&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -463,8 +463,8 @@ public class SendApi {
      * @param documentDateTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param documentNumber Document number. (optional)
      * @param includePayload Include payload in the response. Defaults to false. (optional)
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

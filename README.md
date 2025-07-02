@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2025-06-30T08:13:14.679910Z[Etc/UTC]
+- Build date: 2025-07-02T13:24:58.746807Z[Etc/UTC]
 
 - Generator version: 7.14.0
 
@@ -102,8 +102,8 @@ public class CompanyApiExample {
         Basic.setPassword("YOUR PASSWORD");
 
         CompanyApi apiInstance = new CompanyApi(defaultClient);
-        Integer page = 1; // Integer | Page number. Defaults to 1.
-        Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+        Integer page = 1; // Integer | Page number.
+        Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
         String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
         try {
             List<Company> result = apiInstance.companyGet(page, pageSize, sort);

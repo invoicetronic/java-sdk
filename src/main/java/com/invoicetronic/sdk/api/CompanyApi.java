@@ -76,8 +76,8 @@ public class CompanyApi {
 
     /**
      * Build call for companyGet
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -156,8 +156,8 @@ public class CompanyApi {
     /**
      * List companies
      * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @return List&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -178,8 +178,8 @@ public class CompanyApi {
     /**
      * List companies
      * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @return ApiResponse&lt;List&lt;Company&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -201,8 +201,8 @@ public class CompanyApi {
     /**
      * List companies (asynchronously)
      * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
-     * @param page Page number. Defaults to 1. (optional, default to 1)
-     * @param pageSize Items per page. Defaults to 50. Cannot be greater than 200. (optional, default to 100)
+     * @param page Page number. (optional, default to 1)
+     * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

@@ -43,8 +43,8 @@ public class Example {
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer companyId = 56; // Integer | Company id
-    Integer page = 1; // Integer | Page number. Defaults to 1.
-    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    Integer page = 1; // Integer | Page number.
+    Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     String description = "description_example"; // String | 
     Boolean enabled = true; // Boolean | 
@@ -69,8 +69,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **companyId** | **Integer**| Company id | [optional] |
-| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 | **description** | **String**|  | [optional] |
 | **enabled** | **Boolean**|  | [optional] |
@@ -406,8 +406,8 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
-    Integer page = 1; // Integer | Page number. Defaults to 1.
-    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    Integer page = 1; // Integer | Page number.
+    Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     Integer webhookId = 56; // Integer | WebHook id
     try {
@@ -428,8 +428,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 | **webhookId** | **Integer**| WebHook id | [optional] |
 

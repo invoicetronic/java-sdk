@@ -47,8 +47,8 @@ public class Example {
     OffsetDateTime lastUpdateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     OffsetDateTime dateSentFrom = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     OffsetDateTime dateSentTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
-    Integer page = 1; // Integer | Page number. Defaults to 1.
-    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    Integer page = 1; // Integer | Page number.
+    Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
       List<Update> result = apiInstance.updateGet(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
@@ -78,8 +78,8 @@ public class Example {
 | **lastUpdateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **dateSentFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **dateSentTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
-| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type

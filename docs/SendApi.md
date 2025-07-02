@@ -132,8 +132,8 @@ public class Example {
     OffsetDateTime documentDateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     String documentNumber = "documentNumber_example"; // String | Document number.
     Boolean includePayload = true; // Boolean | Include payload in the response. Defaults to false.
-    Integer page = 1; // Integer | Page number. Defaults to 1.
-    Integer pageSize = 100; // Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+    Integer page = 1; // Integer | Page number.
+    Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     try {
       List<Send> result = apiInstance.sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort);
@@ -166,8 +166,8 @@ public class Example {
 | **documentDateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **documentNumber** | **String**| Document number. | [optional] |
 | **includePayload** | **Boolean**| Include payload in the response. Defaults to false. | [optional] |
-| **page** | **Integer**| Page number. Defaults to 1. | [optional] [default to 1] |
-| **pageSize** | **Integer**| Items per page. Defaults to 50. Cannot be greater than 200. | [optional] [default to 100] |
+| **page** | **Integer**| Page number. | [optional] [default to 1] |
+| **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
