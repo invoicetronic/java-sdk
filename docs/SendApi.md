@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**sendFilePost**](SendApi.md#sendFilePost) | **POST** /send/file | Add an invoice by file |
 | [**sendGet**](SendApi.md#sendGet) | **GET** /send | List invoices |
 | [**sendIdGet**](SendApi.md#sendIdGet) | **GET** /send/{id} | Get a invoice by id |
+| [**sendIdentifierGet**](SendApi.md#sendIdentifierGet) | **GET** /send/{identifier} | Get a invoice by identifier |
 | [**sendJsonPost**](SendApi.md#sendJsonPost) | **POST** /send/json | Add an invoice by json |
 | [**sendPost**](SendApi.md#sendPost) | **POST** /send | Add an invoice |
 | [**sendValidateFilePost**](SendApi.md#sendValidateFilePost) | **POST** /send/validate/file | Validate an invoice file |
@@ -192,7 +193,7 @@ public class Example {
 
 <a id="sendIdGet"></a>
 # **sendIdGet**
-> Send sendIdGet(id)
+> Send sendIdGet(id, includePayload)
 
 Get a invoice by id
 
@@ -220,8 +221,9 @@ public class Example {
 
     SendApi apiInstance = new SendApi(defaultClient);
     Integer id = 56; // Integer | Item id
+    Boolean includePayload = false; // Boolean | 
     try {
-      Send result = apiInstance.sendIdGet(id);
+      Send result = apiInstance.sendIdGet(id, includePayload);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#sendIdGet");
@@ -239,6 +241,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **Integer**| Item id | |
+| **includePayload** | **Boolean**|  | [optional] [default to false] |
 
 ### Return type
 
@@ -258,6 +261,78 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
+
+<a id="sendIdentifierGet"></a>
+# **sendIdentifierGet**
+> Send sendIdentifierGet(identifier, includePayload)
+
+Get a invoice by identifier
+
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
+
+### Example
+```java
+// Import classes:
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.SendApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    SendApi apiInstance = new SendApi(defaultClient);
+    String identifier = "identifier_example"; // String | 
+    Boolean includePayload = false; // Boolean | 
+    try {
+      Send result = apiInstance.sendIdentifierGet(identifier, includePayload);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SendApi#sendIdentifierGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **identifier** | **String**|  | |
+| **includePayload** | **Boolean**|  | [optional] [default to false] |
+
+### Return type
+
+[**Send**](Send.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **400** | Bad Request |  -  |
 
 <a id="sendJsonPost"></a>
 # **sendJsonPost**

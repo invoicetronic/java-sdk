@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2025-07-02T13:24:58.746807Z[Etc/UTC]
+- Build date: 2025-07-03T14:35:43.575740Z[Etc/UTC]
 
 - Generator version: 7.14.0
 
@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
 *SendApi* | [**sendFilePost**](docs/SendApi.md#sendFilePost) | **POST** /send/file | Add an invoice by file
 *SendApi* | [**sendGet**](docs/SendApi.md#sendGet) | **GET** /send | List invoices
 *SendApi* | [**sendIdGet**](docs/SendApi.md#sendIdGet) | **GET** /send/{id} | Get a invoice by id
+*SendApi* | [**sendIdentifierGet**](docs/SendApi.md#sendIdentifierGet) | **GET** /send/{identifier} | Get a invoice by identifier
 *SendApi* | [**sendJsonPost**](docs/SendApi.md#sendJsonPost) | **POST** /send/json | Add an invoice by json
 *SendApi* | [**sendPost**](docs/SendApi.md#sendPost) | **POST** /send | Add an invoice
 *SendApi* | [**sendValidateFilePost**](docs/SendApi.md#sendValidateFilePost) | **POST** /send/validate/file | Validate an invoice file
@@ -240,5 +241,5 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
-support@invoicetronic.com
+info@invoicetronic.com
 

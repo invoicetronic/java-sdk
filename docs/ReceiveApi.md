@@ -184,7 +184,7 @@ public class Example {
 
 <a id="receiveIdGet"></a>
 # **receiveIdGet**
-> Receive receiveIdGet(id)
+> Receive receiveIdGet(id, includePayload)
 
 Get an incoming invoice by id
 
@@ -212,8 +212,9 @@ public class Example {
 
     ReceiveApi apiInstance = new ReceiveApi(defaultClient);
     Integer id = 56; // Integer | Item id
+    Boolean includePayload = false; // Boolean | 
     try {
-      Receive result = apiInstance.receiveIdGet(id);
+      Receive result = apiInstance.receiveIdGet(id, includePayload);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReceiveApi#receiveIdGet");
@@ -231,6 +232,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **Integer**| Item id | |
+| **includePayload** | **Boolean**|  | [optional] [default to false] |
 
 ### Return type
 
