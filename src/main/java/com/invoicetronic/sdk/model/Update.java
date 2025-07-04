@@ -55,7 +55,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Update
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T08:03:40.500216Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T08:21:44.057736Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Update implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -111,7 +111,7 @@ public class Update implements Serializable {
     
     RIFIUTATO_DAL_DESTINATARIO("RifiutatoDalDestinatario"),
     
-    IMPOSSIBILIT_DI_RECAPITO("ImpossibilitàDiRecapito"),
+    IMPOSSIBILITA_DI_RECAPITO("ImpossibilitaDiRecapito"),
     
     DECORRENZA_TERMINI("DecorrenzaTermini"),
     

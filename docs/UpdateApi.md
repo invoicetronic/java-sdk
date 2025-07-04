@@ -73,7 +73,7 @@ public class Example {
 | **prestatore** | **String**| Vat number or fiscal code. | [optional] |
 | **unread** | **Boolean**| Unread items only. | [optional] |
 | **sendId** | **Integer**| Send item&#39;s id. | [optional] |
-| **state** | **String**| SDI state | [optional] [enum: Inviato, Consegnato, NonConsegnato, Scartato, AccettatoDalDestinatario, RifiutatoDalDestinatario, ImpossibilitàDiRecapito, DecorrenzaTermini, AttestazioneTrasmissioneFattura] |
+| **state** | **String**| SDI state | [optional] [enum: Inviato, Consegnato, NonConsegnato, Scartato, AccettatoDalDestinatario, RifiutatoDalDestinatario, ImpossibilitaDiRecapito, DecorrenzaTermini, AttestazioneTrasmissioneFattura] |
 | **lastUpdateFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **lastUpdateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **dateSentFrom** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
