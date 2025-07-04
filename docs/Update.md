@@ -33,7 +33,7 @@
 | SCARTATO | &quot;Scartato&quot; |
 | ACCETTATO_DAL_DESTINATARIO | &quot;AccettatoDalDestinatario&quot; |
 | RIFIUTATO_DAL_DESTINATARIO | &quot;RifiutatoDalDestinatario&quot; |
-| IMPOSSIBILIT_DI_RECAPITO | &quot;ImpossibilitàDiRecapito&quot; |
+| IMPOSSIBILITA_DI_RECAPITO | &quot;ImpossibilitaDiRecapito&quot; |
 | DECORRENZA_TERMINI | &quot;DecorrenzaTermini&quot; |
 | ATTESTAZIONE_TRASMISSIONE_FATTURA | &quot;AttestazioneTrasmissioneFattura&quot; |
 
