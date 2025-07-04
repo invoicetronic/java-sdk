@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * A company model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T07:40:19.742135Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T07:46:55.357885Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Company implements Serializable {
   private static final long serialVersionUID = 1L;
 
