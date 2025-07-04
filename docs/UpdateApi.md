@@ -49,7 +49,7 @@ public class Example {
     OffsetDateTime dateSentTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     Integer page = 1; // Integer | Page number.
     Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
-    String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+    String sort = "last_update"; // String | Sort by field. Prefix with '-' for descending order.
     try {
       List<Update> result = apiInstance.updateGet(companyId, identifier, prestatore, unread, sendId, state, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, page, pageSize, sort);
       System.out.println(result);
@@ -80,7 +80,7 @@ public class Example {
 | **dateSentTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **page** | **Integer**| Page number. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
-| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] [default to last_update] |
 
 ### Return type
 

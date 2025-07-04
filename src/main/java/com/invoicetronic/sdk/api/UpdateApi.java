@@ -88,7 +88,7 @@ public class UpdateApi {
      * @param dateSentTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
-     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional, default to last_update)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -218,7 +218,7 @@ public class UpdateApi {
      * @param dateSentTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
-     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional, default to last_update)
      * @return List&lt;Update&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -250,7 +250,7 @@ public class UpdateApi {
      * @param dateSentTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
-     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional, default to last_update)
      * @return ApiResponse&lt;List&lt;Update&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -283,7 +283,7 @@ public class UpdateApi {
      * @param dateSentTo UTC ISO 8601 (2024-11-29T12:34:56Z) (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
-     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional, default to last_update)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

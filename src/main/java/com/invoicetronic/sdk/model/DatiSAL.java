@@ -49,7 +49,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiSAL
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T08:21:44.057736Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T09:15:20.624599Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiSAL implements Serializable {
   private static final long serialVersionUID = 1L;
 
