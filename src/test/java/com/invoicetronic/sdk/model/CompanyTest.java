@@ -94,12 +94,4 @@ public class CompanyTest {
         // TODO: test name
     }
 
-    /**
-     * Test the property 'counter'
-     */
-    @Test
-    public void counterTest() {
-        // TODO: test counter
-    }
-
 }

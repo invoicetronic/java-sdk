@@ -212,7 +212,7 @@ public class Example {
 
     ReceiveApi apiInstance = new ReceiveApi(defaultClient);
     Integer id = 56; // Integer | Item id
-    Boolean includePayload = false; // Boolean | 
+    Boolean includePayload = false; // Boolean | Include payload in the response. Defaults to false.
     try {
       Receive result = apiInstance.receiveIdGet(id, includePayload);
       System.out.println(result);
@@ -232,7 +232,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **Integer**| Item id | |
-| **includePayload** | **Boolean**|  | [optional] [default to false] |
+| **includePayload** | **Boolean**| Include payload in the response. Defaults to false. | [optional] [default to false] |
 
 ### Return type
 

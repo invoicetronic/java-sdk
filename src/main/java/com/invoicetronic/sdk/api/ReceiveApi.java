@@ -477,7 +477,7 @@ public class ReceiveApi {
     /**
      * Build call for receiveIdGet
      * @param id Item id (required)
-     * @param includePayload  (optional, default to false)
+     * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -516,7 +516,7 @@ public class ReceiveApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         if (includePayload != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("includePayload", includePayload));
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_payload", includePayload));
         }
 
         final String[] localVarAccepts = {
@@ -553,7 +553,7 @@ public class ReceiveApi {
      * Get an incoming invoice by id
      * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
-     * @param includePayload  (optional, default to false)
+     * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @return Receive
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -573,7 +573,7 @@ public class ReceiveApi {
      * Get an incoming invoice by id
      * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
-     * @param includePayload  (optional, default to false)
+     * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @return ApiResponse&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -594,7 +594,7 @@ public class ReceiveApi {
      * Get an incoming invoice by id (asynchronously)
      * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
      * @param id Item id (required)
-     * @param includePayload  (optional, default to false)
+     * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

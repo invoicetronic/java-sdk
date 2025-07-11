@@ -221,7 +221,7 @@ public class Example {
 
     SendApi apiInstance = new SendApi(defaultClient);
     Integer id = 56; // Integer | Item id
-    Boolean includePayload = false; // Boolean | 
+    Boolean includePayload = false; // Boolean | Include payload in the response. Defaults to false.
     try {
       Send result = apiInstance.sendIdGet(id, includePayload);
       System.out.println(result);
@@ -241,7 +241,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **Integer**| Item id | |
-| **includePayload** | **Boolean**|  | [optional] [default to false] |
+| **includePayload** | **Boolean**| Include payload in the response. Defaults to false. | [optional] [default to false] |
 
 ### Return type
 
@@ -292,7 +292,7 @@ public class Example {
 
     SendApi apiInstance = new SendApi(defaultClient);
     String identifier = "identifier_example"; // String | 
-    Boolean includePayload = false; // Boolean | 
+    Boolean includePayload = false; // Boolean | Include payload in the response. Defaults to false.
     try {
       Send result = apiInstance.sendIdentifierGet(identifier, includePayload);
       System.out.println(result);
@@ -312,7 +312,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **identifier** | **String**|  | |
-| **includePayload** | **Boolean**|  | [optional] [default to false] |
+| **includePayload** | **Boolean**| Include payload in the response. Defaults to false. | [optional] [default to false] |
 
 ### Return type
 

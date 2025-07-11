@@ -15,8 +15,8 @@ info:
   title: Invoicetronic API
   version: "1"
   x-logo:
-    url: https://testapi.invoicetronic.com/assets/logomark-white.svg
-    altText: "Amica: tutto il software che serve per gestire la tua azienda"
+    url: https://invoicetronic.com/assets/logomark-white.svg
+    altText: "Invoicetronic: support electronic invoices in a snap"
 servers:
 - url: /
 security:
@@ -446,9 +446,10 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: Include payload in the response. Defaults to false.
+        explode: true
         in: query
-        name: includePayload
+        name: include_payload
         required: false
         schema:
           default: false
@@ -657,9 +658,10 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: Include payload in the response. Defaults to false.
+        explode: true
         in: query
-        name: includePayload
+        name: include_payload
         required: false
         schema:
           default: false
@@ -691,9 +693,10 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: Include payload in the response. Defaults to false.
+        explode: true
         in: query
-        name: includePayload
+        name: include_payload
         required: false
         schema:
           default: false
@@ -1980,7 +1983,6 @@ components:
         vat: IT01234567891
         name: Mario Rossi Srl
         id: 0
-        counter: 5
         fiscal_code: RSSMRA70A01F205V
         version: 6
       properties:
@@ -2016,12 +2018,6 @@ components:
           example: Mario Rossi Srl
           minLength: 1
           type: string
-        counter:
-          description: "Holds the last unique value used to generate a XML filename.\
-            \ This is automatically updated by the system \r\nwhen a raw XML file\
-            \ is uploaded. Normally, you do not need or want to change this value."
-          format: int32
-          type: integer
       required:
       - fiscal_code
       - name
@@ -5252,7 +5248,6 @@ components:
           vat: IT01234567891
           name: Mario Rossi Srl
           id: 0
-          counter: 5
           fiscal_code: RSSMRA70A01F205V
           version: 6
         id: 0

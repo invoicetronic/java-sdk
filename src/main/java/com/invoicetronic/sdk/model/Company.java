@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * A company model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-04T09:15:20.624599Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-11T14:20:42.316050Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Company implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -88,11 +88,6 @@ public class Company implements Serializable {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nonnull
   private String name;
-
-  public static final String SERIALIZED_NAME_COUNTER = "counter";
-  @SerializedName(SERIALIZED_NAME_COUNTER)
-  @javax.annotation.Nullable
-  private Integer counter;
 
   public Company() {
   }
@@ -230,25 +225,6 @@ public class Company implements Serializable {
   }
 
 
-  public Company counter(@javax.annotation.Nullable Integer counter) {
-    this.counter = counter;
-    return this;
-  }
-
-  /**
-   * Holds the last unique value used to generate a XML filename. This is automatically updated by the system   when a raw XML file is uploaded. Normally, you do not need or want to change this value.
-   * @return counter
-   */
-  @javax.annotation.Nullable
-  public Integer getCounter() {
-    return counter;
-  }
-
-  public void setCounter(@javax.annotation.Nullable Integer counter) {
-    this.counter = counter;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -265,13 +241,12 @@ public class Company implements Serializable {
         Objects.equals(this.userId, company.userId) &&
         Objects.equals(this.vat, company.vat) &&
         Objects.equals(this.fiscalCode, company.fiscalCode) &&
-        Objects.equals(this.name, company.name) &&
-        Objects.equals(this.counter, company.counter);
+        Objects.equals(this.name, company.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, vat, fiscalCode, name, counter);
+    return Objects.hash(id, created, version, userId, vat, fiscalCode, name);
   }
 
   @Override
@@ -285,7 +260,6 @@ public class Company implements Serializable {
     sb.append("    vat: ").append(toIndentedString(vat)).append("\n");
     sb.append("    fiscalCode: ").append(toIndentedString(fiscalCode)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    counter: ").append(toIndentedString(counter)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -307,7 +281,7 @@ public class Company implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "vat", "fiscal_code", "name", "counter"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "vat", "fiscal_code", "name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("vat", "fiscal_code", "name"));

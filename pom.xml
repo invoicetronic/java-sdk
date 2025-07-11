@@ -5,7 +5,7 @@
     <artifactId>java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>java-sdk</name>
-    <version>1</version>
+    <version>1.0</version>
     <url>https://github.com/invoicetronic/java-sdk</url>
     <description>Java SDK for the Invoicetronic API</description>
     <scm>
