@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * RappresentanteFiscale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T09:04:47.005887Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T09:33:44.994702Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RappresentanteFiscale implements Serializable {
   private static final long serialVersionUID = 1L;
 
