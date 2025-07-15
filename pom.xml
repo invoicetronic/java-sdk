@@ -5,7 +5,7 @@
     <artifactId>java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>java-sdk</name>
-    <version>1.0.0</version>
+    <version>main</version>
     <url>https://github.com/invoicetronic/java-sdk</url>
     <description>Java SDK for the Invoicetronic API</description>
     <scm>
@@ -17,7 +17,7 @@
     <licenses>
         <license>
             <name>MIT</name>
-            <url>https://github.com/invoicetronic/java-sdk/blob/master/LICENSE</url>
+            <url>https://github.com/invoicetronic/openapi/blob/main/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
