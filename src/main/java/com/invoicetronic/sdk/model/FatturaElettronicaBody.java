@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * FatturaElettronicaBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T14:28:17.019126Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T15:16:13.927313Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class FatturaElettronicaBody implements Serializable {
   private static final long serialVersionUID = 1L;
 
