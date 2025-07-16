@@ -49,7 +49,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T15:16:13.927313Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T15:27:59.911039Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Status implements Serializable {
   private static final long serialVersionUID = 1L;
 
