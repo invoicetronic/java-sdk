@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Validation error from the SDI.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T10:06:42.311632Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T10:22:23.951151Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Error implements Serializable {
   private static final long serialVersionUID = 1L;
 
