@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * ContattiTrasmittente
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T14:38:10.487116Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T14:52:01.893846Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ContattiTrasmittente implements Serializable {
   private static final long serialVersionUID = 1L;
 
