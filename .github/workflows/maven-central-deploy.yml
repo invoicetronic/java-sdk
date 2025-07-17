@@ -70,7 +70,8 @@ jobs:
           CENTRAL_TOKEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          mvn clean deploy -P sign-artifacts -Dgpg.passphrase="${GPG_PASSPHRASE}" --batch-mode --no-transfer-progress
+          mvn clean verify -P sign-artifacts -Dgpg.passphrase="${GPG_PASSPHRASE}" --batch-mode --no-transfer-progress
+          mvn org.sonatype.central:central-publishing-maven-plugin:0.6.0:publish -P sign-artifacts -Dgpg.passphrase="${GPG_PASSPHRASE}" --batch-mode --no-transfer-progress
           
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
