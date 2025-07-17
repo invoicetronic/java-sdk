@@ -53,7 +53,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * CessionarioCommittente
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T09:28:11.105089Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T10:18:31.150718Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CessionarioCommittente implements Serializable {
   private static final long serialVersionUID = 1L;
 
