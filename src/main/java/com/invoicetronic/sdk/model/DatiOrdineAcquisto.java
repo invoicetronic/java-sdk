@@ -53,7 +53,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiOrdineAcquisto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T14:17:18.943276Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T14:38:10.487116Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DatiOrdineAcquisto implements Serializable {
   private static final long serialVersionUID = 1L;
 
