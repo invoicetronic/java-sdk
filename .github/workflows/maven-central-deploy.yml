@@ -1,0 +1,101 @@
+name: Deploy to Maven Central
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+          
+      - name: Import GPG key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+        run: |
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import --pinentry-mode loopback
+          
+      - name: Create Maven settings
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+                                        https://maven.apache.org/xsd/settings-1.0.0.xsd">
+              <servers>
+                  <server>
+                      <id>central</id>
+                      <username>${env.CENTRAL_TOKEN_USERNAME}</username>
+                      <password>${env.CENTRAL_TOKEN_PASSWORD}</password>
+                  </server>
+              </servers>
+              
+              <profiles>
+                  <profile>
+                      <id>central-publish</id>
+                      <activation>
+                          <activeByDefault>true</activeByDefault>
+                      </activation>
+                      <properties>
+                          <gpg.executable>gpg</gpg.executable>
+                          <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+                      </properties>
+                  </profile>
+              </profiles>
+          </settings>
+          EOF
+          
+      - name: Deploy to Maven Central
+        env:
+          CENTRAL_TOKEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
+          CENTRAL_TOKEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          mvn clean deploy -P sign-artifacts -Dgpg.passphrase="${GPG_PASSPHRASE}" --batch-mode --no-transfer-progress
+          
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            ## Java SDK ${{ github.ref_name }}
+            
+            This release has been automatically deployed to Maven Central.
+            
+            ### Maven Dependency
+            ```xml
+            <dependency>
+                <groupId>com.invoicetronic</groupId>
+                <artifactId>java-sdk</artifactId>
+                <version>${{ github.ref_name }}</version>
+            </dependency>
+            ```
+            
+            ### Gradle Dependency
+            ```groovy
+            implementation 'com.invoicetronic:java-sdk:${{ github.ref_name }}'
+            ```
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
