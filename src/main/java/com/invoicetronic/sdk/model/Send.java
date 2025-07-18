@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Send
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T07:58:43.754744Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T08:13:52.964187Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Send implements Serializable {
   private static final long serialVersionUID = 1L;
 
