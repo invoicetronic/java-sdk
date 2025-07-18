@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * IndirizzoResa
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T10:02:11.762668Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T13:33:56.497374Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class IndirizzoResa implements Serializable {
   private static final long serialVersionUID = 1L;
 
