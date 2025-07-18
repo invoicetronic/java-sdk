@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -8,6 +9,7 @@
     <version>1.0.0</version>
     <url>https://github.com/invoicetronic/java-sdk</url>
     <description>Java SDK for the Invoicetronic API</description>
+    
     <scm>
         <connection>scm:git:git@github.com:invoicetronic/java-sdk.git</connection>
         <developerConnection>scm:git:git@github.com:invoicetronic/java-sdk.git</developerConnection>
@@ -30,6 +32,19 @@
             <organizationUrl>https://invoicetronic.com</organizationUrl>
         </developer>
     </developers>
+
+    <distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <name>Central Repository OSSRH</name>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <name>Central Repository OSSRH</name>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
     <build>
         <plugins>
@@ -114,6 +129,7 @@
                 <executions>
                     <execution>
                         <goals>
+                            <goal>jar</goal>
                             <goal>test-jar</goal>
                         </goals>
                     </execution>
@@ -200,7 +216,7 @@
                 <formats>
                   <!-- you can define as many formats as you want, each is independent -->
                   <format>
-                    <!-- define the files to apply to -->
+                    <!-- define the files to apply to those files -->
                     <includes>
                       <include>.gitignore</include>
                     </includes>
@@ -229,6 +245,34 @@
 
                 </java>
               </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.6.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>published</waitUntil>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>publish</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>publish</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
