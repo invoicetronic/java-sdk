@@ -34,17 +34,17 @@
     </developers>
 
     <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <name>Central Repository OSSRH</name>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <name>Central Repository OSSRH</name>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://central.sonatype.com/</url>
+        </repository>
+        <snapshotRepository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://central.sonatype.com/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -128,13 +128,25 @@
                 <version>3.3.0</version>
                 <executions>
                     <execution>
+                        <id>default-jar</id>
                         <goals>
                             <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>attach-test-jar</id>
+                        <goals>
                             <goal>test-jar</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <mode>development</mode>
+                            <url>${project.url}</url>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
             <plugin>
