@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,13 +48,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * CessionarioCommittente
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class CessionarioCommittente implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -221,7 +223,7 @@ public class CessionarioCommittente implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CessionarioCommittente.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CessionarioCommittente is not found in the empty JSON string", CessionarioCommittente.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CessionarioCommittente is not found in the empty JSON string", CessionarioCommittente.openapiRequiredFields.toString()));
         }
       }
 
@@ -229,7 +231,7 @@ public class CessionarioCommittente implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CessionarioCommittente.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CessionarioCommittente` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CessionarioCommittente` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

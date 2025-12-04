@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * ProblemDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class ProblemDetails implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -301,21 +303,21 @@ public class ProblemDetails implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProblemDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProblemDetails is not found in the empty JSON string", ProblemDetails.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ProblemDetails is not found in the empty JSON string", ProblemDetails.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("detail") != null && !jsonObj.get("detail").isJsonNull()) && !jsonObj.get("detail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `detail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `detail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail").toString()));
       }
       if ((jsonObj.get("instance") != null && !jsonObj.get("instance").isJsonNull()) && !jsonObj.get("instance").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instance` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instance").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instance` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instance").toString()));
       }
   }
 
@@ -376,7 +378,7 @@ public class ProblemDetails implements Serializable {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

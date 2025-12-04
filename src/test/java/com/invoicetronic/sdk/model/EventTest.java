@@ -96,14 +96,6 @@ public class EventTest {
     }
 
     /**
-     * Test the property 'query'
-     */
-    @Test
-    public void queryTest() {
-        // TODO: test query
-    }
-
-    /**
      * Test the property 'endpoint'
      */
     @Test
@@ -144,11 +136,27 @@ public class EventTest {
     }
 
     /**
+     * Test the property 'resourceId'
+     */
+    @Test
+    public void resourceIdTest() {
+        // TODO: test resourceId
+    }
+
+    /**
      * Test the property 'success'
      */
     @Test
     public void successTest() {
         // TODO: test success
+    }
+
+    /**
+     * Test the property 'query'
+     */
+    @Test
+    public void queryTest() {
+        // TODO: test query
     }
 
     /**

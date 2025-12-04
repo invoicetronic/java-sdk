@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,13 +48,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * DatiAnagraficiCedentePrestatore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class DatiAnagraficiCedentePrestatore implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -336,7 +338,7 @@ public class DatiAnagraficiCedentePrestatore implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DatiAnagraficiCedentePrestatore.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DatiAnagraficiCedentePrestatore is not found in the empty JSON string", DatiAnagraficiCedentePrestatore.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DatiAnagraficiCedentePrestatore is not found in the empty JSON string", DatiAnagraficiCedentePrestatore.openapiRequiredFields.toString()));
         }
       }
 
@@ -344,7 +346,7 @@ public class DatiAnagraficiCedentePrestatore implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DatiAnagraficiCedentePrestatore.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DatiAnagraficiCedentePrestatore` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatiAnagraficiCedentePrestatore` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -353,23 +355,23 @@ public class DatiAnagraficiCedentePrestatore implements Serializable {
         IdFiscaleIVA.validateJsonElement(jsonObj.get("id_fiscale_iva"));
       }
       if ((jsonObj.get("codice_fiscale") != null && !jsonObj.get("codice_fiscale").isJsonNull()) && !jsonObj.get("codice_fiscale").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `codice_fiscale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codice_fiscale").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `codice_fiscale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codice_fiscale").toString()));
       }
       // validate the optional field `anagrafica`
       if (jsonObj.get("anagrafica") != null && !jsonObj.get("anagrafica").isJsonNull()) {
         Anagrafica.validateJsonElement(jsonObj.get("anagrafica"));
       }
       if ((jsonObj.get("albo_professionale") != null && !jsonObj.get("albo_professionale").isJsonNull()) && !jsonObj.get("albo_professionale").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `albo_professionale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("albo_professionale").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `albo_professionale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("albo_professionale").toString()));
       }
       if ((jsonObj.get("provincia_albo") != null && !jsonObj.get("provincia_albo").isJsonNull()) && !jsonObj.get("provincia_albo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `provincia_albo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provincia_albo").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `provincia_albo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provincia_albo").toString()));
       }
       if ((jsonObj.get("numero_iscrizione_albo") != null && !jsonObj.get("numero_iscrizione_albo").isJsonNull()) && !jsonObj.get("numero_iscrizione_albo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `numero_iscrizione_albo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("numero_iscrizione_albo").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `numero_iscrizione_albo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("numero_iscrizione_albo").toString()));
       }
       if ((jsonObj.get("regime_fiscale") != null && !jsonObj.get("regime_fiscale").isJsonNull()) && !jsonObj.get("regime_fiscale").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `regime_fiscale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regime_fiscale").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `regime_fiscale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regime_fiscale").toString()));
       }
   }
 

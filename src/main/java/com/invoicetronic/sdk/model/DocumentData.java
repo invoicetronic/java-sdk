@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,13 +46,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * DocumentData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class DocumentData implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -178,7 +180,7 @@ public class DocumentData implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentData is not found in the empty JSON string", DocumentData.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DocumentData is not found in the empty JSON string", DocumentData.openapiRequiredFields.toString()));
         }
       }
 
@@ -186,12 +188,12 @@ public class DocumentData implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DocumentData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DocumentData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DocumentData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("number") != null && !jsonObj.get("number").isJsonNull()) && !jsonObj.get("number").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number").toString()));
       }
   }
 

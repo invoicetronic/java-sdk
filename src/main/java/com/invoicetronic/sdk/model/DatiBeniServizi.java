@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,13 +49,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * DatiBeniServizi
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class DatiBeniServizi implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -197,7 +199,7 @@ public class DatiBeniServizi implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DatiBeniServizi.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DatiBeniServizi is not found in the empty JSON string", DatiBeniServizi.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DatiBeniServizi is not found in the empty JSON string", DatiBeniServizi.openapiRequiredFields.toString()));
         }
       }
 
@@ -205,7 +207,7 @@ public class DatiBeniServizi implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DatiBeniServizi.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DatiBeniServizi` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatiBeniServizi` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -214,7 +216,7 @@ public class DatiBeniServizi implements Serializable {
         if (jsonArraydettaglioLinee != null) {
           // ensure the json data is an array
           if (!jsonObj.get("dettaglio_linee").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `dettaglio_linee` to be an array in the JSON string but got `%s`", jsonObj.get("dettaglio_linee").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `dettaglio_linee` to be an array in the JSON string but got `%s`", jsonObj.get("dettaglio_linee").toString()));
           }
 
           // validate the optional field `dettaglio_linee` (array)
@@ -228,7 +230,7 @@ public class DatiBeniServizi implements Serializable {
         if (jsonArraydatiRiepilogo != null) {
           // ensure the json data is an array
           if (!jsonObj.get("dati_riepilogo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `dati_riepilogo` to be an array in the JSON string but got `%s`", jsonObj.get("dati_riepilogo").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `dati_riepilogo` to be an array in the JSON string but got `%s`", jsonObj.get("dati_riepilogo").toString()));
           }
 
           // validate the optional field `dati_riepilogo` (array)

@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,13 +51,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * DettaglioLinee
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class DettaglioLinee implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -571,7 +573,7 @@ public class DettaglioLinee implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DettaglioLinee.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DettaglioLinee is not found in the empty JSON string", DettaglioLinee.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DettaglioLinee is not found in the empty JSON string", DettaglioLinee.openapiRequiredFields.toString()));
         }
       }
 
@@ -579,19 +581,19 @@ public class DettaglioLinee implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DettaglioLinee.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DettaglioLinee` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DettaglioLinee` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("tipo_cessione_prestazione") != null && !jsonObj.get("tipo_cessione_prestazione").isJsonNull()) && !jsonObj.get("tipo_cessione_prestazione").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tipo_cessione_prestazione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tipo_cessione_prestazione").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tipo_cessione_prestazione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tipo_cessione_prestazione").toString()));
       }
       if (jsonObj.get("codice_articolo") != null && !jsonObj.get("codice_articolo").isJsonNull()) {
         JsonArray jsonArraycodiceArticolo = jsonObj.getAsJsonArray("codice_articolo");
         if (jsonArraycodiceArticolo != null) {
           // ensure the json data is an array
           if (!jsonObj.get("codice_articolo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `codice_articolo` to be an array in the JSON string but got `%s`", jsonObj.get("codice_articolo").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `codice_articolo` to be an array in the JSON string but got `%s`", jsonObj.get("codice_articolo").toString()));
           }
 
           // validate the optional field `codice_articolo` (array)
@@ -601,17 +603,17 @@ public class DettaglioLinee implements Serializable {
         }
       }
       if ((jsonObj.get("descrizione") != null && !jsonObj.get("descrizione").isJsonNull()) && !jsonObj.get("descrizione").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `descrizione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descrizione").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `descrizione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descrizione").toString()));
       }
       if ((jsonObj.get("unita_misura") != null && !jsonObj.get("unita_misura").isJsonNull()) && !jsonObj.get("unita_misura").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unita_misura` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unita_misura").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unita_misura` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unita_misura").toString()));
       }
       if (jsonObj.get("sconto_maggiorazione") != null && !jsonObj.get("sconto_maggiorazione").isJsonNull()) {
         JsonArray jsonArrayscontoMaggiorazione = jsonObj.getAsJsonArray("sconto_maggiorazione");
         if (jsonArrayscontoMaggiorazione != null) {
           // ensure the json data is an array
           if (!jsonObj.get("sconto_maggiorazione").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `sconto_maggiorazione` to be an array in the JSON string but got `%s`", jsonObj.get("sconto_maggiorazione").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sconto_maggiorazione` to be an array in the JSON string but got `%s`", jsonObj.get("sconto_maggiorazione").toString()));
           }
 
           // validate the optional field `sconto_maggiorazione` (array)
@@ -621,20 +623,20 @@ public class DettaglioLinee implements Serializable {
         }
       }
       if ((jsonObj.get("ritenuta") != null && !jsonObj.get("ritenuta").isJsonNull()) && !jsonObj.get("ritenuta").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ritenuta` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ritenuta").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ritenuta` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ritenuta").toString()));
       }
       if ((jsonObj.get("natura") != null && !jsonObj.get("natura").isJsonNull()) && !jsonObj.get("natura").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `natura` to be a primitive type in the JSON string but got `%s`", jsonObj.get("natura").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `natura` to be a primitive type in the JSON string but got `%s`", jsonObj.get("natura").toString()));
       }
       if ((jsonObj.get("riferimento_amministrazione") != null && !jsonObj.get("riferimento_amministrazione").isJsonNull()) && !jsonObj.get("riferimento_amministrazione").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `riferimento_amministrazione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("riferimento_amministrazione").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `riferimento_amministrazione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("riferimento_amministrazione").toString()));
       }
       if (jsonObj.get("altri_dati_gestionali") != null && !jsonObj.get("altri_dati_gestionali").isJsonNull()) {
         JsonArray jsonArrayaltriDatiGestionali = jsonObj.getAsJsonArray("altri_dati_gestionali");
         if (jsonArrayaltriDatiGestionali != null) {
           // ensure the json data is an array
           if (!jsonObj.get("altri_dati_gestionali").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `altri_dati_gestionali` to be an array in the JSON string but got `%s`", jsonObj.get("altri_dati_gestionali").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `altri_dati_gestionali` to be an array in the JSON string but got `%s`", jsonObj.get("altri_dati_gestionali").toString()));
           }
 
           // validate the optional field `altri_dati_gestionali` (array)

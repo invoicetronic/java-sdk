@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,13 +46,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * Event
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class Event implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -90,11 +92,6 @@ public class Event implements Serializable {
   @javax.annotation.Nullable
   private String method;
 
-  public static final String SERIALIZED_NAME_QUERY = "query";
-  @SerializedName(SERIALIZED_NAME_QUERY)
-  @javax.annotation.Nullable
-  private String query;
-
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
   @javax.annotation.Nullable
@@ -120,10 +117,20 @@ public class Event implements Serializable {
   @javax.annotation.Nullable
   private String error;
 
+  public static final String SERIALIZED_NAME_RESOURCE_ID = "resource_id";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
+  @javax.annotation.Nullable
+  private Integer resourceId;
+
   public static final String SERIALIZED_NAME_SUCCESS = "success";
   @SerializedName(SERIALIZED_NAME_SUCCESS)
   @javax.annotation.Nullable
   private Boolean success;
+
+  public static final String SERIALIZED_NAME_QUERY = "query";
+  @SerializedName(SERIALIZED_NAME_QUERY)
+  @javax.annotation.Nullable
+  private String query;
 
   public static final String SERIALIZED_NAME_RESPONSE_BODY = "response_body";
   @SerializedName(SERIALIZED_NAME_RESPONSE_BODY)
@@ -273,25 +280,6 @@ public class Event implements Serializable {
   }
 
 
-  public Event query(@javax.annotation.Nullable String query) {
-    this.query = query;
-    return this;
-  }
-
-  /**
-   * Request query.
-   * @return query
-   */
-  @javax.annotation.Nullable
-  public String getQuery() {
-    return query;
-  }
-
-  public void setQuery(@javax.annotation.Nullable String query) {
-    this.query = query;
-  }
-
-
   public Event endpoint(@javax.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
     return this;
@@ -387,6 +375,25 @@ public class Event implements Serializable {
   }
 
 
+  public Event resourceId(@javax.annotation.Nullable Integer resourceId) {
+    this.resourceId = resourceId;
+    return this;
+  }
+
+  /**
+   * ID of the resource created or modified by this request.
+   * @return resourceId
+   */
+  @javax.annotation.Nullable
+  public Integer getResourceId() {
+    return resourceId;
+  }
+
+  public void setResourceId(@javax.annotation.Nullable Integer resourceId) {
+    this.resourceId = resourceId;
+  }
+
+
   /**
    * Wether the request was successful.
    * @return success
@@ -396,6 +403,25 @@ public class Event implements Serializable {
     return success;
   }
 
+
+
+  public Event query(@javax.annotation.Nullable String query) {
+    this.query = query;
+    return this;
+  }
+
+  /**
+   * Request query. Only used for internal logging, not sent to webhooks.
+   * @return query
+   */
+  @javax.annotation.Nullable
+  public String getQuery() {
+    return query;
+  }
+
+  public void setQuery(@javax.annotation.Nullable String query) {
+    this.query = query;
+  }
 
 
   public Event responseBody(@javax.annotation.Nullable String responseBody) {
@@ -434,13 +460,14 @@ public class Event implements Serializable {
         Objects.equals(this.apiKeyId, event.apiKeyId) &&
         Objects.equals(this.companyId, event.companyId) &&
         Objects.equals(this.method, event.method) &&
-        Objects.equals(this.query, event.query) &&
         Objects.equals(this.endpoint, event.endpoint) &&
         Objects.equals(this.apiVersion, event.apiVersion) &&
         Objects.equals(this.statusCode, event.statusCode) &&
         Objects.equals(this.dateTime, event.dateTime) &&
         Objects.equals(this.error, event.error) &&
+        Objects.equals(this.resourceId, event.resourceId) &&
         Objects.equals(this.success, event.success) &&
+        Objects.equals(this.query, event.query) &&
         Objects.equals(this.responseBody, event.responseBody);
   }
 
@@ -450,7 +477,7 @@ public class Event implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, apiKeyId, companyId, method, query, endpoint, apiVersion, statusCode, dateTime, error, success, responseBody);
+    return Objects.hash(id, created, version, userId, apiKeyId, companyId, method, endpoint, apiVersion, statusCode, dateTime, error, resourceId, success, query, responseBody);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -471,13 +498,14 @@ public class Event implements Serializable {
     sb.append("    apiKeyId: ").append(toIndentedString(apiKeyId)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
     sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    responseBody: ").append(toIndentedString(responseBody)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -500,7 +528,7 @@ public class Event implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "api_key_id", "company_id", "method", "query", "endpoint", "api_version", "status_code", "date_time", "error", "success", "response_body"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "api_key_id", "company_id", "method", "endpoint", "api_version", "status_code", "date_time", "error", "resource_id", "success", "query", "response_body"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -515,7 +543,7 @@ public class Event implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Event.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Event is not found in the empty JSON string", Event.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Event is not found in the empty JSON string", Event.openapiRequiredFields.toString()));
         }
       }
 
@@ -523,24 +551,24 @@ public class Event implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Event.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Event` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Event` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
-      }
-      if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
       }
       if ((jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) && !jsonObj.get("endpoint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
       }
       if ((jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) && !jsonObj.get("error").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
+      }
+      if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
       if ((jsonObj.get("response_body") != null && !jsonObj.get("response_body").isJsonNull()) && !jsonObj.get("response_body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `response_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_body").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `response_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_body").toString()));
       }
   }
 

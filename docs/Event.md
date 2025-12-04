@@ -14,13 +14,14 @@
 |**apiKeyId** | **Integer** | Api key id. |  [optional] |
 |**companyId** | **Integer** | Company id. |  [optional] |
 |**method** | **String** | Request method. |  [optional] |
-|**query** | **String** | Request query. |  [optional] |
 |**endpoint** | **String** | API endpoint. |  [optional] |
 |**apiVersion** | **Integer** | Api version. |  [optional] |
 |**statusCode** | **Integer** | Status code returned by the API. |  [optional] |
 |**dateTime** | **OffsetDateTime** | Date and time of the request. |  [optional] |
 |**error** | **String** | Response error. |  [optional] |
+|**resourceId** | **Integer** | ID of the resource created or modified by this request. |  [optional] |
 |**success** | **Boolean** | Wether the request was successful. |  [optional] [readonly] |
+|**query** | **String** | Request query. Only used for internal logging, not sent to webhooks. |  [optional] |
 |**responseBody** | **String** | Response payload. It is guaranteed to be cyphered at rest. |  [optional] |
 
 

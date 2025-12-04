@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * Allegati
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class Allegati implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -255,7 +257,7 @@ public class Allegati implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Allegati.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Allegati is not found in the empty JSON string", Allegati.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Allegati is not found in the empty JSON string", Allegati.openapiRequiredFields.toString()));
         }
       }
 
@@ -263,21 +265,21 @@ public class Allegati implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Allegati.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Allegati` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Allegati` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("nome_attachment") != null && !jsonObj.get("nome_attachment").isJsonNull()) && !jsonObj.get("nome_attachment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nome_attachment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nome_attachment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `nome_attachment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nome_attachment").toString()));
       }
       if ((jsonObj.get("algoritmo_compressione") != null && !jsonObj.get("algoritmo_compressione").isJsonNull()) && !jsonObj.get("algoritmo_compressione").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `algoritmo_compressione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("algoritmo_compressione").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `algoritmo_compressione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("algoritmo_compressione").toString()));
       }
       if ((jsonObj.get("formato_attachment") != null && !jsonObj.get("formato_attachment").isJsonNull()) && !jsonObj.get("formato_attachment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `formato_attachment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("formato_attachment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `formato_attachment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("formato_attachment").toString()));
       }
       if ((jsonObj.get("descrizione_attachment") != null && !jsonObj.get("descrizione_attachment").isJsonNull()) && !jsonObj.get("descrizione_attachment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `descrizione_attachment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descrizione_attachment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `descrizione_attachment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descrizione_attachment").toString()));
       }
   }
 

@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,13 +51,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * Reduced Send data for Update responses, containing only the essential fields.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class SendReduced implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -277,7 +279,7 @@ public class SendReduced implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SendReduced.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendReduced is not found in the empty JSON string", SendReduced.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SendReduced is not found in the empty JSON string", SendReduced.openapiRequiredFields.toString()));
         }
       }
 
@@ -285,22 +287,22 @@ public class SendReduced implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SendReduced.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendReduced` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SendReduced` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("identifier") != null && !jsonObj.get("identifier").isJsonNull()) && !jsonObj.get("identifier").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `identifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `identifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier").toString()));
       }
       if ((jsonObj.get("prestatore") != null && !jsonObj.get("prestatore").isJsonNull()) && !jsonObj.get("prestatore").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prestatore` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prestatore").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prestatore` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prestatore").toString()));
       }
       if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
         JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
         if (jsonArraydocuments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("documents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
           }
 
           // validate the optional field `documents` (array)

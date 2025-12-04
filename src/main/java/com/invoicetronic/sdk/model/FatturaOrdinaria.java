@@ -14,6 +14,7 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,13 +49,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * FatturaOrdinaria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T07:27:37.407993Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class FatturaOrdinaria implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -215,7 +217,7 @@ public class FatturaOrdinaria implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FatturaOrdinaria.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FatturaOrdinaria is not found in the empty JSON string", FatturaOrdinaria.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FatturaOrdinaria is not found in the empty JSON string", FatturaOrdinaria.openapiRequiredFields.toString()));
         }
       }
 
@@ -223,12 +225,12 @@ public class FatturaOrdinaria implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!FatturaOrdinaria.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `FatturaOrdinaria` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FatturaOrdinaria` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("sistema_emittente") != null && !jsonObj.get("sistema_emittente").isJsonNull()) && !jsonObj.get("sistema_emittente").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sistema_emittente` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sistema_emittente").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sistema_emittente` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sistema_emittente").toString()));
       }
       // validate the optional field `fattura_elettronica_header`
       if (jsonObj.get("fattura_elettronica_header") != null && !jsonObj.get("fattura_elettronica_header").isJsonNull()) {
@@ -239,7 +241,7 @@ public class FatturaOrdinaria implements Serializable {
         if (jsonArrayfatturaElettronicaBody != null) {
           // ensure the json data is an array
           if (!jsonObj.get("fattura_elettronica_body").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `fattura_elettronica_body` to be an array in the JSON string but got `%s`", jsonObj.get("fattura_elettronica_body").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `fattura_elettronica_body` to be an array in the JSON string but got `%s`", jsonObj.get("fattura_elettronica_body").toString()));
           }
 
           // validate the optional field `fattura_elettronica_body` (array)
