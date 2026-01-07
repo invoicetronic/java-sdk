@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2026-01-07T10:19:31.522220Z[Etc/UTC]
+- Build date: 2026-01-07T10:24:03.366361Z[Etc/UTC]
 
 - Generator version: 7.18.0
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.invoicetronic</groupId>
   <artifactId>java-sdk</artifactId>
-  <version>1.1.6</version>
+  <version>1.1.7</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -62,7 +62,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.invoicetronic:java-sdk:1.1.6"
+     implementation "com.invoicetronic:java-sdk:1.1.7"
   }
 ```
 
@@ -76,7 +76,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/java-sdk-1.1.6.jar`
+- `target/java-sdk-1.1.7.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
