@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.invoicetronic",
     name := "java-sdk",
-    version := "1.1.2",
+    version := "1.1.3",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),
