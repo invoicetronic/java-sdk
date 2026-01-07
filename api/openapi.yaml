@@ -17,9 +17,6 @@ info:
   termsOfService: https://invoicetronic.com/tos
   title: Invoicetronic API
   version: "1"
-  x-logo:
-    url: https://invoicetronic.com/assets/logomark-white.svg
-    altText: "Invoicetronic: support electronic invoices in a snap"
 servers:
 - url: /
 security:
@@ -3393,11 +3390,11 @@ components:
           type: integer
         method:
           description: Request method.
-          nullable: true
+          minLength: 1
           type: string
         endpoint:
           description: API endpoint.
-          nullable: true
+          minLength: 1
           type: string
         api_version:
           description: Api version.
@@ -3433,6 +3430,9 @@ components:
           description: Response payload. It is guaranteed to be cyphered at rest.
           nullable: true
           type: string
+      required:
+      - endpoint
+      - method
       type: object
     FatturaElettronicaBody:
       additionalProperties: false
@@ -5117,7 +5117,7 @@ components:
           description: "Xml payloaad. This is the actual xml content, as string. On\
             \ send, it can be base64 encoded. If it's not, it will be encoded before\
             \ sending. It is guaranteed to be cyphered at rest."
-          nullable: true
+          minLength: 1
           type: string
         last_update:
           description: Last update from SDI.
@@ -5149,6 +5149,8 @@ components:
           description: SDI message id.
           nullable: true
           type: string
+      required:
+      - payload
       type: object
     ScontoMaggiorazione:
       additionalProperties: false
@@ -5313,7 +5315,7 @@ components:
           description: "Xml payloaad. This is the actual xml content, as string. On\
             \ send, it can be base64 encoded. If it's not, it will be encoded before\
             \ sending. It is guaranteed to be cyphered at rest."
-          nullable: true
+          minLength: 1
           type: string
         last_update:
           description: Last update from SDI.
@@ -5346,6 +5348,8 @@ components:
           type: object
         company:
           $ref: "#/components/schemas/Company"
+      required:
+      - payload
       type: object
     SendReduced:
       additionalProperties: false
@@ -5590,7 +5594,7 @@ components:
         url:
           description: The url of your application's endpoint that will receive a
             POST request when the webhook is fired.
-          nullable: true
+          minLength: 1
           type: string
         enabled:
           description: "Wether the webhook is enabled. On creation, this is set to\
@@ -5613,6 +5617,8 @@ components:
             type: string
           nullable: true
           type: array
+      required:
+      - url
       type: object
     WebHookHistory:
       additionalProperties: false

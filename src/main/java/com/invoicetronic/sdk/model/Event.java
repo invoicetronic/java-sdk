@@ -14,7 +14,6 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,14 +45,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * Event
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T07:32:57.928754Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Event implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -89,12 +87,12 @@ public class Event implements Serializable {
 
   public static final String SERIALIZED_NAME_METHOD = "method";
   @SerializedName(SERIALIZED_NAME_METHOD)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String method;
 
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String endpoint;
 
   public static final String SERIALIZED_NAME_API_VERSION = "api_version";
@@ -261,7 +259,7 @@ public class Event implements Serializable {
   }
 
 
-  public Event method(@javax.annotation.Nullable String method) {
+  public Event method(@javax.annotation.Nonnull String method) {
     this.method = method;
     return this;
   }
@@ -270,17 +268,17 @@ public class Event implements Serializable {
    * Request method.
    * @return method
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getMethod() {
     return method;
   }
 
-  public void setMethod(@javax.annotation.Nullable String method) {
+  public void setMethod(@javax.annotation.Nonnull String method) {
     this.method = method;
   }
 
 
-  public Event endpoint(@javax.annotation.Nullable String endpoint) {
+  public Event endpoint(@javax.annotation.Nonnull String endpoint) {
     this.endpoint = endpoint;
     return this;
   }
@@ -289,12 +287,12 @@ public class Event implements Serializable {
    * API endpoint.
    * @return endpoint
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getEndpoint() {
     return endpoint;
   }
 
-  public void setEndpoint(@javax.annotation.Nullable String endpoint) {
+  public void setEndpoint(@javax.annotation.Nonnull String endpoint) {
     this.endpoint = endpoint;
   }
 
@@ -531,7 +529,7 @@ public class Event implements Serializable {
     openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "api_key_id", "company_id", "method", "endpoint", "api_version", "status_code", "date_time", "error", "resource_id", "success", "query", "response_body"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("method", "endpoint"));
   }
 
   /**
@@ -543,7 +541,7 @@ public class Event implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Event.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Event is not found in the empty JSON string", Event.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Event is not found in the empty JSON string", Event.openapiRequiredFields.toString()));
         }
       }
 
@@ -551,24 +549,31 @@ public class Event implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Event.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Event` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Event` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Event.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
+      if (!jsonObj.get("method").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
       }
-      if ((jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) && !jsonObj.get("endpoint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
+      if (!jsonObj.get("endpoint").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
       }
       if ((jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) && !jsonObj.get("error").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
       }
       if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
       if ((jsonObj.get("response_body") != null && !jsonObj.get("response_body").isJsonNull()) && !jsonObj.get("response_body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `response_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_body").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `response_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_body").toString()));
       }
   }
 

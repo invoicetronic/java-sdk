@@ -14,7 +14,6 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,14 +47,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * DatiTrasporto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T07:32:57.928754Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class DatiTrasporto implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -468,7 +466,7 @@ public class DatiTrasporto implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DatiTrasporto.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DatiTrasporto is not found in the empty JSON string", DatiTrasporto.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in DatiTrasporto is not found in the empty JSON string", DatiTrasporto.openapiRequiredFields.toString()));
         }
       }
 
@@ -476,7 +474,7 @@ public class DatiTrasporto implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DatiTrasporto.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatiTrasporto` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatiTrasporto` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -485,19 +483,19 @@ public class DatiTrasporto implements Serializable {
         DatiAnagraficiVettore.validateJsonElement(jsonObj.get("dati_anagrafici_vettore"));
       }
       if ((jsonObj.get("mezzo_trasporto") != null && !jsonObj.get("mezzo_trasporto").isJsonNull()) && !jsonObj.get("mezzo_trasporto").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mezzo_trasporto` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mezzo_trasporto").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mezzo_trasporto` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mezzo_trasporto").toString()));
       }
       if ((jsonObj.get("causale_trasporto") != null && !jsonObj.get("causale_trasporto").isJsonNull()) && !jsonObj.get("causale_trasporto").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `causale_trasporto` to be a primitive type in the JSON string but got `%s`", jsonObj.get("causale_trasporto").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `causale_trasporto` to be a primitive type in the JSON string but got `%s`", jsonObj.get("causale_trasporto").toString()));
       }
       if ((jsonObj.get("descrizione") != null && !jsonObj.get("descrizione").isJsonNull()) && !jsonObj.get("descrizione").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `descrizione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descrizione").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `descrizione` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descrizione").toString()));
       }
       if ((jsonObj.get("unita_misura_peso") != null && !jsonObj.get("unita_misura_peso").isJsonNull()) && !jsonObj.get("unita_misura_peso").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unita_misura_peso` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unita_misura_peso").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `unita_misura_peso` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unita_misura_peso").toString()));
       }
       if ((jsonObj.get("tipo_resa") != null && !jsonObj.get("tipo_resa").isJsonNull()) && !jsonObj.get("tipo_resa").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tipo_resa` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tipo_resa").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tipo_resa` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tipo_resa").toString()));
       }
       // validate the optional field `indirizzo_resa`
       if (jsonObj.get("indirizzo_resa") != null && !jsonObj.get("indirizzo_resa").isJsonNull()) {

@@ -14,7 +14,6 @@
 package com.invoicetronic.sdk.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,14 +46,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import com.invoicetronic.sdk.JSON;
 
 /**
  * DatiAnagrafici
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T19:03:12.319698Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T07:32:57.928754Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class DatiAnagrafici implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -207,7 +205,7 @@ public class DatiAnagrafici implements Serializable {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DatiAnagrafici.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DatiAnagrafici is not found in the empty JSON string", DatiAnagrafici.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in DatiAnagrafici is not found in the empty JSON string", DatiAnagrafici.openapiRequiredFields.toString()));
         }
       }
 
@@ -215,7 +213,7 @@ public class DatiAnagrafici implements Serializable {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DatiAnagrafici.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatiAnagrafici` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatiAnagrafici` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -224,7 +222,7 @@ public class DatiAnagrafici implements Serializable {
         IdFiscaleIVA.validateJsonElement(jsonObj.get("id_fiscale_iva"));
       }
       if ((jsonObj.get("codice_fiscale") != null && !jsonObj.get("codice_fiscale").isJsonNull()) && !jsonObj.get("codice_fiscale").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `codice_fiscale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codice_fiscale").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `codice_fiscale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codice_fiscale").toString()));
       }
       // validate the optional field `anagrafica`
       if (jsonObj.get("anagrafica") != null && !jsonObj.get("anagrafica").isJsonNull()) {
