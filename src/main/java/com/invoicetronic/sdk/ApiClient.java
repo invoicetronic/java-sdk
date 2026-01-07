@@ -142,7 +142,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Invoicetronic/1.1.1/Java-SDK");
+        setUserAgent("Invoicetronic/1.1.2/Java-SDK");
 
         authentications = new HashMap<String, Authentication>();
     }

@@ -50,7 +50,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DatiBollo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T09:45:56.559847Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T09:52:48.466609Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class DatiBollo implements Serializable {
   private static final long serialVersionUID = 1L;
 
