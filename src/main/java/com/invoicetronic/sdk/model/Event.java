@@ -51,7 +51,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Event
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T10:24:03.366361Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T16:17:14.556320Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class Event implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -393,7 +393,7 @@ public class Event implements Serializable {
 
 
   /**
-   * Wether the request was successful.
+   * Whether the request was successful.
    * @return success
    */
   @javax.annotation.Nullable
@@ -428,7 +428,7 @@ public class Event implements Serializable {
   }
 
   /**
-   * Response payload. It is guaranteed to be cyphered at rest.
+   * Response payload. It is guaranteed to be encrypted at rest.
    * @return responseBody
    */
   @javax.annotation.Nullable

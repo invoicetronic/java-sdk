@@ -54,7 +54,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Receive
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T10:24:03.366361Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T16:17:14.556320Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class Receive implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -337,7 +337,7 @@ public class Receive implements Serializable {
   }
 
   /**
-   * SDI identifier. This is set by the SDI and is guaranted to be unique within the SDI system.
+   * SDI identifier. This is set by the SDI and is guaranteed to be unique within the SDI system.
    * @return identifier
    */
   @javax.annotation.Nullable
@@ -394,7 +394,7 @@ public class Receive implements Serializable {
   }
 
   /**
-   * Xml payloaad. This is the actual xml content, as string. On send, it can be base64 encoded. If it&#39;s not, it will be encoded before sending. It is guaranteed to be cyphered at rest.
+   * Xml payload. This is the actual xml content, as string. On send, it can be base64 encoded. If it&#39;s not, it will be encoded before sending. It is guaranteed to be encrypted at rest.
    * @return payload
    */
   @javax.annotation.Nonnull
@@ -497,7 +497,7 @@ public class Receive implements Serializable {
   }
 
   /**
-   * Wether the invoice has been read at least once.
+   * Whether the invoice has been read at least once. Set to true only when the invoice is requested with include_payload&#x3D;true.
    * @return isRead
    */
   @javax.annotation.Nullable

@@ -181,7 +181,7 @@ public class WebhookApi {
 
     /**
      * List webhooks
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Retrieve a paginated list of webhooks. Results can be filtered by company, description, enabled status, events, and URL.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param companyId Company id (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
@@ -208,7 +208,7 @@ public class WebhookApi {
 
     /**
      * List webhooks
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Retrieve a paginated list of webhooks. Results can be filtered by company, description, enabled status, events, and URL.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param companyId Company id (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
@@ -236,7 +236,7 @@ public class WebhookApi {
 
     /**
      * List webhooks (asynchronously)
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Retrieve a paginated list of webhooks. Results can be filtered by company, description, enabled status, events, and URL.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param companyId Company id (optional)
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
@@ -277,6 +277,7 @@ public class WebhookApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -338,7 +339,7 @@ public class WebhookApi {
 
     /**
      * Delete a webhook by id
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Delete a webhook subscription by its internal id.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param id Item id (required)
      * @return WebHook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -349,6 +350,7 @@ public class WebhookApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -359,7 +361,7 @@ public class WebhookApi {
 
     /**
      * Delete a webhook by id
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Delete a webhook subscription by its internal id.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param id Item id (required)
      * @return ApiResponse&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -370,6 +372,7 @@ public class WebhookApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -381,7 +384,7 @@ public class WebhookApi {
 
     /**
      * Delete a webhook by id (asynchronously)
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Delete a webhook subscription by its internal id.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -393,6 +396,7 @@ public class WebhookApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -475,7 +479,7 @@ public class WebhookApi {
 
     /**
      * Get a webhook by id
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Retrieve a webhook by its internal id.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param id Item id (required)
      * @return WebHook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -494,7 +498,7 @@ public class WebhookApi {
 
     /**
      * Get a webhook by id
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Retrieve a webhook by its internal id.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param id Item id (required)
      * @return ApiResponse&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -514,7 +518,7 @@ public class WebhookApi {
 
     /**
      * Get a webhook by id (asynchronously)
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Retrieve a webhook by its internal id.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -607,7 +611,7 @@ public class WebhookApi {
 
     /**
      * Add a webhook
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Create a new webhook subscription.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param webHook  (required)
      * @return WebHook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -627,7 +631,7 @@ public class WebhookApi {
 
     /**
      * Add a webhook
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Create a new webhook subscription.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param webHook  (required)
      * @return ApiResponse&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -648,7 +652,7 @@ public class WebhookApi {
 
     /**
      * Add a webhook (asynchronously)
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Create a new webhook subscription.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param webHook  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -742,7 +746,7 @@ public class WebhookApi {
 
     /**
      * Update a webhook
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Update an existing webhook subscription.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param webHook  (required)
      * @return WebHook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -762,7 +766,7 @@ public class WebhookApi {
 
     /**
      * Update a webhook
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Update an existing webhook subscription.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param webHook  (required)
      * @return ApiResponse&lt;WebHook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -783,7 +787,7 @@ public class WebhookApi {
 
     /**
      * Update a webhook (asynchronously)
-     * Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
+     * Update an existing webhook subscription.  **Webhooks** allow you to receive notifications to an external service when specific events occur, such as invoice creation or status updates. You can subscribe to specific events and receive a notification when they occur.  You can also manage webhooks via the [Dashboard](https://dashboard.invoicetronic.com).  For more information, see the **[Webhooks documentation page](https://invoicetronic.com/en/docs/webhooks/)**.
      * @param webHook  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

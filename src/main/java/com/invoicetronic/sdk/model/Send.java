@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Send
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T10:24:03.366361Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T16:17:14.556320Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class Send implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -340,7 +340,7 @@ public class Send implements Serializable {
   }
 
   /**
-   * SDI identifier. This is set by the SDI and is guaranted to be unique within the SDI system.
+   * SDI identifier. This is set by the SDI and is guaranteed to be unique within the SDI system.
    * @return identifier
    */
   @javax.annotation.Nullable
@@ -397,7 +397,7 @@ public class Send implements Serializable {
   }
 
   /**
-   * Xml payloaad. This is the actual xml content, as string. On send, it can be base64 encoded. If it&#39;s not, it will be encoded before sending. It is guaranteed to be cyphered at rest.
+   * Xml payload. This is the actual xml content, as string. On send, it can be base64 encoded. If it&#39;s not, it will be encoded before sending. It is guaranteed to be encrypted at rest.
    * @return payload
    */
   @javax.annotation.Nonnull

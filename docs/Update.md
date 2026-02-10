@@ -14,11 +14,11 @@
 |**companyId** | **Integer** | Company id. |  [optional] |
 |**sendId** | **Integer** | Send id. This is the id of the sent invoice to which this update refers to. |  [optional] |
 |**lastUpdate** | **OffsetDateTime** | Last update from SDI. |  [optional] |
-|**state** | [**StateEnum**](#StateEnum) | State of the document. Theses are the possible values, as per the SDI documentation: |  [optional] |
+|**state** | [**StateEnum**](#StateEnum) | State of the document. These are the possible values, as per the SDI documentation: |  [optional] |
 |**description** | **String** | Description for the state. |  [optional] |
 |**messageId** | **String** | SDI message id. |  [optional] |
 |**errors** | [**List&lt;Error&gt;**](Error.md) | SDI errors, if any. |  [optional] |
-|**isRead** | **Boolean** | Wether the item has been read at least once. |  [optional] |
+|**isRead** | **Boolean** | Whether the item has been read at least once. |  [optional] |
 |**send** | [**SendReduced**](SendReduced.md) |  |  [optional] |
 
 

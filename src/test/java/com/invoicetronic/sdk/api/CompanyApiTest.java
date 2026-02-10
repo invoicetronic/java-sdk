@@ -36,7 +36,7 @@ public class CompanyApiTest {
     /**
      * List companies
      *
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      *
      * @throws ApiException if the Api call fails
      */
@@ -52,21 +52,22 @@ public class CompanyApiTest {
     /**
      * Delete a company
      *
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Delete a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.  **Warning:** Deleting a company will permanently remove all associated data, including sent invoices, received invoices, invoice updates from SDI, logs, and webhooks.  If the company has any linked invoices, you must explicitly confirm deletion by adding &#x60;?force&#x3D;true&#x60; to the request. Without this parameter, the API will return &#x60;409 Conflict&#x60; with details about the linked data.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void companyIdDeleteTest() throws ApiException {
         Integer id = null;
-        Company response = api.companyIdDelete(id);
+        Boolean force = null;
+        Company response = api.companyIdDelete(id, force);
         // TODO: test validations
     }
 
     /**
      * Get a company by id
      *
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      *
      * @throws ApiException if the Api call fails
      */
@@ -80,7 +81,7 @@ public class CompanyApiTest {
     /**
      * Add a company
      *
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Add a new company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      *
      * @throws ApiException if the Api call fails
      */
@@ -94,7 +95,7 @@ public class CompanyApiTest {
     /**
      * Update a company
      *
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Update an existing company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      *
      * @throws ApiException if the Api call fails
      */

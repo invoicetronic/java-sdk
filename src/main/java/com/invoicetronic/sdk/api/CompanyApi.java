@@ -155,7 +155,7 @@ public class CompanyApi {
 
     /**
      * List companies
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -177,7 +177,7 @@ public class CompanyApi {
 
     /**
      * List companies
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -200,7 +200,7 @@ public class CompanyApi {
 
     /**
      * List companies (asynchronously)
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
@@ -226,6 +226,7 @@ public class CompanyApi {
     /**
      * Build call for companyIdDelete
      * @param id Item id (required)
+     * @param force Force delete including all related data. (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -236,10 +237,11 @@ public class CompanyApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyIdDeleteCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call companyIdDeleteCall(@javax.annotation.Nonnull Integer id, @javax.annotation.Nullable Boolean force, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -265,6 +267,10 @@ public class CompanyApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (force != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("force", force));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -285,20 +291,21 @@ public class CompanyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call companyIdDeleteValidateBeforeCall(@javax.annotation.Nonnull Integer id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call companyIdDeleteValidateBeforeCall(@javax.annotation.Nonnull Integer id, @javax.annotation.Nullable Boolean force, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling companyIdDelete(Async)");
         }
 
-        return companyIdDeleteCall(id, _callback);
+        return companyIdDeleteCall(id, force, _callback);
 
     }
 
     /**
      * Delete a company
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Delete a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.  **Warning:** Deleting a company will permanently remove all associated data, including sent invoices, received invoices, invoice updates from SDI, logs, and webhooks.  If the company has any linked invoices, you must explicitly confirm deletion by adding &#x60;?force&#x3D;true&#x60; to the request. Without this parameter, the API will return &#x60;409 Conflict&#x60; with details about the linked data.
      * @param id Item id (required)
+     * @param force Force delete including all related data. (optional, default to false)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -308,18 +315,20 @@ public class CompanyApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Company companyIdDelete(@javax.annotation.Nonnull Integer id) throws ApiException {
-        ApiResponse<Company> localVarResp = companyIdDeleteWithHttpInfo(id);
+    public Company companyIdDelete(@javax.annotation.Nonnull Integer id, @javax.annotation.Nullable Boolean force) throws ApiException {
+        ApiResponse<Company> localVarResp = companyIdDeleteWithHttpInfo(id, force);
         return localVarResp.getData();
     }
 
     /**
      * Delete a company
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Delete a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.  **Warning:** Deleting a company will permanently remove all associated data, including sent invoices, received invoices, invoice updates from SDI, logs, and webhooks.  If the company has any linked invoices, you must explicitly confirm deletion by adding &#x60;?force&#x3D;true&#x60; to the request. Without this parameter, the API will return &#x60;409 Conflict&#x60; with details about the linked data.
      * @param id Item id (required)
+     * @param force Force delete including all related data. (optional, default to false)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -329,19 +338,21 @@ public class CompanyApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Company> companyIdDeleteWithHttpInfo(@javax.annotation.Nonnull Integer id) throws ApiException {
-        okhttp3.Call localVarCall = companyIdDeleteValidateBeforeCall(id, null);
+    public ApiResponse<Company> companyIdDeleteWithHttpInfo(@javax.annotation.Nonnull Integer id, @javax.annotation.Nullable Boolean force) throws ApiException {
+        okhttp3.Call localVarCall = companyIdDeleteValidateBeforeCall(id, force, null);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Delete a company (asynchronously)
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Delete a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.  **Warning:** Deleting a company will permanently remove all associated data, including sent invoices, received invoices, invoice updates from SDI, logs, and webhooks.  If the company has any linked invoices, you must explicitly confirm deletion by adding &#x60;?force&#x3D;true&#x60; to the request. Without this parameter, the API will return &#x60;409 Conflict&#x60; with details about the linked data.
      * @param id Item id (required)
+     * @param force Force delete including all related data. (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -352,12 +363,13 @@ public class CompanyApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call companyIdDeleteAsync(@javax.annotation.Nonnull Integer id, final ApiCallback<Company> _callback) throws ApiException {
+    public okhttp3.Call companyIdDeleteAsync(@javax.annotation.Nonnull Integer id, @javax.annotation.Nullable Boolean force, final ApiCallback<Company> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = companyIdDeleteValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = companyIdDeleteValidateBeforeCall(id, force, _callback);
         Type localVarReturnType = new TypeToken<Company>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -434,7 +446,7 @@ public class CompanyApi {
 
     /**
      * Get a company by id
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param id Item id (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -453,7 +465,7 @@ public class CompanyApi {
 
     /**
      * Get a company by id
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param id Item id (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -473,7 +485,7 @@ public class CompanyApi {
 
     /**
      * Get a company by id (asynchronously)
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Retrieve a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -566,7 +578,7 @@ public class CompanyApi {
 
     /**
      * Add a company
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Add a new company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param company  (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -586,7 +598,7 @@ public class CompanyApi {
 
     /**
      * Add a company
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Add a new company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param company  (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -607,7 +619,7 @@ public class CompanyApi {
 
     /**
      * Add a company (asynchronously)
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Add a new company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param company  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -701,7 +713,7 @@ public class CompanyApi {
 
     /**
      * Update a company
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Update an existing company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param company  (required)
      * @return Company
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -721,7 +733,7 @@ public class CompanyApi {
 
     /**
      * Update a company
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Update an existing company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param company  (required)
      * @return ApiResponse&lt;Company&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -742,7 +754,7 @@ public class CompanyApi {
 
     /**
      * Update a company (asynchronously)
-     * Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+     * Update an existing company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      * @param company  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

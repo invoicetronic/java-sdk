@@ -16,7 +16,7 @@ Webhook history.
 |**event** | **String** | Event name. |  [optional] |
 |**statusCode** | **Integer** | Status code. |  [optional] |
 |**dateTime** | **OffsetDateTime** | Date and time of the request. |  [optional] |
-|**success** | **Boolean** | Wether the request was successful. |  [optional] [readonly] |
+|**success** | **Boolean** | Whether the request was successful. |  [optional] [readonly] |
 
 
 ## Implemented Interfaces

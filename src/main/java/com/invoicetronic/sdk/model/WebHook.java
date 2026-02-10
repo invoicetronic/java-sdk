@@ -53,7 +53,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * WebHook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T10:24:03.366361Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T16:17:14.556320Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class WebHook implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -230,7 +230,7 @@ public class WebHook implements Serializable {
   }
 
   /**
-   * Wether the webhook is enabled. On creation, this is set to &#x60;true&#x60;.
+   * Whether the webhook is enabled. On creation, this is set to &#x60;true&#x60;.
    * @return enabled
    */
   @javax.annotation.Nullable
@@ -295,7 +295,7 @@ public class WebHook implements Serializable {
   }
 
   /**
-   * List of events to that trigger the webhook.  See Invoicetronic.SupportedEvents.Available for a list of valid event names.
+   * List of events that trigger the webhook.  See Invoicetronic.SupportedEvents.Available for a list of valid event names.
    * @return events
    */
   @javax.annotation.Nullable

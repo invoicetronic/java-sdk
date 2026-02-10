@@ -55,7 +55,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * Update
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T10:24:03.366361Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T16:17:14.556320Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class Update implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -95,7 +95,7 @@ public class Update implements Serializable {
   private OffsetDateTime lastUpdate;
 
   /**
-   * State of the document. Theses are the possible values, as per the SDI documentation:
+   * State of the document. These are the possible values, as per the SDI documentation:
    */
   @JsonAdapter(StateEnum.Adapter.class)
   public enum StateEnum {
@@ -332,7 +332,7 @@ public class Update implements Serializable {
   }
 
   /**
-   * State of the document. Theses are the possible values, as per the SDI documentation:
+   * State of the document. These are the possible values, as per the SDI documentation:
    * @return state
    */
   @javax.annotation.Nullable
@@ -416,7 +416,7 @@ public class Update implements Serializable {
   }
 
   /**
-   * Wether the item has been read at least once.
+   * Whether the item has been read at least once.
    * @return isRead
    */
   @javax.annotation.Nullable

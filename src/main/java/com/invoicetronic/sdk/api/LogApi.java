@@ -210,7 +210,7 @@ public class LogApi {
 
     /**
      * List events
-     * Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
+     * Retrieve a paginated list of log events. Results can be filtered by various criteria such as endpoint, method, status code, and date ranges.  **Logs** record every API request. They are preserved for 15 days.  You can also view logs in the Events section of the [Dashboard](https://dashboard.invoicetronic.com).
      * @param companyId Company id (optional)
      * @param endpoint  (optional)
      * @param method  (optional)
@@ -243,7 +243,7 @@ public class LogApi {
 
     /**
      * List events
-     * Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
+     * Retrieve a paginated list of log events. Results can be filtered by various criteria such as endpoint, method, status code, and date ranges.  **Logs** record every API request. They are preserved for 15 days.  You can also view logs in the Events section of the [Dashboard](https://dashboard.invoicetronic.com).
      * @param companyId Company id (optional)
      * @param endpoint  (optional)
      * @param method  (optional)
@@ -277,7 +277,7 @@ public class LogApi {
 
     /**
      * List events (asynchronously)
-     * Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
+     * Retrieve a paginated list of log events. Results can be filtered by various criteria such as endpoint, method, status code, and date ranges.  **Logs** record every API request. They are preserved for 15 days.  You can also view logs in the Events section of the [Dashboard](https://dashboard.invoicetronic.com).
      * @param companyId Company id (optional)
      * @param endpoint  (optional)
      * @param method  (optional)
@@ -383,7 +383,7 @@ public class LogApi {
 
     /**
      * Get an event by id
-     * Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
+     * Retrieve a log event by its internal id.  **Logs** record every API request. They are preserved for 15 days.  You can also view logs in the Events section of the [Dashboard](https://dashboard.invoicetronic.com).
      * @param id Item id (required)
      * @return Event
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -402,7 +402,7 @@ public class LogApi {
 
     /**
      * Get an event by id
-     * Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
+     * Retrieve a log event by its internal id.  **Logs** record every API request. They are preserved for 15 days.  You can also view logs in the Events section of the [Dashboard](https://dashboard.invoicetronic.com).
      * @param id Item id (required)
      * @return ApiResponse&lt;Event&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -422,7 +422,7 @@ public class LogApi {
 
     /**
      * Get an event by id (asynchronously)
-     * Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
+     * Retrieve a log event by its internal id.  **Logs** record every API request. They are preserved for 15 days.  You can also view logs in the Events section of the [Dashboard](https://dashboard.invoicetronic.com).
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

@@ -225,7 +225,7 @@ public class ReceiveApi {
 
     /**
      * List incoming invoices
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
@@ -261,7 +261,7 @@ public class ReceiveApi {
 
     /**
      * List incoming invoices
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
@@ -298,7 +298,7 @@ public class ReceiveApi {
 
     /**
      * List incoming invoices (asynchronously)
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param unread Unread items only. (optional)
@@ -348,6 +348,7 @@ public class ReceiveApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -409,7 +410,7 @@ public class ReceiveApi {
 
     /**
      * Delete an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Permanently delete a receive invoice by its internal id. This action cannot be undone.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param id Item id (required)
      * @return Receive
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -420,6 +421,7 @@ public class ReceiveApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -430,7 +432,7 @@ public class ReceiveApi {
 
     /**
      * Delete an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Permanently delete a receive invoice by its internal id. This action cannot be undone.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param id Item id (required)
      * @return ApiResponse&lt;Receive&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -441,6 +443,7 @@ public class ReceiveApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -452,7 +455,7 @@ public class ReceiveApi {
 
     /**
      * Delete an incoming invoice by id (asynchronously)
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Permanently delete a receive invoice by its internal id. This action cannot be undone.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param id Item id (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -464,6 +467,7 @@ public class ReceiveApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
@@ -551,7 +555,7 @@ public class ReceiveApi {
 
     /**
      * Get an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Retrieve an incoming invoice by its internal id. The &#x60;id&#x60; is unique and assigned by the system when the invoice is received. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. The invoice is marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param id Item id (required)
      * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @return Receive
@@ -571,7 +575,7 @@ public class ReceiveApi {
 
     /**
      * Get an incoming invoice by id
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Retrieve an incoming invoice by its internal id. The &#x60;id&#x60; is unique and assigned by the system when the invoice is received. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. The invoice is marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param id Item id (required)
      * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @return ApiResponse&lt;Receive&gt;
@@ -592,7 +596,7 @@ public class ReceiveApi {
 
     /**
      * Get an incoming invoice by id (asynchronously)
-     * Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
+     * Retrieve an incoming invoice by its internal id. The &#x60;id&#x60; is unique and assigned by the system when the invoice is received. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. The invoice is marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param id Item id (required)
      * @param includePayload Include payload in the response. Defaults to false. (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
