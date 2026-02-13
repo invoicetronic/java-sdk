@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2026-02-10T16:17:14.556320Z[Etc/UTC]
+- Build date: 2026-02-13T08:10:58.834806Z[Etc/UTC]
 
 - Generator version: 7.19.0
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.invoicetronic</groupId>
   <artifactId>java-sdk</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -62,7 +62,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.invoicetronic:java-sdk:1.2"
+     implementation "com.invoicetronic:java-sdk:1.3"
   }
 ```
 
@@ -76,7 +76,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/java-sdk-1.2.jar`
+- `target/java-sdk-1.3.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**companyIdGet**](docs/CompanyApi.md#companyIdGet) | **GET** /company/{id} | Get a company by id
 *CompanyApi* | [**companyPost**](docs/CompanyApi.md#companyPost) | **POST** /company | Add a company
 *CompanyApi* | [**companyPut**](docs/CompanyApi.md#companyPut) | **PUT** /company | Update a company
+*ExportApi* | [**exportGet**](docs/ExportApi.md#exportGet) | **GET** /export | Export invoices as a ZIP archive
 *LogApi* | [**logGet**](docs/LogApi.md#logGet) | **GET** /log | List events
 *LogApi* | [**logIdGet**](docs/LogApi.md#logIdGet) | **GET** /log/{id} | Get an event by id
 *ReceiveApi* | [**receiveGet**](docs/ReceiveApi.md#receiveGet) | **GET** /receive | List incoming invoices

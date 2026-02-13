@@ -51,7 +51,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * DettaglioPagamento
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T16:17:14.556320Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T08:10:58.834806Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class DettaglioPagamento implements Serializable {
   private static final long serialVersionUID = 1L;
 
