@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2026-02-25T09:07:02.885840Z[Etc/UTC]
+- Build date: 2026-02-25T10:01:27.540816Z[Etc/UTC]
 
 - Generator version: 7.20.0
 
@@ -166,9 +166,14 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Company](docs/Company.md)
+ - [DocumentData](docs/DocumentData.md)
+ - [Error](docs/Error.md)
  - [Event](docs/Event.md)
+ - [ProblemDetails](docs/ProblemDetails.md)
+ - [ProblemHttpResult](docs/ProblemHttpResult.md)
  - [Receive](docs/Receive.md)
  - [Send](docs/Send.md)
+ - [SendReduced](docs/SendReduced.md)
  - [Status](docs/Status.md)
  - [Update](docs/Update.md)
  - [WebHook](docs/WebHook.md)

@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 
 import com.google.gson.Gson;
@@ -47,60 +49,60 @@ import java.util.Set;
 import com.invoicetronic.sdk.JSON;
 
 /**
- * Account status with remaining operations and signatures.
+ * DocumentData
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-25T10:01:27.540816Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class Status implements Serializable {
+public class DocumentData implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  public static final String SERIALIZED_NAME_OPERATION_LEFT = "operation_left";
-  @SerializedName(SERIALIZED_NAME_OPERATION_LEFT)
+  public static final String SERIALIZED_NAME_NUMBER = "number";
+  @SerializedName(SERIALIZED_NAME_NUMBER)
   @javax.annotation.Nullable
-  private Integer operationLeft;
+  private String number;
 
-  public static final String SERIALIZED_NAME_SIGNATURE_LEFT = "signature_left";
-  @SerializedName(SERIALIZED_NAME_SIGNATURE_LEFT)
+  public static final String SERIALIZED_NAME_DATE = "date";
+  @SerializedName(SERIALIZED_NAME_DATE)
   @javax.annotation.Nullable
-  private Integer signatureLeft;
+  private OffsetDateTime date;
 
-  public Status() {
+  public DocumentData() {
   }
 
-  public Status operationLeft(@javax.annotation.Nullable Integer operationLeft) {
-    this.operationLeft = operationLeft;
+  public DocumentData number(@javax.annotation.Nullable String number) {
+    this.number = number;
     return this;
   }
 
   /**
-   * Operations (invoices and validations) left.
-   * @return operationLeft
+   * Get number
+   * @return number
    */
   @javax.annotation.Nullable
-  public Integer getOperationLeft() {
-    return operationLeft;
+  public String getNumber() {
+    return number;
   }
 
-  public void setOperationLeft(@javax.annotation.Nullable Integer operationLeft) {
-    this.operationLeft = operationLeft;
+  public void setNumber(@javax.annotation.Nullable String number) {
+    this.number = number;
   }
 
 
-  public Status signatureLeft(@javax.annotation.Nullable Integer signatureLeft) {
-    this.signatureLeft = signatureLeft;
+  public DocumentData date(@javax.annotation.Nullable OffsetDateTime date) {
+    this.date = date;
     return this;
   }
 
   /**
-   * Signatures left.
-   * @return signatureLeft
+   * Get date
+   * @return date
    */
   @javax.annotation.Nullable
-  public Integer getSignatureLeft() {
-    return signatureLeft;
+  public OffsetDateTime getDate() {
+    return date;
   }
 
-  public void setSignatureLeft(@javax.annotation.Nullable Integer signatureLeft) {
-    this.signatureLeft = signatureLeft;
+  public void setDate(@javax.annotation.Nullable OffsetDateTime date) {
+    this.date = date;
   }
 
 
@@ -113,22 +115,33 @@ public class Status implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Status status = (Status) o;
-    return Objects.equals(this.operationLeft, status.operationLeft) &&
-        Objects.equals(this.signatureLeft, status.signatureLeft);
+    DocumentData documentData = (DocumentData) o;
+    return Objects.equals(this.number, documentData.number) &&
+        Objects.equals(this.date, documentData.date);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operationLeft, signatureLeft);
+    return Objects.hash(number, date);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Status {\n");
-    sb.append("    operationLeft: ").append(toIndentedString(operationLeft)).append("\n");
-    sb.append("    signatureLeft: ").append(toIndentedString(signatureLeft)).append("\n");
+    sb.append("class DocumentData {\n");
+    sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -150,7 +163,7 @@ public class Status implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("operation_left", "signature_left"));
+    openapiFields = new HashSet<String>(Arrays.asList("number", "date"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -160,45 +173,48 @@ public class Status implements Serializable {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Status
+   * @throws IOException if the JSON Element is invalid with respect to DocumentData
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Status.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Status is not found in the empty JSON string", Status.openapiRequiredFields.toString()));
+        if (!DocumentData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in DocumentData is not found in the empty JSON string", DocumentData.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Status.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Status` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!DocumentData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DocumentData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("number") != null && !jsonObj.get("number").isJsonNull()) && !jsonObj.get("number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Status.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Status' and its subtypes
+       if (!DocumentData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentData' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Status> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Status.class));
+       final TypeAdapter<DocumentData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentData.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Status>() {
+       return (TypeAdapter<T>) new TypeAdapter<DocumentData>() {
            @Override
-           public void write(JsonWriter out, Status value) throws IOException {
+           public void write(JsonWriter out, DocumentData value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Status read(JsonReader in) throws IOException {
+           public DocumentData read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -209,18 +225,18 @@ public class Status implements Serializable {
   }
 
   /**
-   * Create an instance of Status given an JSON string
+   * Create an instance of DocumentData given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Status
-   * @throws IOException if the JSON string is invalid with respect to Status
+   * @return An instance of DocumentData
+   * @throws IOException if the JSON string is invalid with respect to DocumentData
    */
-  public static Status fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Status.class);
+  public static DocumentData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentData.class);
   }
 
   /**
-   * Convert an instance of Status to an JSON string
+   * Convert an instance of DocumentData to an JSON string
    *
    * @return JSON string
    */

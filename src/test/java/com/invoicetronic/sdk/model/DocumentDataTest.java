@@ -11,27 +11,48 @@
  */
 
 
-package com.invoicetronic.sdk;
+package com.invoicetronic.sdk.model;
 
-import java.util.HashSet;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * Representing a Server Variable for server URL template substitution.
+ * Model tests for DocumentData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-25T10:01:27.540816Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class ServerVariable {
-    public String description;
-    public String defaultValue;
-    public HashSet<String> enumValues = null;
+public class DocumentDataTest {
+    private final DocumentData model = new DocumentData();
 
     /**
-     * @param description A description for the server variable.
-     * @param defaultValue The default value to use for substitution.
-     * @param enumValues An enumeration of string values to be used if the substitution options are from a limited set.
+     * Model tests for DocumentData
      */
-    public ServerVariable(String description, String defaultValue, HashSet<String> enumValues) {
-        this.description = description;
-        this.defaultValue = defaultValue;
-        this.enumValues = enumValues;
+    @Test
+    public void testDocumentData() {
+        // TODO: test DocumentData
     }
+
+    /**
+     * Test the property 'number'
+     */
+    @Test
+    public void numberTest() {
+        // TODO: test number
+    }
+
+    /**
+     * Test the property 'date'
+     */
+    @Test
+    public void dateTest() {
+        // TODO: test date
+    }
+
 }

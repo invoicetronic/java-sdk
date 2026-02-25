@@ -405,7 +405,7 @@ public class Example {
 
 <a id="sendJsonPost"></a>
 # **sendJsonPost**
-> Send sendJsonPost(fatturaOrdinaria, validate, signature)
+> Send sendJsonPost(body, validate, signature)
 
 Add an invoice by json
 
@@ -432,11 +432,11 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
+    Object body = null; // Object | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
     String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.sendJsonPost(fatturaOrdinaria, validate, signature);
+      Send result = apiInstance.sendJsonPost(body, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#sendJsonPost");
@@ -453,7 +453,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
+| **body** | **Object**|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
 | **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 
@@ -622,7 +622,7 @@ null (empty response body)
 
 <a id="sendValidateJsonPost"></a>
 # **sendValidateJsonPost**
-> sendValidateJsonPost(fatturaOrdinaria)
+> sendValidateJsonPost(body)
 
 Validate an invoice by json
 
@@ -649,9 +649,9 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
+    Object body = null; // Object | 
     try {
-      apiInstance.sendValidateJsonPost(fatturaOrdinaria);
+      apiInstance.sendValidateJsonPost(body);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#sendValidateJsonPost");
       System.err.println("Status code: " + e.getCode());
@@ -667,7 +667,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
+| **body** | **Object**|  | |
 
 ### Return type
 
@@ -760,7 +760,7 @@ null (empty response body)
 
 <a id="sendValidateXmlPost"></a>
 # **sendValidateXmlPost**
-> sendValidateXmlPost(fatturaOrdinaria)
+> sendValidateXmlPost(body)
 
 Validate an invoice by xml
 
@@ -787,9 +787,9 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
+    Object body = null; // Object | 
     try {
-      apiInstance.sendValidateXmlPost(fatturaOrdinaria);
+      apiInstance.sendValidateXmlPost(body);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#sendValidateXmlPost");
       System.err.println("Status code: " + e.getCode());
@@ -805,7 +805,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
+| **body** | **Object**|  | |
 
 ### Return type
 
@@ -829,7 +829,7 @@ null (empty response body)
 
 <a id="sendXmlPost"></a>
 # **sendXmlPost**
-> Send sendXmlPost(fatturaOrdinaria, validate, signature)
+> Send sendXmlPost(body, validate, signature)
 
 Add an invoice by xml
 
@@ -856,11 +856,11 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     SendApi apiInstance = new SendApi(defaultClient);
-    FatturaOrdinaria fatturaOrdinaria = new FatturaOrdinaria(); // FatturaOrdinaria | 
+    Object body = null; // Object | 
     Boolean validate = false; // Boolean | Validate the document first, and reject it on failure.
     String signature = "None"; // String | Whether to digitally sign the document.
     try {
-      Send result = apiInstance.sendXmlPost(fatturaOrdinaria, validate, signature);
+      Send result = apiInstance.sendXmlPost(body, validate, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#sendXmlPost");
@@ -877,7 +877,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **fatturaOrdinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md)|  | |
+| **body** | **Object**|  | |
 | **validate** | **Boolean**| Validate the document first, and reject it on failure. | [optional] [default to false] |
 | **signature** | **String**| Whether to digitally sign the document. | [optional] [default to Auto] [enum: None, Apply, Force, Auto] |
 

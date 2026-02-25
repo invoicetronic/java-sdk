@@ -14,7 +14,6 @@
 package com.invoicetronic.sdk.api;
 
 import com.invoicetronic.sdk.ApiException;
-import com.invoicetronic.sdk.model.FatturaOrdinaria;
 import java.io.File;
 import java.time.OffsetDateTime;
 import com.invoicetronic.sdk.model.ProblemDetails;
@@ -134,10 +133,10 @@ public class SendApiTest {
      */
     @Test
     public void sendJsonPostTest() throws ApiException {
-        FatturaOrdinaria fatturaOrdinaria = null;
+        Object body = null;
         Boolean validate = null;
         String signature = null;
-        Send response = api.sendJsonPost(fatturaOrdinaria, validate, signature);
+        Send response = api.sendJsonPost(body, validate, signature);
         // TODO: test validations
     }
 
@@ -180,8 +179,8 @@ public class SendApiTest {
      */
     @Test
     public void sendValidateJsonPostTest() throws ApiException {
-        FatturaOrdinaria fatturaOrdinaria = null;
-        api.sendValidateJsonPost(fatturaOrdinaria);
+        Object body = null;
+        api.sendValidateJsonPost(body);
         // TODO: test validations
     }
 
@@ -208,8 +207,8 @@ public class SendApiTest {
      */
     @Test
     public void sendValidateXmlPostTest() throws ApiException {
-        FatturaOrdinaria fatturaOrdinaria = null;
-        api.sendValidateXmlPost(fatturaOrdinaria);
+        Object body = null;
+        api.sendValidateXmlPost(body);
         // TODO: test validations
     }
 
@@ -222,10 +221,10 @@ public class SendApiTest {
      */
     @Test
     public void sendXmlPostTest() throws ApiException {
-        FatturaOrdinaria fatturaOrdinaria = null;
+        Object body = null;
         Boolean validate = null;
         String signature = null;
-        Send response = api.sendXmlPost(fatturaOrdinaria, validate, signature);
+        Send response = api.sendXmlPost(body, validate, signature);
         // TODO: test validations
     }
 

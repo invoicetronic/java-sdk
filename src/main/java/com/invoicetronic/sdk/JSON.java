@@ -97,9 +97,14 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Company.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.DocumentData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Error.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Event.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.ProblemDetails.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.ProblemHttpResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Receive.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Send.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.SendReduced.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Status.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.Update.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.invoicetronic.sdk.model.WebHook.CustomTypeAdapterFactory());

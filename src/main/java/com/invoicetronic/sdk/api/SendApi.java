@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.invoicetronic.sdk.model.FatturaOrdinaria;
 import java.io.File;
 import java.time.OffsetDateTime;
 import com.invoicetronic.sdk.model.ProblemDetails;
@@ -896,7 +895,7 @@ public class SendApi {
     }
     /**
      * Build call for sendJsonPost
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback Callback for upload/download progress
@@ -911,7 +910,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendJsonPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendJsonPostCall(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -925,7 +924,7 @@ public class SendApi {
             basePath = null;
         }
 
-        Object localVarPostBody = fatturaOrdinaria;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/send/json";
@@ -965,20 +964,20 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendJsonPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'fatturaOrdinaria' is set
-        if (fatturaOrdinaria == null) {
-            throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendJsonPost(Async)");
+    private okhttp3.Call sendJsonPostValidateBeforeCall(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling sendJsonPost(Async)");
         }
 
-        return sendJsonPostCall(fatturaOrdinaria, validate, signature, _callback);
+        return sendJsonPostCall(body, validate, signature, _callback);
 
     }
 
     /**
      * Add an invoice by json
      * Add a new invoice using a FatturaPA JSON representation. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return Send
@@ -992,15 +991,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendJsonPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
-        ApiResponse<Send> localVarResp = sendJsonPostWithHttpInfo(fatturaOrdinaria, validate, signature);
+    public Send sendJsonPost(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
+        ApiResponse<Send> localVarResp = sendJsonPostWithHttpInfo(body, validate, signature);
         return localVarResp.getData();
     }
 
     /**
      * Add an invoice by json
      * Add a new invoice using a FatturaPA JSON representation. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return ApiResponse&lt;Send&gt;
@@ -1014,8 +1013,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendJsonPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
-        okhttp3.Call localVarCall = sendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, signature, null);
+    public ApiResponse<Send> sendJsonPostWithHttpInfo(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
+        okhttp3.Call localVarCall = sendJsonPostValidateBeforeCall(body, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1023,7 +1022,7 @@ public class SendApi {
     /**
      * Add an invoice by json (asynchronously)
      * Add a new invoice using a FatturaPA JSON representation. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback The callback to be executed when the API call finishes
@@ -1038,9 +1037,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendJsonPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendJsonPostAsync(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendJsonPostValidateBeforeCall(fatturaOrdinaria, validate, signature, _callback);
+        okhttp3.Call localVarCall = sendJsonPostValidateBeforeCall(body, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1333,7 +1332,7 @@ public class SendApi {
     }
     /**
      * Build call for sendValidateJsonPost
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1346,7 +1345,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateJsonPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidateJsonPostCall(@javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1360,7 +1359,7 @@ public class SendApi {
             basePath = null;
         }
 
-        Object localVarPostBody = fatturaOrdinaria;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/send/validate/json";
@@ -1392,20 +1391,20 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidateJsonPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'fatturaOrdinaria' is set
-        if (fatturaOrdinaria == null) {
-            throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendValidateJsonPost(Async)");
+    private okhttp3.Call sendValidateJsonPostValidateBeforeCall(@javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling sendValidateJsonPost(Async)");
         }
 
-        return sendValidateJsonPostCall(fatturaOrdinaria, _callback);
+        return sendValidateJsonPostCall(body, _callback);
 
     }
 
     /**
      * Validate an invoice by json
      * Validate a JSON invoice without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1416,14 +1415,14 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidateJsonPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
-        sendValidateJsonPostWithHttpInfo(fatturaOrdinaria);
+    public void sendValidateJsonPost(@javax.annotation.Nonnull Object body) throws ApiException {
+        sendValidateJsonPostWithHttpInfo(body);
     }
 
     /**
      * Validate an invoice by json
      * Validate a JSON invoice without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1435,15 +1434,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidateJsonPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
-        okhttp3.Call localVarCall = sendValidateJsonPostValidateBeforeCall(fatturaOrdinaria, null);
+    public ApiResponse<Void> sendValidateJsonPostWithHttpInfo(@javax.annotation.Nonnull Object body) throws ApiException {
+        okhttp3.Call localVarCall = sendValidateJsonPostValidateBeforeCall(body, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Validate an invoice by json (asynchronously)
      * Validate a JSON invoice without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1456,9 +1455,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateJsonPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidateJsonPostAsync(@javax.annotation.Nonnull Object body, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendValidateJsonPostValidateBeforeCall(fatturaOrdinaria, _callback);
+        okhttp3.Call localVarCall = sendValidateJsonPostValidateBeforeCall(body, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -1595,7 +1594,7 @@ public class SendApi {
     }
     /**
      * Build call for sendValidateXmlPost
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1608,7 +1607,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateXmlPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendValidateXmlPostCall(@javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1622,7 +1621,7 @@ public class SendApi {
             basePath = null;
         }
 
-        Object localVarPostBody = fatturaOrdinaria;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/send/validate/xml";
@@ -1654,20 +1653,20 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendValidateXmlPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'fatturaOrdinaria' is set
-        if (fatturaOrdinaria == null) {
-            throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendValidateXmlPost(Async)");
+    private okhttp3.Call sendValidateXmlPostValidateBeforeCall(@javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling sendValidateXmlPost(Async)");
         }
 
-        return sendValidateXmlPostCall(fatturaOrdinaria, _callback);
+        return sendValidateXmlPostCall(body, _callback);
 
     }
 
     /**
      * Validate an invoice by xml
      * Validate an XML invoice document without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1678,14 +1677,14 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public void sendValidateXmlPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
-        sendValidateXmlPostWithHttpInfo(fatturaOrdinaria);
+    public void sendValidateXmlPost(@javax.annotation.Nonnull Object body) throws ApiException {
+        sendValidateXmlPostWithHttpInfo(body);
     }
 
     /**
      * Validate an invoice by xml
      * Validate an XML invoice document without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1697,15 +1696,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> sendValidateXmlPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria) throws ApiException {
-        okhttp3.Call localVarCall = sendValidateXmlPostValidateBeforeCall(fatturaOrdinaria, null);
+    public ApiResponse<Void> sendValidateXmlPostWithHttpInfo(@javax.annotation.Nonnull Object body) throws ApiException {
+        okhttp3.Call localVarCall = sendValidateXmlPostValidateBeforeCall(body, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Validate an invoice by xml (asynchronously)
      * Validate an XML invoice document without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1718,15 +1717,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendValidateXmlPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call sendValidateXmlPostAsync(@javax.annotation.Nonnull Object body, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendValidateXmlPostValidateBeforeCall(fatturaOrdinaria, _callback);
+        okhttp3.Call localVarCall = sendValidateXmlPostValidateBeforeCall(body, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for sendXmlPost
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback Callback for upload/download progress
@@ -1741,7 +1740,7 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendXmlPostCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendXmlPostCall(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1755,7 +1754,7 @@ public class SendApi {
             basePath = null;
         }
 
-        Object localVarPostBody = fatturaOrdinaria;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/send/xml";
@@ -1795,20 +1794,20 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendXmlPostValidateBeforeCall(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'fatturaOrdinaria' is set
-        if (fatturaOrdinaria == null) {
-            throw new ApiException("Missing the required parameter 'fatturaOrdinaria' when calling sendXmlPost(Async)");
+    private okhttp3.Call sendXmlPostValidateBeforeCall(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling sendXmlPost(Async)");
         }
 
-        return sendXmlPostCall(fatturaOrdinaria, validate, signature, _callback);
+        return sendXmlPostCall(body, validate, signature, _callback);
 
     }
 
     /**
      * Add an invoice by xml
      * Add a new invoice using a raw XML document in FatturaPA format. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return Send
@@ -1822,15 +1821,15 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public Send sendXmlPost(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
-        ApiResponse<Send> localVarResp = sendXmlPostWithHttpInfo(fatturaOrdinaria, validate, signature);
+    public Send sendXmlPost(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
+        ApiResponse<Send> localVarResp = sendXmlPostWithHttpInfo(body, validate, signature);
         return localVarResp.getData();
     }
 
     /**
      * Add an invoice by xml
      * Add a new invoice using a raw XML document in FatturaPA format. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @return ApiResponse&lt;Send&gt;
@@ -1844,8 +1843,8 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Send> sendXmlPostWithHttpInfo(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
-        okhttp3.Call localVarCall = sendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, signature, null);
+    public ApiResponse<Send> sendXmlPostWithHttpInfo(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature) throws ApiException {
+        okhttp3.Call localVarCall = sendXmlPostValidateBeforeCall(body, validate, signature, null);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1853,7 +1852,7 @@ public class SendApi {
     /**
      * Add an invoice by xml (asynchronously)
      * Add a new invoice using a raw XML document in FatturaPA format. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-     * @param fatturaOrdinaria  (required)
+     * @param body  (required)
      * @param validate Validate the document first, and reject it on failure. (optional, default to false)
      * @param signature Whether to digitally sign the document. (optional, default to Auto)
      * @param _callback The callback to be executed when the API call finishes
@@ -1868,9 +1867,9 @@ public class SendApi {
         <tr><td> 422 </td><td> Unprocessable Content </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendXmlPostAsync(@javax.annotation.Nonnull FatturaOrdinaria fatturaOrdinaria, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
+    public okhttp3.Call sendXmlPostAsync(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable Boolean validate, @javax.annotation.Nullable String signature, final ApiCallback<Send> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendXmlPostValidateBeforeCall(fatturaOrdinaria, validate, signature, _callback);
+        okhttp3.Call localVarCall = sendXmlPostValidateBeforeCall(body, validate, signature, _callback);
         Type localVarReturnType = new TypeToken<Send>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
