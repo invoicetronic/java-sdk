@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**companyIdGet**](CompanyApi.md#companyIdGet) | **GET** /company/{id} | Get a company by id |
 | [**companyPost**](CompanyApi.md#companyPost) | **POST** /company | Add a company |
 | [**companyPut**](CompanyApi.md#companyPut) | **PUT** /company | Update a company |
+| [**companyVatGet**](CompanyApi.md#companyVatGet) | **GET** /company/{vat} | Get a company by vat number |
 
 
 <a id="companyGet"></a>
@@ -366,5 +367,75 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **422** | Unprocessable Content |  -  |
+| **400** | Bad Request |  -  |
+
+<a id="companyVatGet"></a>
+# **companyVatGet**
+> Company companyVatGet(vat)
+
+Get a company by vat number
+
+Retrieve a company by its VAT number.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+
+### Example
+```java
+// Import classes:
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.CompanyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    CompanyApi apiInstance = new CompanyApi(defaultClient);
+    String vat = "vat_example"; // String | 
+    try {
+      Company result = apiInstance.companyVatGet(vat);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CompanyApi#companyVatGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **vat** | **String**|  | |
+
+### Return type
+
+[**Company**](Company.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
 

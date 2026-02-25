@@ -15,6 +15,7 @@ package com.invoicetronic.sdk.api;
 
 import com.invoicetronic.sdk.ApiException;
 import java.time.OffsetDateTime;
+import com.invoicetronic.sdk.model.ProblemDetails;
 import com.invoicetronic.sdk.model.ProblemHttpResult;
 import com.invoicetronic.sdk.model.Receive;
 import org.junit.jupiter.api.Disabled;
@@ -89,6 +90,20 @@ public class ReceiveApiTest {
         Integer id = null;
         Boolean includePayload = null;
         Receive response = api.receiveIdGet(id, includePayload);
+        // TODO: test validations
+    }
+
+    /**
+     * Get a receive invoice payload by id
+     *
+     * Retrieve only the payload of a receive invoice, without the full invoice metadata. This is useful when you already have the invoice metadata and only need the XML content.  The response is a &#x60;text/plain&#x60; string, identical to the &#x60;payload&#x60; field returned by the standard GET endpoint with &#x60;include_payload&#x3D;true&#x60;.  The invoice is marked as read (&#x60;is_read&#x60; &#x3D; true) and counted as an operation, same as when retrieving the full invoice with &#x60;include_payload&#x3D;true&#x60;. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void receiveIdPayloadGetTest() throws ApiException {
+        Integer id = null;
+        api.receiveIdPayloadGet(id);
         // TODO: test validations
     }
 

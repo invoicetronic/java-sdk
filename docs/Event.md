@@ -2,6 +2,7 @@
 
 # Event
 
+An API request log entry.
 
 ## Properties
 

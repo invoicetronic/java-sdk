@@ -2,6 +2,7 @@
 
 # Send
 
+A sent invoice.
 
 ## Properties
 

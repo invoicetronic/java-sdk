@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**sendFilePost**](SendApi.md#sendFilePost) | **POST** /send/file | Add an invoice by file |
 | [**sendGet**](SendApi.md#sendGet) | **GET** /send | List invoices |
 | [**sendIdGet**](SendApi.md#sendIdGet) | **GET** /send/{id} | Get a invoice by id |
+| [**sendIdPayloadGet**](SendApi.md#sendIdPayloadGet) | **GET** /send/{id}/payload | Get a send invoice payload by id |
 | [**sendIdentifierGet**](SendApi.md#sendIdentifierGet) | **GET** /send/{identifier} | Get a invoice by identifier |
 | [**sendJsonPost**](SendApi.md#sendJsonPost) | **POST** /send/json | Add an invoice by json |
 | [**sendPost**](SendApi.md#sendPost) | **POST** /send | Add an invoice |
@@ -255,6 +256,74 @@ public class Example {
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+
+<a id="sendIdPayloadGet"></a>
+# **sendIdPayloadGet**
+> sendIdPayloadGet(id)
+
+Get a send invoice payload by id
+
+Retrieve only the payload of a send invoice, without the full invoice metadata. This is useful when you already have the invoice metadata and only need the XML content.  The response is a &#x60;text/plain&#x60; string, identical to the &#x60;payload&#x60; field returned by the standard GET endpoint with &#x60;include_payload&#x3D;true&#x60;. Depending on how the invoice was originally submitted, the payload may be Base64-encoded or plain XML. 
+
+### Example
+```java
+// Import classes:
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.SendApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    SendApi apiInstance = new SendApi(defaultClient);
+    Integer id = 56; // Integer | Item id
+    try {
+      apiInstance.sendIdPayloadGet(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SendApi#sendIdPayloadGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| Item id | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -2,6 +2,7 @@
 
 # Receive
 
+A received invoice.
 
 ## Properties
 

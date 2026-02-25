@@ -112,6 +112,40 @@ paths:
       - company
       x-accepts:
       - application/json
+  /company/{vat}:
+    get:
+      description: |-
+        Retrieve a company by its VAT number.
+
+        **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+      parameters:
+      - explode: false
+        in: path
+        name: vat
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Company"
+          description: OK
+        "404":
+          description: Not Found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProblemHttpResult"
+          description: Bad Request
+      summary: Get a company by vat number
+      tags:
+      - company
+      x-accepts:
+      - application/json
   /company:
     get:
       description: |-
@@ -614,6 +648,41 @@ paths:
       - receive
       x-accepts:
       - application/json
+  /receive/{id}/payload:
+    get:
+      description: |
+        Retrieve only the payload of a receive invoice, without the full invoice metadata.
+        This is useful when you already have the invoice metadata and only need the XML content.
+
+        The response is a `text/plain` string, identical to the `payload` field returned
+        by the standard GET endpoint with `include_payload=true`.
+
+        The invoice is marked as read (`is_read` = true) and counted as an operation, same as when
+        retrieving the full invoice with `include_payload=true`.
+      parameters:
+      - description: Item id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetails"
+          description: Not Found
+      summary: Get a receive invoice payload by id
+      tags:
+      - receive
+      x-accepts:
+      - application/problem+json
   /receive:
     get:
       description: |-
@@ -872,6 +941,39 @@ paths:
       - send
       x-accepts:
       - application/json
+  /send/{id}/payload:
+    get:
+      description: |
+        Retrieve only the payload of a send invoice, without the full invoice metadata.
+        This is useful when you already have the invoice metadata and only need the XML content.
+
+        The response is a `text/plain` string, identical to the `payload` field returned
+        by the standard GET endpoint with `include_payload=true`. Depending on how the invoice
+        was originally submitted, the payload may be Base64-encoded or plain XML.
+      parameters:
+      - description: Item id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetails"
+          description: Not Found
+      summary: Get a send invoice payload by id
+      tags:
+      - send
+      x-accepts:
+      - application/problem+json
   /send:
     get:
       description: |-
@@ -2052,6 +2154,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     AltriDatiGestionali:
       additionalProperties: false
       example:
@@ -2075,6 +2178,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     Anagrafica:
       additionalProperties: false
       example:
@@ -2100,6 +2204,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     CedentePrestatore:
       additionalProperties: false
       example:
@@ -2159,6 +2264,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     CessionarioCommittente:
       additionalProperties: false
       example:
@@ -2204,6 +2310,7 @@ components:
         rappresentante_fiscale:
           $ref: "#/components/schemas/RappresentanteFiscaleCessionarioCommittente"
       type: object
+      x-internal: true
     CodiceArticolo:
       additionalProperties: false
       example:
@@ -2217,6 +2324,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     Company:
       additionalProperties: false
       description: A company model.
@@ -2283,6 +2391,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     ContattiTrasmittente:
       additionalProperties: false
       example:
@@ -2296,6 +2405,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiAnagrafici:
       additionalProperties: false
       example:
@@ -2318,6 +2428,7 @@ components:
         anagrafica:
           $ref: "#/components/schemas/Anagrafica"
       type: object
+      x-internal: true
     DatiAnagraficiCedentePrestatore:
       additionalProperties: false
       example:
@@ -2361,6 +2472,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiAnagraficiCessionarioCommittente:
       additionalProperties: false
       example:
@@ -2383,6 +2495,7 @@ components:
         anagrafica:
           $ref: "#/components/schemas/Anagrafica"
       type: object
+      x-internal: true
     DatiAnagraficiVettore:
       additionalProperties: false
       example:
@@ -2409,6 +2522,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiBeniServizi:
       additionalProperties: false
       example:
@@ -2510,6 +2624,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-internal: true
     DatiBollo:
       additionalProperties: false
       example:
@@ -2524,6 +2639,7 @@ components:
           nullable: true
           type: number
       type: object
+      x-internal: true
     DatiCassaPrevidenziale:
       additionalProperties: false
       example:
@@ -2561,6 +2677,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiContratto:
       additionalProperties: false
       example:
@@ -2600,6 +2717,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiConvenzione:
       additionalProperties: false
       example:
@@ -2639,6 +2757,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiDDT:
       additionalProperties: false
       example:
@@ -2661,6 +2780,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-internal: true
     DatiFattureCollegate:
       additionalProperties: false
       example:
@@ -2700,6 +2820,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiGenerali:
       additionalProperties: false
       example:
@@ -2936,6 +3057,7 @@ components:
         fattura_principale:
           $ref: "#/components/schemas/FatturaPrincipale"
       type: object
+      x-internal: true
     DatiGeneraliDocumento:
       additionalProperties: false
       example:
@@ -3032,6 +3154,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiOrdineAcquisto:
       additionalProperties: false
       example:
@@ -3071,6 +3194,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiPagamento:
       additionalProperties: false
       example:
@@ -3128,6 +3252,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-internal: true
     DatiRicezione:
       additionalProperties: false
       example:
@@ -3167,6 +3292,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiRiepilogo:
       additionalProperties: false
       example:
@@ -3206,6 +3332,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiRitenuta:
       additionalProperties: false
       example:
@@ -3227,6 +3354,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiSAL:
       additionalProperties: false
       example:
@@ -3236,6 +3364,7 @@ components:
           format: int32
           type: integer
       type: object
+      x-internal: true
     DatiTrasmissione:
       additionalProperties: false
       example:
@@ -3267,6 +3396,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiTrasporto:
       additionalProperties: false
       example:
@@ -3345,6 +3475,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DatiVeicoli:
       additionalProperties: false
       example:
@@ -3359,6 +3490,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DettaglioLinee:
       additionalProperties: false
       example:
@@ -3455,6 +3587,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-internal: true
     DettaglioPagamento:
       additionalProperties: false
       example:
@@ -3551,6 +3684,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     DocumentData:
       additionalProperties: false
       example:
@@ -3564,6 +3698,7 @@ components:
           format: date-time
           type: string
       type: object
+      x-internal: true
     Error:
       additionalProperties: false
       description: Validation error from the SDI.
@@ -3585,8 +3720,10 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     Event:
       additionalProperties: false
+      description: An API request log entry.
       example:
         status_code: 7
         company_id: 5
@@ -4079,6 +4216,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-internal: true
     FatturaElettronicaHeader:
       additionalProperties: false
       example:
@@ -4208,6 +4346,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     FatturaOrdinaria:
       additionalProperties: false
       example:
@@ -5099,6 +5238,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-internal: true
     FatturaPrincipale:
       additionalProperties: false
       example:
@@ -5113,6 +5253,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     IdFiscaleIVA:
       additionalProperties: false
       example:
@@ -5126,6 +5267,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     IdTrasmittente:
       additionalProperties: false
       example:
@@ -5139,6 +5281,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     IndirizzoResa:
       additionalProperties: false
       example:
@@ -5169,6 +5312,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     IscrizioneREA:
       additionalProperties: false
       example:
@@ -5195,6 +5339,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     ProblemDetails:
       additionalProperties: {}
       example:
@@ -5221,6 +5366,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     ProblemHttpResult:
       additionalProperties: false
       example:
@@ -5244,6 +5390,7 @@ components:
           readOnly: true
           type: integer
       type: object
+      x-internal: true
     RappresentanteFiscale:
       additionalProperties: false
       example:
@@ -5262,6 +5409,7 @@ components:
         dati_anagrafici:
           $ref: "#/components/schemas/DatiAnagrafici"
       type: object
+      x-internal: true
     RappresentanteFiscaleCessionarioCommittente:
       additionalProperties: false
       example:
@@ -5284,8 +5432,10 @@ components:
         id_fiscale_iva:
           $ref: "#/components/schemas/IdFiscaleIVA"
       type: object
+      x-internal: true
     Receive:
       additionalProperties: false
+      description: A received invoice.
       example:
         identifier: identifier
         date_sent: 2000-01-23T04:56:07.000+00:00
@@ -5415,6 +5565,7 @@ components:
           nullable: true
           type: number
       type: object
+      x-internal: true
     SedeCedentePrestatore:
       additionalProperties: false
       example:
@@ -5445,6 +5596,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     SedeCessionarioCommittente:
       additionalProperties: false
       example:
@@ -5475,8 +5627,10 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     Send:
       additionalProperties: false
+      description: A sent invoice.
       example:
         identifier: identifier
         date_sent: 2000-01-23T04:56:07.000+00:00
@@ -5637,6 +5791,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     StabileOrganizzazione:
       additionalProperties: false
       example:
@@ -5667,8 +5822,10 @@ components:
           nullable: true
           type: string
       type: object
+      x-internal: true
     Status:
       additionalProperties: false
+      description: Account status with remaining operations and signatures.
       example:
         signature_left: 6
         operation_left: 0
@@ -5700,8 +5857,10 @@ components:
         dati_anagrafici:
           $ref: "#/components/schemas/DatiAnagrafici"
       type: object
+      x-internal: true
     Update:
       additionalProperties: false
+      description: An SDI status update for a sent invoice.
       example:
         company_id: 5
         created: 2000-01-23T04:56:07.000+00:00
@@ -5799,6 +5958,7 @@ components:
       type: object
     WebHook:
       additionalProperties: false
+      description: A webhook subscription.
       example:
         company_id: 5
         user_id: 1

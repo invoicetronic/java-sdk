@@ -97,6 +97,20 @@ public class SendApiTest {
     }
 
     /**
+     * Get a send invoice payload by id
+     *
+     * Retrieve only the payload of a send invoice, without the full invoice metadata. This is useful when you already have the invoice metadata and only need the XML content.  The response is a &#x60;text/plain&#x60; string, identical to the &#x60;payload&#x60; field returned by the standard GET endpoint with &#x60;include_payload&#x3D;true&#x60;. Depending on how the invoice was originally submitted, the payload may be Base64-encoded or plain XML. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void sendIdPayloadGetTest() throws ApiException {
+        Integer id = null;
+        api.sendIdPayloadGet(id);
+        // TODO: test validations
+    }
+
+    /**
      * Get a invoice by identifier
      *
      * Retrieve a send invoice by its SDI identifier. The &#x60;identifier&#x60; is assigned by the SDI and becomes available after the invoice has been accepted. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).

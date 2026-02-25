@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**receiveGet**](ReceiveApi.md#receiveGet) | **GET** /receive | List incoming invoices |
 | [**receiveIdDelete**](ReceiveApi.md#receiveIdDelete) | **DELETE** /receive/{id} | Delete an incoming invoice by id |
 | [**receiveIdGet**](ReceiveApi.md#receiveIdGet) | **GET** /receive/{id} | Get an incoming invoice by id |
+| [**receiveIdPayloadGet**](ReceiveApi.md#receiveIdPayloadGet) | **GET** /receive/{id}/payload | Get a receive invoice payload by id |
 
 
 <a id="receiveGet"></a>
@@ -247,6 +248,74 @@ public class Example {
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+
+<a id="receiveIdPayloadGet"></a>
+# **receiveIdPayloadGet**
+> receiveIdPayloadGet(id)
+
+Get a receive invoice payload by id
+
+Retrieve only the payload of a receive invoice, without the full invoice metadata. This is useful when you already have the invoice metadata and only need the XML content.  The response is a &#x60;text/plain&#x60; string, identical to the &#x60;payload&#x60; field returned by the standard GET endpoint with &#x60;include_payload&#x3D;true&#x60;.  The invoice is marked as read (&#x60;is_read&#x60; &#x3D; true) and counted as an operation, same as when retrieving the full invoice with &#x60;include_payload&#x3D;true&#x60;. 
+
+### Example
+```java
+// Import classes:
+import com.invoicetronic.sdk.ApiClient;
+import com.invoicetronic.sdk.ApiException;
+import com.invoicetronic.sdk.Configuration;
+import com.invoicetronic.sdk.auth.*;
+import com.invoicetronic.sdk.models.*;
+import com.invoicetronic.sdk.api.ReceiveApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    ReceiveApi apiInstance = new ReceiveApi(defaultClient);
+    Integer id = 56; // Integer | Item id
+    try {
+      apiInstance.receiveIdPayloadGet(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ReceiveApi#receiveIdPayloadGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| Item id | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/problem+json
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -106,4 +106,18 @@ public class CompanyApiTest {
         // TODO: test validations
     }
 
+    /**
+     * Get a company by vat number
+     *
+     * Retrieve a company by its VAT number.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void companyVatGetTest() throws ApiException {
+        String vat = null;
+        Company response = api.companyVatGet(vat);
+        // TODO: test validations
+    }
+
 }

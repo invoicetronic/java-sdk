@@ -2,6 +2,7 @@
 
 # WebHook
 
+A webhook subscription.
 
 ## Properties
 

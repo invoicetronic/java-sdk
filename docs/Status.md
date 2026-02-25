@@ -2,6 +2,7 @@
 
 # Status
 
+Account status with remaining operations and signatures.
 
 ## Properties
 
