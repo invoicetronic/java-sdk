@@ -12,11 +12,11 @@ All URIs are relative to *http://localhost*
 
 <a id="receiveGet"></a>
 # **receiveGet**
-> List&lt;Receive&gt; receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort)
+> List&lt;Receive&gt; receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q)
 
 List incoming invoices
 
-Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
 
 ### Example
 ```java
@@ -56,8 +56,9 @@ public class Example {
     Integer page = 1; // Integer | Page number.
     Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+    String q = "q_example"; // String | Full-text search across committente, prestatore, identifier, and file name.
     try {
-      List<Receive> result = apiInstance.receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort);
+      List<Receive> result = apiInstance.receiveGet(companyId, identifier, unread, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReceiveApi#receiveGet");
@@ -91,6 +92,7 @@ public class Example {
 | **page** | **Integer**| Page number. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **q** | **String**| Full-text search across committente, prestatore, identifier, and file name. | [optional] |
 
 ### Return type
 

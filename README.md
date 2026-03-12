@@ -9,7 +9,7 @@ For more information, see  [Invoicetronic website][2]
 
 - API version: 1
 
-- Build date: 2026-02-25T10:01:27.540816Z[Etc/UTC]
+- Build date: 2026-03-12T10:37:05.465728Z[Etc/UTC]
 
 - Generator version: 7.20.0
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.invoicetronic</groupId>
   <artifactId>java-sdk</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -62,7 +62,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.invoicetronic:java-sdk:1.4"
+     implementation "com.invoicetronic:java-sdk:1.5"
   }
 ```
 
@@ -76,7 +76,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/java-sdk-1.4.jar`
+- `target/java-sdk-1.5.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -105,8 +105,9 @@ public class CompanyApiExample {
         Integer page = 1; // Integer | Page number.
         Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
         String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+        String q = "q_example"; // String | Full-text search across committente, prestatore, identifier, and file name.
         try {
-            List<Company> result = apiInstance.companyGet(page, pageSize, sort);
+            List<Company> result = apiInstance.companyGet(page, pageSize, sort, q);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompanyApi#companyGet");
@@ -133,6 +134,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**companyPut**](docs/CompanyApi.md#companyPut) | **PUT** /company | Update a company
 *CompanyApi* | [**companyVatGet**](docs/CompanyApi.md#companyVatGet) | **GET** /company/{vat} | Get a company by vat number
 *ExportApi* | [**exportGet**](docs/ExportApi.md#exportGet) | **GET** /export | Export invoices as a ZIP archive
+*HealthApi* | [**healthGet**](docs/HealthApi.md#healthGet) | **GET** /health | Health check
 *LogApi* | [**logGet**](docs/LogApi.md#logGet) | **GET** /log | List events
 *LogApi* | [**logIdGet**](docs/LogApi.md#logIdGet) | **GET** /log/{id} | Get an event by id
 *ReceiveApi* | [**receiveGet**](docs/ReceiveApi.md#receiveGet) | **GET** /receive | List incoming invoices

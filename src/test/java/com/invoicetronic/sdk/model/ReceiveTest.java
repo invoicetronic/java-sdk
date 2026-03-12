@@ -163,6 +163,14 @@ public class ReceiveTest {
     }
 
     /**
+     * Test the property 'nomePrestatore'
+     */
+    @Test
+    public void nomePrestatoreTest() {
+        // TODO: test nomePrestatore
+    }
+
+    /**
      * Test the property 'isRead'
      */
     @Test

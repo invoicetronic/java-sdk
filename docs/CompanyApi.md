@@ -14,11 +14,11 @@ All URIs are relative to *http://localhost*
 
 <a id="companyGet"></a>
 # **companyGet**
-> List&lt;Company&gt; companyGet(page, pageSize, sort)
+> List&lt;Company&gt; companyGet(page, pageSize, sort, q)
 
 List companies
 
-Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+Retrieve a paginated list of companies. Results can be filtered by free-text search (&#x60;q&#x60;) across name, VAT number, and fiscal code.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
 
 ### Example
 ```java
@@ -44,8 +44,9 @@ public class Example {
     Integer page = 1; // Integer | Page number.
     Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
+    String q = "q_example"; // String | Full-text search across committente, prestatore, identifier, and file name.
     try {
-      List<Company> result = apiInstance.companyGet(page, pageSize, sort);
+      List<Company> result = apiInstance.companyGet(page, pageSize, sort, q);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CompanyApi#companyGet");
@@ -65,6 +66,7 @@ public class Example {
 | **page** | **Integer**| Page number. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **q** | **String**| Full-text search across committente, prestatore, identifier, and file name. | [optional] |
 
 ### Return type
 

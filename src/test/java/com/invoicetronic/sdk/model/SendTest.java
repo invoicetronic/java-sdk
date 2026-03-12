@@ -166,6 +166,14 @@ public class SendTest {
     }
 
     /**
+     * Test the property 'nomeCommittente'
+     */
+    @Test
+    public void nomeCommittenteTest() {
+        // TODO: test nomeCommittente
+    }
+
+    /**
      * Test the property 'metaData'
      */
     @Test

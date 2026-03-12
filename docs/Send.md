@@ -23,6 +23,7 @@ A sent invoice.
 |**dateSent** | **OffsetDateTime** | When the invoice was sent to SDI. |  [optional] |
 |**documents** | [**List&lt;DocumentData&gt;**](DocumentData.md) | The invoices included in the payload. This is set by the system, based on the xml content. |  [optional] |
 |**encoding** | [**EncodingEnum**](#EncodingEnum) | Whether the payload is Base64 encoded or a plain XML (text). |  [optional] |
+|**nomeCommittente** | **String** | Business name of the committente (client/buyer) extracted from the invoice XML. |  [optional] |
 |**metaData** | **Map&lt;String, String&gt;** | Optional metadata, as json. |  [optional] |
 |**company** | [**Company**](Company.md) |  |  [optional] |
 

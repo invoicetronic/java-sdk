@@ -36,7 +36,7 @@ public class CompanyApiTest {
     /**
      * List companies
      *
-     * Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+     * Retrieve a paginated list of companies. Results can be filtered by free-text search (&#x60;q&#x60;) across name, VAT number, and fiscal code.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
      *
      * @throws ApiException if the Api call fails
      */
@@ -45,7 +45,8 @@ public class CompanyApiTest {
         Integer page = null;
         Integer pageSize = null;
         String sort = null;
-        List<Company> response = api.companyGet(page, pageSize, sort);
+        String q = null;
+        List<Company> response = api.companyGet(page, pageSize, sort, q);
         // TODO: test validations
     }
 

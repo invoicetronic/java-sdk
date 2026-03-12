@@ -11,27 +11,36 @@
  */
 
 
-package com.invoicetronic.sdk.auth;
+package com.invoicetronic.sdk.api;
 
-import com.invoicetronic.sdk.Pair;
 import com.invoicetronic.sdk.ApiException;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import java.net.URI;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T10:37:05.465728Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public interface Authentication {
+/**
+ * API tests for HealthApi
+ */
+@Disabled
+public class HealthApiTest {
+
+    private final HealthApi api = new HealthApi();
+
     /**
-     * Apply authentication settings to header and query params.
+     * Health check
      *
-     * @param queryParams List of query parameters
-     * @param headerParams Map of header parameters
-     * @param cookieParams Map of cookie parameters
-     * @param payload HTTP request body
-     * @param method HTTP method
-     * @param uri URI
-     * @throws ApiException if failed to update the parameters
+     * Returns the health status of the API and its dependencies. No authentication required. Rate limited to 12 requests per minute.
+     *
+     * @throws ApiException if the Api call fails
      */
-    void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams, String payload, String method, URI uri) throws ApiException;
+    @Test
+    public void healthGetTest() throws ApiException {
+        api.healthGet();
+        // TODO: test validations
+    }
+
 }

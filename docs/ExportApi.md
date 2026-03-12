@@ -36,7 +36,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     ExportApi apiInstance = new ExportApi(defaultClient);
-    String type = "Send"; // String | 
+    String type = "type_example"; // String | 
     Integer companyId = 56; // Integer | Company id
     Integer year = 56; // Integer | 
     Integer month = 56; // Integer | 
@@ -60,7 +60,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **type** | **String**|  | [optional] [default to Both] [enum: Send, Receive, Both] |
+| **type** | **String**|  | [optional] |
 | **companyId** | **Integer**| Company id | [optional] |
 | **year** | **Integer**|  | [optional] |
 | **month** | **Integer**|  | [optional] |

@@ -54,7 +54,7 @@ public class SendApiTest {
     /**
      * List invoices
      *
-     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      *
      * @throws ApiException if the Api call fails
      */
@@ -76,7 +76,8 @@ public class SendApiTest {
         Integer page = null;
         Integer pageSize = null;
         String sort = null;
-        List<Send> response = api.sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort);
+        String q = null;
+        List<Send> response = api.sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q);
         // TODO: test validations
     }
 

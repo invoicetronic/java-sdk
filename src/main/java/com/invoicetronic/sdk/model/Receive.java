@@ -54,7 +54,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * A received invoice.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-25T10:08:34.172406Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T10:37:05.465728Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class Receive implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -184,6 +184,11 @@ public class Receive implements Serializable {
   @SerializedName(SERIALIZED_NAME_ENCODING)
   @javax.annotation.Nullable
   private EncodingEnum encoding;
+
+  public static final String SERIALIZED_NAME_NOME_PRESTATORE = "nome_prestatore";
+  @SerializedName(SERIALIZED_NAME_NOME_PRESTATORE)
+  @javax.annotation.Nullable
+  private String nomePrestatore;
 
   public static final String SERIALIZED_NAME_IS_READ = "is_read";
   @SerializedName(SERIALIZED_NAME_IS_READ)
@@ -491,6 +496,25 @@ public class Receive implements Serializable {
   }
 
 
+  public Receive nomePrestatore(@javax.annotation.Nullable String nomePrestatore) {
+    this.nomePrestatore = nomePrestatore;
+    return this;
+  }
+
+  /**
+   * Business name of the prestatore (supplier/seller) extracted from the invoice XML.
+   * @return nomePrestatore
+   */
+  @javax.annotation.Nullable
+  public String getNomePrestatore() {
+    return nomePrestatore;
+  }
+
+  public void setNomePrestatore(@javax.annotation.Nullable String nomePrestatore) {
+    this.nomePrestatore = nomePrestatore;
+  }
+
+
   public Receive isRead(@javax.annotation.Nullable Boolean isRead) {
     this.isRead = isRead;
     return this;
@@ -554,6 +578,7 @@ public class Receive implements Serializable {
         Objects.equals(this.dateSent, receive.dateSent) &&
         Objects.equals(this.documents, receive.documents) &&
         Objects.equals(this.encoding, receive.encoding) &&
+        Objects.equals(this.nomePrestatore, receive.nomePrestatore) &&
         Objects.equals(this.isRead, receive.isRead) &&
         Objects.equals(this.messageId, receive.messageId);
   }
@@ -564,7 +589,7 @@ public class Receive implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, encoding, isRead, messageId);
+    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, encoding, nomePrestatore, isRead, messageId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -593,6 +618,7 @@ public class Receive implements Serializable {
     sb.append("    dateSent: ").append(toIndentedString(dateSent)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
+    sb.append("    nomePrestatore: ").append(toIndentedString(nomePrestatore)).append("\n");
     sb.append("    isRead: ").append(toIndentedString(isRead)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("}");
@@ -616,7 +642,7 @@ public class Receive implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "company_id", "committente", "prestatore", "identifier", "file_name", "format", "payload", "last_update", "date_sent", "documents", "encoding", "is_read", "message_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "company_id", "committente", "prestatore", "identifier", "file_name", "format", "payload", "last_update", "date_sent", "documents", "encoding", "nome_prestatore", "is_read", "message_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("payload"));
@@ -688,6 +714,9 @@ public class Receive implements Serializable {
       // validate the optional field `encoding`
       if (jsonObj.get("encoding") != null && !jsonObj.get("encoding").isJsonNull()) {
         EncodingEnum.validateJsonElement(jsonObj.get("encoding"));
+      }
+      if ((jsonObj.get("nome_prestatore") != null && !jsonObj.get("nome_prestatore").isJsonNull()) && !jsonObj.get("nome_prestatore").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nome_prestatore` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nome_prestatore").toString()));
       }
       if ((jsonObj.get("message_id") != null && !jsonObj.get("message_id").isJsonNull()) && !jsonObj.get("message_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `message_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_id").toString()));

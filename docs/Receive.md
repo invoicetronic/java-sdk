@@ -23,6 +23,7 @@ A received invoice.
 |**dateSent** | **OffsetDateTime** | When the invoice was sent to SDI. |  [optional] |
 |**documents** | [**List&lt;DocumentData&gt;**](DocumentData.md) | The invoices included in the payload. This is set by the system, based on the xml content. |  [optional] |
 |**encoding** | [**EncodingEnum**](#EncodingEnum) | Whether the payload is Base64 encoded or a plain XML (text). |  [optional] |
+|**nomePrestatore** | **String** | Business name of the prestatore (supplier/seller) extracted from the invoice XML. |  [optional] |
 |**isRead** | **Boolean** | Whether the invoice has been read at least once. Set to true only when the invoice is requested with include_payload&#x3D;true. |  [optional] |
 |**messageId** | **String** | SDI message id. |  [optional] |
 

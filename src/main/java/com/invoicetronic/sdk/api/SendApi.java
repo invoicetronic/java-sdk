@@ -249,6 +249,7 @@ public class SendApi {
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param q Full-text search across committente, prestatore, identifier, and file name. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -261,7 +262,7 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendGetCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String q, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -350,6 +351,10 @@ public class SendApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
 
+        if (q != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("q", q));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -370,14 +375,14 @@ public class SendApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return sendGetCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, _callback);
+    private okhttp3.Call sendGetValidateBeforeCall(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String q, final ApiCallback _callback) throws ApiException {
+        return sendGetCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q, _callback);
 
     }
 
     /**
      * List invoices
-     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param committente Vat number or fiscal code. (optional)
@@ -394,6 +399,7 @@ public class SendApi {
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param q Full-text search across committente, prestatore, identifier, and file name. (optional)
      * @return List&lt;Send&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -405,14 +411,14 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public List<Send> sendGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<List<Send>> localVarResp = sendGetWithHttpInfo(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort);
+    public List<Send> sendGet(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String q) throws ApiException {
+        ApiResponse<List<Send>> localVarResp = sendGetWithHttpInfo(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q);
         return localVarResp.getData();
     }
 
     /**
      * List invoices
-     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param committente Vat number or fiscal code. (optional)
@@ -429,6 +435,7 @@ public class SendApi {
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param q Full-text search across committente, prestatore, identifier, and file name. (optional)
      * @return ApiResponse&lt;List&lt;Send&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -440,15 +447,15 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Send>> sendGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = sendGetValidateBeforeCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, null);
+    public ApiResponse<List<Send>> sendGetWithHttpInfo(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String q) throws ApiException {
+        okhttp3.Call localVarCall = sendGetValidateBeforeCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q, null);
         Type localVarReturnType = new TypeToken<List<Send>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List invoices (asynchronously)
-     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+     * Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
      * @param companyId Company id (optional)
      * @param identifier SDI identifier. (optional)
      * @param committente Vat number or fiscal code. (optional)
@@ -465,6 +472,7 @@ public class SendApi {
      * @param page Page number. (optional, default to 1)
      * @param pageSize Items per page. Cannot be greater than 200. (optional, default to 100)
      * @param sort Sort by field. Prefix with &#39;-&#39; for descending order. (optional)
+     * @param q Full-text search across committente, prestatore, identifier, and file name. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -477,9 +485,9 @@ public class SendApi {
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<List<Send>> _callback) throws ApiException {
+    public okhttp3.Call sendGetAsync(@javax.annotation.Nullable Integer companyId, @javax.annotation.Nullable String identifier, @javax.annotation.Nullable String committente, @javax.annotation.Nullable String prestatore, @javax.annotation.Nullable String fileName, @javax.annotation.Nullable OffsetDateTime lastUpdateFrom, @javax.annotation.Nullable OffsetDateTime lastUpdateTo, @javax.annotation.Nullable OffsetDateTime dateSentFrom, @javax.annotation.Nullable OffsetDateTime dateSentTo, @javax.annotation.Nullable OffsetDateTime documentDateFrom, @javax.annotation.Nullable OffsetDateTime documentDateTo, @javax.annotation.Nullable String documentNumber, @javax.annotation.Nullable Boolean includePayload, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String q, final ApiCallback<List<Send>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendGetValidateBeforeCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, _callback);
+        okhttp3.Call localVarCall = sendGetValidateBeforeCall(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q, _callback);
         Type localVarReturnType = new TypeToken<List<Send>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -57,7 +57,7 @@ import com.invoicetronic.sdk.JSON;
 /**
  * A sent invoice.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-25T10:08:34.172406Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T10:37:05.465728Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class Send implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -187,6 +187,11 @@ public class Send implements Serializable {
   @SerializedName(SERIALIZED_NAME_ENCODING)
   @javax.annotation.Nullable
   private EncodingEnum encoding;
+
+  public static final String SERIALIZED_NAME_NOME_COMMITTENTE = "nome_committente";
+  @SerializedName(SERIALIZED_NAME_NOME_COMMITTENTE)
+  @javax.annotation.Nullable
+  private String nomeCommittente;
 
   public static final String SERIALIZED_NAME_META_DATA = "meta_data";
   @SerializedName(SERIALIZED_NAME_META_DATA)
@@ -494,6 +499,25 @@ public class Send implements Serializable {
   }
 
 
+  public Send nomeCommittente(@javax.annotation.Nullable String nomeCommittente) {
+    this.nomeCommittente = nomeCommittente;
+    return this;
+  }
+
+  /**
+   * Business name of the committente (client/buyer) extracted from the invoice XML.
+   * @return nomeCommittente
+   */
+  @javax.annotation.Nullable
+  public String getNomeCommittente() {
+    return nomeCommittente;
+  }
+
+  public void setNomeCommittente(@javax.annotation.Nullable String nomeCommittente) {
+    this.nomeCommittente = nomeCommittente;
+  }
+
+
   public Send metaData(@javax.annotation.Nullable Map<String, String> metaData) {
     this.metaData = metaData;
     return this;
@@ -565,6 +589,7 @@ public class Send implements Serializable {
         Objects.equals(this.dateSent, send.dateSent) &&
         Objects.equals(this.documents, send.documents) &&
         Objects.equals(this.encoding, send.encoding) &&
+        Objects.equals(this.nomeCommittente, send.nomeCommittente) &&
         Objects.equals(this.metaData, send.metaData) &&
         Objects.equals(this.company, send.company);
   }
@@ -575,7 +600,7 @@ public class Send implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, encoding, metaData, company);
+    return Objects.hash(id, created, version, userId, companyId, committente, prestatore, identifier, fileName, format, payload, lastUpdate, dateSent, documents, encoding, nomeCommittente, metaData, company);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -604,6 +629,7 @@ public class Send implements Serializable {
     sb.append("    dateSent: ").append(toIndentedString(dateSent)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
+    sb.append("    nomeCommittente: ").append(toIndentedString(nomeCommittente)).append("\n");
     sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("}");
@@ -627,7 +653,7 @@ public class Send implements Serializable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "company_id", "committente", "prestatore", "identifier", "file_name", "format", "payload", "last_update", "date_sent", "documents", "encoding", "meta_data", "company"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created", "version", "user_id", "company_id", "committente", "prestatore", "identifier", "file_name", "format", "payload", "last_update", "date_sent", "documents", "encoding", "nome_committente", "meta_data", "company"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("payload"));
@@ -699,6 +725,9 @@ public class Send implements Serializable {
       // validate the optional field `encoding`
       if (jsonObj.get("encoding") != null && !jsonObj.get("encoding").isJsonNull()) {
         EncodingEnum.validateJsonElement(jsonObj.get("encoding"));
+      }
+      if ((jsonObj.get("nome_committente") != null && !jsonObj.get("nome_committente").isJsonNull()) && !jsonObj.get("nome_committente").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nome_committente` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nome_committente").toString()));
       }
       // validate the optional field `company`
       if (jsonObj.get("company") != null && !jsonObj.get("company").isJsonNull()) {
