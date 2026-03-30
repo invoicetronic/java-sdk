@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   contact:
     email: info@invoicetronic.com
@@ -16,11 +16,21 @@ info:
     url: https://github.com/invoicetronic/openapi/blob/main/LICENSE
   termsOfService: https://invoicetronic.com/tos
   title: Invoicetronic API
-  version: "1"
+  version: 1.6.1
 servers:
 - url: /
 security:
-- Basic: []
+- {}
+tags:
+- name: company
+- name: export
+- name: health
+- name: log
+- name: receive
+- name: send
+- name: status
+- name: update
+- name: webhook
 paths:
   /company/{id}:
     delete:
@@ -58,24 +68,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Company"
           description: OK
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Unprocessable Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
-        "409":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Conflict
         "404":
           description: Not Found
       summary: Delete a company
@@ -135,12 +127,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: Get a company by vat number
       tags:
       - company
@@ -201,12 +187,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List companies
       tags:
       - company
@@ -230,12 +210,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Company"
           description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -272,12 +246,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/ProblemDetails"
           description: Unprocessable Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: Update a company
       tags:
       - company
@@ -560,6 +528,13 @@ paths:
           format: date-time
           type: string
         style: form
+      - explode: true
+        in: query
+        name: user_agent
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -571,12 +546,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List events
       tags:
       - log
@@ -605,24 +574,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Receive"
           description: OK
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Unprocessable Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
-        "409":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Conflict
         "404":
           description: Not Found
       summary: Delete an incoming invoice by id
@@ -877,12 +828,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List incoming invoices
       tags:
       - receive
@@ -959,12 +904,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: Get a invoice by identifier
       tags:
       - send
@@ -1169,12 +1108,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List invoices
       tags:
       - send
@@ -1225,12 +1158,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Send"
           description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1289,12 +1216,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Send"
           description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1355,12 +1276,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Send"
           description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1419,12 +1334,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/Send"
           description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1452,12 +1361,6 @@ paths:
       responses:
         "204":
           description: No Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1485,12 +1388,6 @@ paths:
       responses:
         "204":
           description: No Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1520,12 +1417,6 @@ paths:
       responses:
         "204":
           description: No Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1553,12 +1444,6 @@ paths:
       responses:
         "204":
           description: No Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -1802,12 +1687,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List updates
       tags:
       - update
@@ -1840,24 +1719,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/WebHook"
           description: OK
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Unprocessable Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
-        "409":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Conflict
         "404":
           description: Not Found
       summary: Delete a webhook by id
@@ -1985,12 +1846,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List webhooks
       tags:
       - webhook
@@ -2018,12 +1873,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/WebHook"
           description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
         "422":
           content:
             application/json:
@@ -2064,12 +1913,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/ProblemDetails"
           description: Unprocessable Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: Update a webhook
       tags:
       - webhook
@@ -2157,12 +2000,6 @@ paths:
           description: OK
         "404":
           description: Not Found
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemHttpResult"
-          description: Bad Request
       summary: List webhook history items
       tags:
       - webhook
@@ -2273,6 +2110,7 @@ components:
         success: true
         resource_id: 9
         id: 0
+        user_agent: user_agent
       properties:
         id:
           description: Unique identifier. Leave it at 0 for new records as it will
@@ -2329,6 +2167,11 @@ components:
           format: int32
           nullable: true
           type: integer
+        user_agent:
+          description: User-Agent header from the HTTP request.
+          maxLength: 512
+          nullable: true
+          type: string
         success:
           description: Whether the request was successful.
           readOnly: true
@@ -2371,29 +2214,6 @@ components:
         instance:
           nullable: true
           type: string
-      type: object
-    ProblemHttpResult:
-      additionalProperties: false
-      example:
-        status_code: 6
-        content_type: content_type
-        problem_details:
-          instance: instance
-          detail: detail
-          type: type
-          title: title
-          status: 0
-      properties:
-        problem_details:
-          $ref: "#/components/schemas/ProblemDetails"
-        content_type:
-          nullable: true
-          readOnly: true
-          type: string
-        status_code:
-          format: int32
-          readOnly: true
-          type: integer
       type: object
     Receive:
       additionalProperties: false
@@ -2440,10 +2260,9 @@ components:
           format: int32
           type: integer
         company_id:
-          description: "Company id. On send, this is the sender and must be set in\
-            \ advance. On receive, it will be\r\nautomatically set based on the recipient's\
-            \ VAT number. If a matching company is not found, the invoice will be\
-            \ rejected until the company is created."
+          description: |-
+            Company id. On send, this is the sender and must be set in advance. On receive, it will be
+            automatically set based on the recipient's VAT number. If a matching company is not found, the invoice will be rejected until the company is created.
           format: int32
           type: integer
         committente:
@@ -2567,10 +2386,9 @@ components:
           format: int32
           type: integer
         company_id:
-          description: "Company id. On send, this is the sender and must be set in\
-            \ advance. On receive, it will be\r\nautomatically set based on the recipient's\
-            \ VAT number. If a matching company is not found, the invoice will be\
-            \ rejected until the company is created."
+          description: |-
+            Company id. On send, this is the sender and must be set in advance. On receive, it will be
+            automatically set based on the recipient's VAT number. If a matching company is not found, the invoice will be rejected until the company is created.
           format: int32
           type: integer
         committente:
@@ -2856,8 +2674,9 @@ components:
           nullable: true
           type: string
         events:
-          description: "List of events that trigger the webhook.\r\nSee Invoicetronic.SupportedEvents.Available\
-            \ for a list of valid event names."
+          description: |-
+            List of events that trigger the webhook.
+            See Invoicetronic.SupportedEvents.Available for a list of valid event names.
           items:
             type: string
           nullable: true

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="logGet"></a>
 # **logGet**
-> List&lt;Event&gt; logGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo)
+> List&lt;Event&gt; logGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo, userAgent)
 
 List events
 
@@ -22,7 +22,6 @@ Retrieve a paginated list of log events. Results can be filtered by various crit
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.LogApi;
 
@@ -30,11 +29,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     LogApi apiInstance = new LogApi(defaultClient);
     Integer companyId = 56; // Integer | Company id
@@ -51,8 +45,9 @@ public class Example {
     Boolean success = true; // Boolean | 
     OffsetDateTime dateTimeFrom = OffsetDateTime.now(); // OffsetDateTime | Date and time of the event
     OffsetDateTime dateTimeTo = OffsetDateTime.now(); // OffsetDateTime | Date and time of the event
+    String userAgent = "userAgent_example"; // String | 
     try {
-      List<Event> result = apiInstance.logGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo);
+      List<Event> result = apiInstance.logGet(companyId, endpoint, method, apiVerion, statusCode, dateCreatedFrom, dateCreatedTo, page, pageSize, sort, query, success, dateTimeFrom, dateTimeTo, userAgent);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LogApi#logGet");
@@ -83,6 +78,7 @@ public class Example {
 | **success** | **Boolean**|  | [optional] |
 | **dateTimeFrom** | **OffsetDateTime**| Date and time of the event | [optional] |
 | **dateTimeTo** | **OffsetDateTime**| Date and time of the event | [optional] |
+| **userAgent** | **String**|  | [optional] |
 
 ### Return type
 
@@ -90,7 +86,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -102,7 +98,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="logIdGet"></a>
 # **logIdGet**
@@ -118,7 +113,6 @@ Retrieve a log event by its internal id.  **Logs** record every API request. The
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.LogApi;
 
@@ -126,11 +120,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     LogApi apiInstance = new LogApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -160,7 +149,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 

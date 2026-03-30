@@ -21,7 +21,6 @@ Export invoices as a ZIP archive of FatturaPA XML files, suitable for import int
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.ExportApi;
 
@@ -29,11 +28,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     ExportApi apiInstance = new ExportApi(defaultClient);
     String type = "type_example"; // String | 
@@ -74,7 +68,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 

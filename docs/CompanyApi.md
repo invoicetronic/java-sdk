@@ -26,7 +26,6 @@ Retrieve a paginated list of companies. Results can be filtered by free-text sea
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.CompanyApi;
 
@@ -34,11 +33,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Integer page = 1; // Integer | Page number.
@@ -74,7 +68,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -86,7 +80,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="companyIdDelete"></a>
 # **companyIdDelete**
@@ -102,7 +95,6 @@ Delete a company by its internal id.  **Companies** are the entities that send a
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.CompanyApi;
 
@@ -110,11 +102,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -146,7 +133,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -157,9 +144,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **422** | Unprocessable Content |  -  |
-| **400** | Bad Request |  -  |
-| **409** | Conflict |  -  |
 | **404** | Not Found |  -  |
 
 <a id="companyIdGet"></a>
@@ -176,7 +160,6 @@ Retrieve a company by its internal id.  **Companies** are the entities that send
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.CompanyApi;
 
@@ -184,11 +167,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -218,7 +196,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -245,7 +223,6 @@ Add a new company.  **Companies** are the entities that send and receive invoice
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.CompanyApi;
 
@@ -253,11 +230,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Company company = new Company(); // Company | 
@@ -287,7 +259,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -298,7 +270,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
 <a id="companyPut"></a>
@@ -315,7 +286,6 @@ Update an existing company.  **Companies** are the entities that send and receiv
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.CompanyApi;
 
@@ -323,11 +293,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     Company company = new Company(); // Company | 
@@ -357,7 +322,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -369,7 +334,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **422** | Unprocessable Content |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="companyVatGet"></a>
 # **companyVatGet**
@@ -385,7 +349,6 @@ Retrieve a company by its VAT number.  **Companies** are the entities that send 
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.CompanyApi;
 
@@ -393,11 +356,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     CompanyApi apiInstance = new CompanyApi(defaultClient);
     String vat = "vat_example"; // String | 
@@ -427,7 +385,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -439,5 +397,4 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 

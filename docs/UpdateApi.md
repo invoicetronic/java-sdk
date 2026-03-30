@@ -22,7 +22,6 @@ Retrieve a paginated list of updates. Results can be filtered by various criteri
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.UpdateApi;
 
@@ -30,11 +29,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     UpdateApi apiInstance = new UpdateApi(defaultClient);
     Integer companyId = 56; // Integer | Company id
@@ -88,7 +82,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -100,7 +94,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="updateIdGet"></a>
 # **updateIdGet**
@@ -116,7 +109,6 @@ Retrieve an update by its internal id.  **Updates** are status notifications fro
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.UpdateApi;
 
@@ -124,11 +116,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     UpdateApi apiInstance = new UpdateApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -158,7 +145,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 

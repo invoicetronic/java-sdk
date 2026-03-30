@@ -12,7 +12,7 @@ A received invoice.
 |**created** | **OffsetDateTime** | Creation date. It is set automatically. |  [optional] |
 |**version** | **Integer** | Row version, for optimistic concurrency. It is set automatically. |  [optional] |
 |**userId** | **Integer** | User id. |  [optional] |
-|**companyId** | **Integer** | Company id. On send, this is the sender and must be set in advance. On receive, it will be  automatically set based on the recipient&#39;s VAT number. If a matching company is not found, the invoice will be rejected until the company is created. |  [optional] |
+|**companyId** | **Integer** | Company id. On send, this is the sender and must be set in advance. On receive, it will be automatically set based on the recipient&#39;s VAT number. If a matching company is not found, the invoice will be rejected until the company is created. |  [optional] |
 |**committente** | **String** | VAT number of the Cessionario/Committente (customer). This is automatically set based on the recipient&#39;s VAT number. |  [optional] |
 |**prestatore** | **String** | VAT number of the Cedente/Prestatore (vendor). This is automatically set based on the sender&#39;s VAT number. |  [optional] |
 |**identifier** | **String** | SDI identifier. This is set by the SDI and is guaranteed to be unique within the SDI system. |  [optional] |

@@ -27,7 +27,6 @@ Retrieve a paginated list of webhooks. Results can be filtered by company, descr
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -35,11 +34,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer companyId = 56; // Integer | Company id
@@ -83,7 +77,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,7 +89,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="webhookIdDelete"></a>
 # **webhookIdDelete**
@@ -111,7 +104,6 @@ Delete a webhook subscription by its internal id.  **Webhooks** allow you to rec
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -119,11 +111,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -153,7 +140,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -164,9 +151,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **422** | Unprocessable Content |  -  |
-| **400** | Bad Request |  -  |
-| **409** | Conflict |  -  |
 | **404** | Not Found |  -  |
 
 <a id="webhookIdGet"></a>
@@ -183,7 +167,6 @@ Retrieve a webhook by its internal id.  **Webhooks** allow you to receive notifi
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -191,11 +174,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -225,7 +203,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -252,7 +230,6 @@ Create a new webhook subscription.  **Webhooks** allow you to receive notificati
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -260,11 +237,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     WebHook webHook = new WebHook(); // WebHook | 
@@ -294,7 +266,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -305,7 +277,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** | Bad Request |  -  |
 | **422** | Unprocessable Content |  -  |
 
 <a id="webhookPut"></a>
@@ -322,7 +293,6 @@ Update an existing webhook subscription.  **Webhooks** allow you to receive noti
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -330,11 +300,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     WebHook webHook = new WebHook(); // WebHook | 
@@ -364,7 +329,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -376,7 +341,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **422** | Unprocessable Content |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="webhookhistoryGet"></a>
 # **webhookhistoryGet**
@@ -392,7 +356,6 @@ Webhook history items are stored in the database and can be accessed via the API
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -400,11 +363,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer page = 1; // Integer | Page number.
@@ -440,7 +398,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -452,7 +410,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **404** | Not Found |  -  |
-| **400** | Bad Request |  -  |
 
 <a id="webhookhistoryIdGet"></a>
 # **webhookhistoryIdGet**
@@ -468,7 +425,6 @@ Webhook history items are stored in the database and can be accessed via the API
 import com.invoicetronic.sdk.ApiClient;
 import com.invoicetronic.sdk.ApiException;
 import com.invoicetronic.sdk.Configuration;
-import com.invoicetronic.sdk.auth.*;
 import com.invoicetronic.sdk.models.*;
 import com.invoicetronic.sdk.api.WebhookApi;
 
@@ -476,11 +432,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     Integer id = 56; // Integer | Item id
@@ -510,7 +461,7 @@ public class Example {
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
