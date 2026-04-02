@@ -7,9 +7,9 @@ For more information, see  [Invoicetronic website][2]
 [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/
 [2]: https://invoicetronic.com/
 
-- API version: 1.6.1
+- API version: 1.6.4
 
-- Build date: 2026-03-30T12:54:42.196633Z[Etc/UTC]
+- Build date: 2026-04-02T15:11:45.668503Z[Etc/UTC]
 
 - Generator version: 7.20.0
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.invoicetronic</groupId>
   <artifactId>java-sdk</artifactId>
-  <version>1.6</version>
+  <version>1.7</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -62,7 +62,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.invoicetronic:java-sdk:1.6"
+     implementation "com.invoicetronic:java-sdk:1.7"
   }
 ```
 
@@ -76,7 +76,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/java-sdk-1.6.jar`
+- `target/java-sdk-1.7.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -96,6 +96,11 @@ public class CompanyApiExample {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
         
+        // Configure HTTP basic authorization: Basic
+        HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+        Basic.setUsername("YOUR USERNAME");
+        Basic.setPassword("YOUR PASSWORD");
+
         CompanyApi apiInstance = new CompanyApi(defaultClient);
         Integer page = 1; // Integer | Page number.
         Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
