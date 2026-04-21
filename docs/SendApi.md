@@ -93,11 +93,11 @@ public class Example {
 
 <a id="sendGet"></a>
 # **sendGet**
-> List&lt;Send&gt; sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q)
+> List&lt;Send&gt; sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, ids, page, pageSize, sort, q)
 
 List invoices
 
-Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Use &#x60;ids&#x60; to fetch specific Send records in a single call (comma-separated, up to 100). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
 
 ### Example
 ```java
@@ -133,12 +133,13 @@ public class Example {
     OffsetDateTime documentDateTo = OffsetDateTime.now(); // OffsetDateTime | UTC ISO 8601 (2024-11-29T12:34:56Z)
     String documentNumber = "documentNumber_example"; // String | Document number.
     Boolean includePayload = true; // Boolean | Include payload in the response. Defaults to false.
+    String ids = "ids_example"; // String | Comma-separated list of Send ids (max 100). Filters the collection to the matching rows; unknown or unauthorized ids are silently skipped.
     Integer page = 1; // Integer | Page number.
     Integer pageSize = 100; // Integer | Items per page. Cannot be greater than 200.
     String sort = "sort_example"; // String | Sort by field. Prefix with '-' for descending order.
     String q = "q_example"; // String | Full-text search across committente, prestatore, identifier, and file name.
     try {
-      List<Send> result = apiInstance.sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, page, pageSize, sort, q);
+      List<Send> result = apiInstance.sendGet(companyId, identifier, committente, prestatore, fileName, lastUpdateFrom, lastUpdateTo, dateSentFrom, dateSentTo, documentDateFrom, documentDateTo, documentNumber, includePayload, ids, page, pageSize, sort, q);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SendApi#sendGet");
@@ -168,6 +169,7 @@ public class Example {
 | **documentDateTo** | **OffsetDateTime**| UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **documentNumber** | **String**| Document number. | [optional] |
 | **includePayload** | **Boolean**| Include payload in the response. Defaults to false. | [optional] |
+| **ids** | **String**| Comma-separated list of Send ids (max 100). Filters the collection to the matching rows; unknown or unauthorized ids are silently skipped. | [optional] |
 | **page** | **Integer**| Page number. | [optional] [default to 1] |
 | **pageSize** | **Integer**| Items per page. Cannot be greater than 200. | [optional] [default to 100] |
 | **sort** | **String**| Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |

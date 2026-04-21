@@ -8,9 +8,9 @@ An API request log entry.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** | Unique identifier. Leave it at 0 for new records as it will be set automatically. |  [optional] |
-|**created** | **OffsetDateTime** | Creation date. It is set automatically. |  [optional] |
-|**version** | **Integer** | Row version, for optimistic concurrency. It is set automatically. |  [optional] |
+|**id** | **Integer** | Unique identifier. For POST requests, leave it at &#x60;0&#x60; — the server will assign one automatically. For PUT requests, set it to the id of the record you want to update. |  [optional] |
+|**created** | **OffsetDateTime** | Creation date. It is set automatically. |  [optional] [readonly] |
+|**version** | **Integer** | Row version, for optimistic concurrency. It is set automatically. |  [optional] [readonly] |
 |**userId** | **Integer** | User id. |  [optional] |
 |**apiKeyId** | **Integer** | Api key id. |  [optional] |
 |**companyId** | **Integer** | Company id. |  [optional] |
